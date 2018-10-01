@@ -1,0 +1,36 @@
+<?php
+
+declare(strict_types=1);
+
+final class Rope
+{
+    private $strength;
+    private $length;
+
+    /**
+     * Rope constructor.
+     * @param int $strength
+     * @param int $length
+     */
+    public function __construct(int $strength, int $length)
+    {
+        $this->strength = $strength;
+        $this->length = $length;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStrength(): int
+    {
+        return $this->strength;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLength(): int
+    {
+        return $this->length;
+    }
+}
