@@ -7,7 +7,6 @@ final class Elevator
     private $rope;
     private $floor;
 
-
     /**
      * Elevator constructor.
      * @param Rope $rope
@@ -24,7 +23,7 @@ final class Elevator
      */
     public function showMaxStrength(): int
     {
-        if ($this->floor->getStrength() > $this->rope->getStrength()) {
+        if ($this->floor->getStrength() < $this->rope->getStrength()) {
             return $this->floor->getStrength();
         }
         return $this->rope->getStrength();
