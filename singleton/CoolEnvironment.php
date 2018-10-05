@@ -19,6 +19,10 @@ final class CoolEnvironment
     {
     }
 
+    private function __wakeup()
+    {
+    }
+
     static public function getInstance(): self
     {
         if(self::$instance === null) {
