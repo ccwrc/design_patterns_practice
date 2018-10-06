@@ -1,4 +1,6 @@
 {
+    "description": "design patterns in PHP",
+    "license": "MIT",
     "autoload": {
         "classmap": [
             "dependency_injection/",
