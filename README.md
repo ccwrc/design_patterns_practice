@@ -1,4 +1,4 @@
-# design_patterns_practice
+# design_patterns_practice (PHP 7.2)
 
 To run unit tests:  
 ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/unit/

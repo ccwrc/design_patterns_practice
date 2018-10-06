@@ -32,7 +32,7 @@ final class Elevator
     /**
      * @return string
      */
-    static public function tryCutRope(): string
+    public function tryCutRope(): string
     {
         return 'Help!';
     }

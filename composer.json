@@ -1,6 +1,7 @@
 {
     "autoload": {
         "classmap": [
+            "dependency_injection/",
             "singleton/"
         ]
     },
