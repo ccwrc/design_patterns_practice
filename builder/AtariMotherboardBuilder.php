@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-class AtariMotherboard implements MotherboardBuilder
+class AtariMotherboardBuilder implements MotherboardBuilder
 {
     private $pcb;
     private $lan;

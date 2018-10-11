@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-class BiostarMotherboard implements MotherboardBuilder
+class BiostarMotherboardBuilder implements MotherboardBuilder
 {
     private $pcb;
     private $lan;
