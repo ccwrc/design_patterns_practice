@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Patterns\tests\unit\builder;
+namespace Patterns\tests\unit\Builder;
 
-use Patterns\builder\AtariMotherboardBuilder;
-use Patterns\builder\BiostarMotherboardBuilder;
-use Patterns\builder\MotherboardFactoryDirector;
+use Patterns\Builder\AtariMotherboardBuilder;
+use Patterns\Builder\BiostarMotherboardBuilder;
+use Patterns\Builder\MotherboardFactoryDirector;
 
 use PHPUnit\Framework\TestCase;
 

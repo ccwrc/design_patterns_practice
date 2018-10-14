@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Patterns\tests\unit\singleton;
+namespace Patterns\tests\unit\Singleton;
 
-use Patterns\singleton\CoolEnvironment;
+use Patterns\Singleton\CoolEnvironment;
 
 use PHPUnit\Framework\TestCase;
 

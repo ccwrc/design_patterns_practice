@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Patterns\dependency_injection;
+namespace Patterns\DependencyInjection;
 
 final class Rope
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Patterns\singleton;
+namespace Patterns\Singleton;
 
 final class CoolEnvironment
 {

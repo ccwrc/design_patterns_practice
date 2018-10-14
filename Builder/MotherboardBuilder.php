@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Patterns\builder;
+namespace Patterns\Builder;
 
 interface MotherboardBuilder
 {

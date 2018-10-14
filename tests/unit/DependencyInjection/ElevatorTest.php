@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Patterns\tests\unit\dependency_injection;
+namespace Patterns\tests\unit\DependencyInjection;
 
-use Patterns\dependency_injection\Elevator;
-use Patterns\dependency_injection\Floor;
-use Patterns\dependency_injection\Rope;
+use Patterns\DependencyInjection\Elevator;
+use Patterns\DependencyInjection\Floor;
+use Patterns\DependencyInjection\Rope;
 
 use PHPUnit\Framework\TestCase;
 

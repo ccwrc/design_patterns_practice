@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Patterns\builder;
+namespace Patterns\Builder;
 
-class BiostarMotherboardBuilder implements MotherboardBuilder
+class AtariMotherboardBuilder implements MotherboardBuilder
 {
     private $pcb;
     private $lan;
@@ -12,12 +12,12 @@ class BiostarMotherboardBuilder implements MotherboardBuilder
 
     public function createPcb(): void
     {
-        $this->pcb = 'Biostar PCB';
+        $this->pcb = 'Atari PCB';
     }
 
     public function addLan(): void
     {
-        $this->lan = 'Realtek LAN';
+        $this->lan = 'Intel LAN';
     }
 
     public function addAudioCard(): void
