@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Patterns\builder;
+
 interface MotherboardBuilder
 {
     public function createPcb(): void;

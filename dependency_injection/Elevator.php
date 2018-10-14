@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Patterns\dependency_injection;
+
 final class Elevator
 {
     private $rope;

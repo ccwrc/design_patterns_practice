@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+namespace Patterns\tests\unit\dependency_injection;
+
+use Patterns\dependency_injection\Elevator;
+use Patterns\dependency_injection\Floor;
+use Patterns\dependency_injection\Rope;
+
 use PHPUnit\Framework\TestCase;
 
 class ElevatorTest extends TestCase

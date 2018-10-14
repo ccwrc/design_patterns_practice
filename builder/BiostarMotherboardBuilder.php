@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Patterns\builder;
+
 class BiostarMotherboardBuilder implements MotherboardBuilder
 {
     private $pcb;

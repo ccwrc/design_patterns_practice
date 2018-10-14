@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Patterns\singleton;
+
 final class CoolEnvironment
 {
     static private $instance;

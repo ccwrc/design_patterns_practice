@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+namespace Patterns\tests\unit\singleton;
+
+use Patterns\singleton\CoolEnvironment;
+
 use PHPUnit\Framework\TestCase;
 
 class CoolEnvironmentTest extends TestCase

@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+namespace Patterns\tests\unit\builder;
+
+use Patterns\builder\AtariMotherboardBuilder;
+use Patterns\builder\BiostarMotherboardBuilder;
+use Patterns\builder\MotherboardFactoryDirector;
+
 use PHPUnit\Framework\TestCase;
 
 class MotherboardFactoryDirectorTest extends TestCase
