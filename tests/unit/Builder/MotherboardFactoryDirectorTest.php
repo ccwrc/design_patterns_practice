@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\tests\unit\Builder;
 
-use Patterns\Builder\AtariMotherboardBuilder;
-use Patterns\Builder\BiostarMotherboardBuilder;
-use Patterns\Builder\MotherboardFactoryDirector;
+use Patterns\Builder\{AtariMotherboardBuilder, BiostarMotherboardBuilder, MotherboardFactoryDirector};
 
 use PHPUnit\Framework\TestCase;
 

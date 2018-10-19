@@ -14,8 +14,10 @@ final class Rope
      * @param int $strength
      * @param int $length
      */
-    public function __construct(int $strength, int $length)
-    {
+    public function __construct(
+        int $strength,
+        int $length
+    ) {
         $this->strength = $strength;
         $this->length = $length;
     }

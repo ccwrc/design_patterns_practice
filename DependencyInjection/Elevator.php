@@ -14,8 +14,10 @@ final class Elevator
      * @param Rope $rope
      * @param Floor $floor
      */
-    public function __construct(Rope $rope, Floor $floor)
-    {
+    public function __construct(
+        Rope $rope,
+        Floor $floor
+    ) {
         $this->rope = $rope;
         $this->floor = $floor;
     }

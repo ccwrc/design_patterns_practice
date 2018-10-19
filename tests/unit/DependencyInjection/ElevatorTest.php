@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\tests\unit\DependencyInjection;
 
-use Patterns\DependencyInjection\Elevator;
-use Patterns\DependencyInjection\Floor;
-use Patterns\DependencyInjection\Rope;
+use Patterns\DependencyInjection\{Elevator, Floor, Rope};
 
 use PHPUnit\Framework\TestCase;
 
@@ -15,7 +13,7 @@ class ElevatorTest extends TestCase
     public function testCreate(): Elevator
     {
         $elevator = new Elevator(
-            new Rope(12,12),
+            new Rope(12, 12),
             new Floor(6)
         );
         $this->assertInstanceOf(Elevator::class, $elevator);
