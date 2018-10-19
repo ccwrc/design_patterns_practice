@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace Patterns\Observer;
 
-class PasswordManager implements \SplSubject
+final class PasswordManager implements \SplSubject, KeyloggerSubject
 {
+    /**
+     * @var string
+     */
+    private $plainTextPassword = '';
     /**
      * @var \SplObjectStorage
      * @link https://devenv.pl/php-spl-class-splobjectstorage/
@@ -15,6 +19,7 @@ class PasswordManager implements \SplSubject
     public function __construct()
     {
         $this->observers = new \SplObjectStorage();
+        $this->plainTextPassword = '';
     }
 
     /**
@@ -40,6 +45,46 @@ class PasswordManager implements \SplSubject
      */
     public function notify(): void
     {
-        // TODO: Implement notify() method.
+        /** @var \SplObserver $observer */
+        foreach ($this->observers as $observer) {
+            $observer->update($this);
+        }
+    }
+
+    public function getPlainTextPassword(): string
+    {
+        return $this->plainTextPassword;
+    }
+
+    /**
+     * @param string $plainTextPassword
+     * @return string
+     * @throws \Exception
+     */
+    public function createPasswordHash(string $plainTextPassword): string
+    {
+        $this->plainTextPassword = $plainTextPassword;
+        $this->notify();
+
+        $options = [
+            'memory_cost' => PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
+            'time_cost' => PASSWORD_ARGON2_DEFAULT_TIME_COST,
+            'threads' => PASSWORD_ARGON2_DEFAULT_THREADS
+        ];
+        $passwordHash = \password_hash($plainTextPassword, PASSWORD_ARGON2I, $options);
+
+        if(!$passwordHash) {
+            throw new \Exception('password hash error');
+        }
+
+        return $passwordHash;
+    }
+
+    public function isPasswordCorrect(
+        string $plainTextPassword,
+        string $passwordHash
+    ): bool
+    {
+        return \password_verify($plainTextPassword, $passwordHash);
     }
 }

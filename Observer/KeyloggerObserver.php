@@ -10,16 +10,14 @@ class KeyloggerObserver implements \SplObserver
 {
 
     /**
-     * Receive update from subject
-     * @link https://php.net/manual/en/splobserver.update.php
-     * @param SplSubject $subject <p>
-     * The <b>SplSubject</b> notifying the observer of an update.
-     * </p>
-     * @return void
-     * @since 5.1.0
+     * @param SplSubject $subject
+     * @return null|string
      */
-    public function update(SplSubject $subject)
+    public function update(SplSubject $subject): ?string
     {
-        // TODO: Implement update() method.
+        if ($subject instanceof KeyloggerSubject) {
+            return 'pass: ' . $subject->getPlainTextPassword() . ' - update the account balance in the bank';
+        }
+        return null;
     }
 }
