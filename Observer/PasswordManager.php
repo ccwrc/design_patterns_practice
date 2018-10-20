@@ -9,7 +9,7 @@ final class PasswordManager implements \SplSubject, KeyloggerSubject
     /**
      * @var string
      */
-    private $plainTextPassword = '';
+    private $plainTextPassword;
     /**
      * @var \SplObjectStorage
      * @link https://devenv.pl/php-spl-class-splobjectstorage/
@@ -96,7 +96,7 @@ final class PasswordManager implements \SplSubject, KeyloggerSubject
      */
     static public function goToHell(?string $trollPassword): string
     {
-        if ($trollPassword !== 'go to hell') {
+        if (($trollPassword !== 'go to hell') and ($trollPassword !== null)) {
             goto bloodthirstyDinosaur;
         } elseif ($trollPassword === 'go to hell') {
             goto plainDinosaur;
@@ -106,6 +106,6 @@ final class PasswordManager implements \SplSubject, KeyloggerSubject
         return 'welcome';
 
         bloodthirstyDinosaur:
-        return 'go to hell'; // if @param $trollPassword === null
+        return 'go to hell';
     }
 }

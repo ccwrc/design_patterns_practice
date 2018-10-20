@@ -40,6 +40,6 @@ class PasswordManagerTest extends TestCase
         $this->assertTrue(is_string(PasswordManager::goToHell('rand ' . rand(1, 155))));
         $this->assertSame('go to hell', PasswordManager::goToHell('any string'));
         $this->assertSame('welcome', PasswordManager::goToHell('go to hell'));
-        $this->assertSame('go to hell', PasswordManager::goToHell(null));
+        $this->assertSame('welcome', PasswordManager::goToHell(null));
     }
 }
