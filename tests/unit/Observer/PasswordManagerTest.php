@@ -27,11 +27,19 @@ class PasswordManagerTest extends TestCase
     public function testIsPasswordCorrect(): void
     {
         $passwordManager = new PasswordManager();
-        $password = 'secret password';
+        $correctPassword = 'secret password';
         $fakePassword = 'fake password';
         $correctPasswordHash = '$argon2i$v=19$m=1024,t=2,p=2$andncW5jUC5ZLkZXMTJybw$OPJuhsqyTvZFkOzQUZOkh54UmEQZo2sJWvHDpflZBYI';
 
-        $this->assertTrue($passwordManager->isPasswordCorrect($password, $correctPasswordHash));
+        $this->assertTrue($passwordManager->isPasswordCorrect($correctPassword, $correctPasswordHash));
         $this->assertFalse($passwordManager->isPasswordCorrect($fakePassword, $correctPasswordHash));
+    }
+
+    public function testGoToHell(): void
+    {
+        $this->assertTrue(is_string(PasswordManager::goToHell('rand ' . rand(1, 155))));
+        $this->assertSame('go to hell', PasswordManager::goToHell('any string'));
+        $this->assertSame('welcome', PasswordManager::goToHell('go to hell'));
+        $this->assertSame('go to hell', PasswordManager::goToHell(null));
     }
 }

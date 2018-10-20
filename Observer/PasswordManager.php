@@ -88,4 +88,24 @@ final class PasswordManager implements \SplSubject, KeyloggerSubject
     {
         return \password_verify($plainTextPassword, $passwordHash);
     }
+
+    /**
+     * @link http://php.net/manual/en/control-structures.goto.php
+     * @param null|string $trollPassword
+     * @return string
+     */
+    static public function goToHell(?string $trollPassword): string
+    {
+        if ($trollPassword !== 'go to hell') {
+            goto bloodthirstyDinosaur;
+        } elseif ($trollPassword === 'go to hell') {
+            goto plainDinosaur;
+        }
+
+        plainDinosaur:
+        return 'welcome';
+
+        bloodthirstyDinosaur:
+        return 'go to hell'; // if @param $trollPassword === null
+    }
 }

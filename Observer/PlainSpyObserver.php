@@ -4,16 +4,26 @@ declare(strict_types=1);
 
 namespace Patterns\Observer;
 
-use SplSubject;
-
 class PlainSpyObserver implements \SplObserver
 {
     /**
-     * @param SplSubject $subject
-     * @return string
+     * @var \SplSubject[]
      */
-    public function update(SplSubject $subject): string
+    private $subjects = [];
+
+    /**
+     * @param \SplSubject $subject
+     */
+    public function update(\SplSubject $subject): void
     {
-        return 'Update something.';
+        $this->subjects[] = clone $subject;
+    }
+
+    /**
+     * @return \SplSubject[]
+     */
+    public function getSubjects(): array
+    {
+        return $this->subjects;
     }
 }
