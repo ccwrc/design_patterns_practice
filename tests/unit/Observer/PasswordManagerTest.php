@@ -16,7 +16,7 @@ class PasswordManagerTest extends TestCase
         $plainText = 'plain pass';
         try {
             $passwordHash = $passwordManager->createPasswordHash($plainText);
-        } catch (\Exception $exception) {
+        } catch (\Throwable $error) {
             $passwordHash = false;
         }
 

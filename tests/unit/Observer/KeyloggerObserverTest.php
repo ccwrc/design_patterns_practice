@@ -20,8 +20,8 @@ class KeyloggerObserverTest extends TestCase
         try {
             $passwordManager->createPasswordHash('plain pass');
             $passwordManager->createPasswordHash('another string');
-        } catch (\Exception $exception) {
-            echo $exception->getMessage();
+        } catch (\Throwable $error) {
+            echo $error->getMessage();
         }
         $this->assertSame(2, KeyloggerObserver::getCounterSubjectImplementsKeylogger());
         $this->assertSame(0, KeyloggerObserver::getCounterSubject());
