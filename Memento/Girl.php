@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Patterns\Memento;
 
-
 class Girl
 {
     /**
@@ -31,14 +30,21 @@ class Girl
      * @var bool
      */
     private $liveGrandmother;
+    /**
+     * @var bool
+     */
+    private $revengeDesire;
 
     public function __construct(string $name)
     {
         $this->name = $name;
+
         $this->wolvesResistance = false;
         $this->abilityToLifeInForest = true;
         $this->basket = false;
         $this->hoodColor = 'red';
+        $this->liveGrandmother = true;
+        $this->revengeDesire = false;
     }
 
     /**
@@ -48,6 +54,12 @@ class Girl
     {
         if ($killer->doesHaveWeapon()) {
             $this->liveGrandmother = false;
+            $this->revengeDesire = true;
         }
+    }
+
+    public function isGrandmaLives(): bool
+    {
+        return $this->liveGrandmother;
     }
 }

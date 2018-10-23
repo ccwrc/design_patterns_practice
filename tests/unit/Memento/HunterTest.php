@@ -12,7 +12,7 @@ class HunterTest extends TestCase
 {
     public function testDoesHaveWeapon(): void
     {
-        $hunter = new Hunter('Tex red neck with a rifle');
+        $hunter = new Hunter('Leon');
 
         $this->assertFalse($hunter->doesHaveWeapon());
     }

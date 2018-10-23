@@ -13,7 +13,7 @@ class Hunter implements Deadly
     /**
      * @var string|null
      */
-    private $weapon;
+    private $weapon = null;
 
     public function __construct(string $name)
     {
