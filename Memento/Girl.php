@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Patterns\Memento;
 
+/**
+ * This is the Originator in Memento pattern
+ * Class Girl
+ */
 class Girl
 {
     /**
@@ -61,5 +65,34 @@ class Girl
     public function isGrandmaLives(): bool
     {
         return $this->liveGrandmother;
+    }
+
+    public function saveToMemento(): GirlMemento
+    {
+        $state = [
+            'name' => $this->name,
+            'wolvesResistance' => $this->wolvesResistance,
+            'abilityToLifeInForest' => $this->abilityToLifeInForest,
+            'basket' => $this->basket,
+            'hoodColor' => $this->hoodColor,
+            'liveGrandmother' => $this->liveGrandmother,
+            'revengeDesire' => $this->revengeDesire
+        ];
+        $girlMemento = new GirlMemento();
+        $girlMemento->setState($state);
+
+        return $girlMemento;
+    }
+
+    public function restoreFromMemento(GirlMemento $girlMemento): void
+    {
+        $state = $girlMemento->getState();
+        $this->name = $state['name'];
+        $this->wolvesResistance = $state['wolvesResistance'];
+        $this->abilityToLifeInForest = $state['abilityToLifeInForest'];
+        $this->basket = $state['basket'];
+        $this->hoodColor = $state['hoodColor'];
+        $this->liveGrandmother = $state['liveGrandmother'];
+        $this->revengeDesire = $state['revengeDesire'];
     }
 }

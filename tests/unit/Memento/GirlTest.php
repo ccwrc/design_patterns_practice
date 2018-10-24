@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\tests\unit\Memento;
 
-use Patterns\Memento\Girl;
+use Patterns\Memento\{Girl, GirlCaretaker, Wolf};
 
 use PHPUnit\Framework\TestCase;
 
@@ -18,5 +18,24 @@ class GirlTest extends TestCase
         $this->assertTrue($girl->isGrandmaLives());
 
         return $girl;
+    }
+
+    /**
+     * @depends testCreate
+     * @param Girl $girl
+     */
+    public function testBehatNeeded(Girl $girl): void
+    {
+        $wolf = new Wolf('Zorg');
+        $wolf->setDefaultWeapon('stomach');
+
+        $caretaker = new GirlCaretaker();
+        $saveHash = $caretaker->addMemento($girl->saveToMemento());
+
+        $girl->killGrandma($wolf);
+        $this->assertFalse($girl->isGrandmaLives());
+
+        $girl->restoreFromMemento($caretaker->getMemento($saveHash));
+        $this->assertTrue($girl->isGrandmaLives());
     }
 }
