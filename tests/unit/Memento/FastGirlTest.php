@@ -13,6 +13,7 @@ class FastGirlTest extends TestCase
     public function testCreate(): FastGirl
     {
         $girl = new FastGirl('Furious girl');
+        $girl->setMaxSpeed(25);
 
         $this->assertInstanceOf(FastGirl::class, $girl);
         $this->assertTrue($girl->isGrandmaLives());
@@ -24,7 +25,7 @@ class FastGirlTest extends TestCase
      * @depends testCreate
      * @param FastGirl $girl
      */
-    public function testBehatNeeded(FastGirl $girl): void
+    public function testBehatNeededWithMaxSpeed(FastGirl $girl): void
     {
         $wolf = new Wolf('Zorg');
         $wolf->setDefaultWeapon('stomach');
@@ -39,6 +40,6 @@ class FastGirlTest extends TestCase
 
         $girl->restoreFromMemento($caretaker->getMemento($mementoIdBeforeMurder));
         $this->assertTrue($girl->isGrandmaLives());
-        $this->assertEquals(20, $girl->getMaxSpeed());
+        $this->assertEquals(25, $girl->getMaxSpeed());
     }
 }
