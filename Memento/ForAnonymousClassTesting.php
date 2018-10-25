@@ -22,4 +22,9 @@ abstract class ForAnonymousClassTesting
     {
         return true;
     }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
 }

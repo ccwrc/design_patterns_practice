@@ -20,5 +20,6 @@ class ForAnonymousClassTestingTest extends TestCase
         };
 
         $this->assertTrue($anonymousClassObject->returnTrue());
+        $this->assertSame('plain name', $anonymousClassObject->getName());
     }
 }
