@@ -29,4 +29,9 @@ class Hunter implements Deadly
     {
         return $this->weapon === null ? false : true;
     }
+
+    public function __toString(): string
+    {
+        return $this->name;
+    }
 }

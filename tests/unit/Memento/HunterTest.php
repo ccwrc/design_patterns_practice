@@ -16,4 +16,11 @@ class HunterTest extends TestCase
 
         $this->assertFalse($hunter->doesHaveWeapon());
     }
+
+    public function testToString(): void
+    {
+        $hunter = new Hunter('Professional');
+
+        $this->assertSame('Professional', (string)$hunter);
+    }
 }
