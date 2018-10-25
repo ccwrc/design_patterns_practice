@@ -30,12 +30,12 @@ class GirlTest extends TestCase
         $wolf->setDefaultWeapon('stomach');
 
         $caretaker = new GirlCaretaker();
-        $mementoId = $caretaker->addMementoAndReturnId($girl->saveToMemento());
+        $mementoIdBeforeMurder = $caretaker->addMementoAndReturnId($girl->saveToMemento());
 
         $girl->killGrandma($wolf);
         $this->assertFalse($girl->isGrandmaLives());
 
-        $girl->restoreFromMemento($caretaker->getMemento($mementoId));
+        $girl->restoreFromMemento($caretaker->getMemento($mementoIdBeforeMurder));
         $this->assertTrue($girl->isGrandmaLives());
     }
 }
