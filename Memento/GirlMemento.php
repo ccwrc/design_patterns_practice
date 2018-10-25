@@ -4,8 +4,13 @@ declare(strict_types=1);
 
 namespace Patterns\Memento;
 
-class GirlMemento
+use Patterns\Memento\PatternInterface\Memento;
+
+class GirlMemento implements Memento
 {
+    /**
+     * @var mixed
+     */
     private $state;
 
     /**

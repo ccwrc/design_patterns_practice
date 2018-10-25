@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Patterns\Memento;
 
-/**
- * This is the Originator in Memento pattern
- * Class Girl
- */
-class Girl
+use Patterns\Memento\PatternInterface\Originator;
+
+class Girl implements Originator
 {
     /**
      * @var string
@@ -42,7 +40,6 @@ class Girl
     public function __construct(string $name)
     {
         $this->name = $name;
-
         $this->wolvesResistance = false;
         $this->abilityToLifeInForest = true;
         $this->basket = false;

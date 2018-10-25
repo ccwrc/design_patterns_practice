@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Patterns\Memento;
 
-class GirlCaretaker
+use Patterns\Memento\PatternInterface\Caretaker;
+
+class GirlCaretaker implements Caretaker
 {
     /**
      * @var GirlMemento[]
