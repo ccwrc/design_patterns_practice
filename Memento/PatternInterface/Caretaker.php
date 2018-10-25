@@ -13,7 +13,7 @@ interface Caretaker
      * @param GirlMemento $girlMemento
      * @return string
      */
-    public function addMemento(GirlMemento $girlMemento): string;
+    public function addMementoAndReturnId(GirlMemento $girlMemento): string;
 
     /**
      * @param string $mementoId

@@ -24,7 +24,7 @@ class GirlMemento implements Memento
     /**
      * @param mixed $state
      */
-    public function setState($state): void
+    public function saveState($state): void
     {
         $this->state = $state;
     }

@@ -16,5 +16,5 @@ interface Memento
      * Writes the state of the object provided by originator
      * @param mixed $state
      */
-    public function setState($state): void;
+    public function saveState($state): void;
 }

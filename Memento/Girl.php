@@ -76,7 +76,7 @@ class Girl implements Originator
             'revengeDesire' => $this->revengeDesire
         ];
         $girlMemento = new GirlMemento();
-        $girlMemento->setState($state);
+        $girlMemento->saveState($state);
 
         return $girlMemento;
     }

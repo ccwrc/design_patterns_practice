@@ -13,7 +13,7 @@ class GirlCaretaker implements Caretaker
      */
     private $mementos = [];
 
-    public function addMemento(GirlMemento $memento): string
+    public function addMementoAndReturnId(GirlMemento $memento): string
     {
         $hash = spl_object_hash($memento);
         $this->mementos[$hash] = $memento;
