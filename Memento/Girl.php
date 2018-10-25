@@ -11,31 +11,31 @@ class Girl implements Originator
     /**
      * @var string
      */
-    private $name;
+    protected $name;
     /**
      * @var bool
      */
-    private $wolvesResistance;
+    protected $wolvesResistance;
     /**
      * @var bool
      */
-    private $abilityToLifeInForest;
+    protected $abilityToLifeInForest;
     /**
      * @var bool
      */
-    private $basket;
+    protected $basket;
     /**
      * @var string
      */
-    private $hoodColor;
+    protected $hoodColor;
     /**
      * @var bool
      */
-    private $liveGrandmother;
+    protected $liveGrandmother;
     /**
      * @var bool
      */
-    private $revengeDesire;
+    protected $revengeDesire;
 
     public function __construct(string $name)
     {

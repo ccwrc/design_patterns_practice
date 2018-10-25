@@ -33,9 +33,12 @@ class FastGirlTest extends TestCase
         $mementoIdBeforeMurder = $caretaker->addMementoAndReturnId($girl->saveToMemento());
 
         $girl->killGrandma($wolf);
+        $girl->setMaxSpeed(300);
         $this->assertFalse($girl->isGrandmaLives());
+        $this->assertEquals(300, $girl->getMaxSpeed());
 
         $girl->restoreFromMemento($caretaker->getMemento($mementoIdBeforeMurder));
         $this->assertTrue($girl->isGrandmaLives());
+        $this->assertEquals(20, $girl->getMaxSpeed());
     }
 }
