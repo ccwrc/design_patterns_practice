@@ -38,4 +38,15 @@ class GirlTest extends TestCase
         $girl->restoreFromMemento($caretaker->getMemento($mementoIdBeforeMurder));
         $this->assertTrue($girl->isGrandmaLives());
     }
+
+    public function testAreAllPropertiesPresentInMemento(): void
+    {
+        $girl = new Girl('Jenny');
+        $countGirlProp = \count((array)$girl);
+
+        $memento = $girl->saveToMemento();
+        $countMementoState = \count($memento->getState());
+
+        $this->assertEquals($countMementoState, $countGirlProp);
+    }
 }

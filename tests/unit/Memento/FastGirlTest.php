@@ -42,4 +42,15 @@ class FastGirlTest extends TestCase
         $this->assertTrue($girl->isGrandmaLives());
         $this->assertEquals(25, $girl->getMaxSpeed());
     }
+
+    public function testAreAllPropertiesPresentInMemento(): void
+    {
+        $girl = new FastGirl('Jenny');
+        $countGirlProp = \count((array)$girl);
+
+        $memento = $girl->saveToMemento();
+        $countMementoState = \count($memento->getState());
+
+        $this->assertEquals($countMementoState, $countGirlProp);
+    }
 }
