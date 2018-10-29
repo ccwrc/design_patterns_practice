@@ -59,4 +59,14 @@ class FakeManager implements \SplSubject
     {
         return $firstNumber <=> $secondNumber;
     }
+
+    /**
+     * @link https://stackoverflow.com/questions/38716613/generate-a-single-use-token-in-php-random-bytes-or-openssl-random-pseudo-bytes
+     * @return string
+     * @throws \Exception
+     */
+    static public function getSingleUseToken(): string
+    {
+        return \bin2hex(\random_bytes(12));
+    }
 }
