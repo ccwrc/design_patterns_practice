@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\Strategy\PatternInterface;
 
-interface PoliceStrategy
+interface CrimeType
 {
     public function getProcedure(): string;
 

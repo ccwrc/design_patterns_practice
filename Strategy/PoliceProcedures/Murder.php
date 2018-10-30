@@ -4,18 +4,37 @@ declare(strict_types=1);
 
 namespace Patterns\Strategy\PoliceProcedures;
 
-use Patterns\Strategy\PatternInterface\PoliceStrategy;
+use Patterns\Strategy\PatternInterface\CrimeType;
 
-class Murder implements PoliceStrategy
+final class Murder implements CrimeType
 {
+    /**
+     * @var string
+     */
+    private $code;
+    /**
+     * @var string
+     */
+    private $procedure;
+
+    public function __construct()
+    {
+        $this->code = '187';
+        $this->procedure = 'Call for support, pursue.';
+    }
 
     public function getProcedure(): string
     {
-        return 'Call for support, pursue.';
+        return $this->procedure;
     }
 
     public function getCode(): string
     {
-        return '187';
+        return $this->code;
+    }
+
+    public function getCodeAndProcedure(): string
+    {
+        return "Code {$this->code}: {$this->procedure}";
     }
 }
