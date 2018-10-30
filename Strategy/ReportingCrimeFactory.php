@@ -9,10 +9,10 @@ use Patterns\Strategy\PoliceProcedures\{Carjacking, IndecentExposure, Kidnapping
 class ReportingCrimeFactory
 {
     /**
-     * @param null|string $crimeType
+     * @param string $crimeType
      * @return ReportingCrime
      */
-    static public function create(?string $crimeType): ReportingCrime
+    static public function create(string $crimeType): ReportingCrime
     {
         switch (strtolower($crimeType)) {
             case 'carjacking':
