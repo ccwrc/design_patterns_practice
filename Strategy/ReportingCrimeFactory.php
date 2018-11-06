@@ -6,7 +6,7 @@ namespace Patterns\Strategy;
 
 use Patterns\Strategy\PoliceProcedures\{Carjacking, IndecentExposure, Kidnapping, Murder, OtherCrime};
 
-class ReportingCrimeFactory
+final class ReportingCrimeFactory
 {
     /**
      * @param string $crimeType
