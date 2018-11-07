@@ -11,7 +11,7 @@ final class ReportingCrime
     /**
      * @var \DateTime
      */
-    private $notificationTime;
+    private $notificationTimeOfCrime;
     /**
      * @var CrimeType
      */
@@ -19,7 +19,7 @@ final class ReportingCrime
 
     public function __construct(CrimeType $crimeType)
     {
-        $this->notificationTime = new \DateTime();
+        $this->notificationTimeOfCrime = new \DateTime('now');
         $this->crimeType = $crimeType;
     }
 
@@ -31,5 +31,10 @@ final class ReportingCrime
     public function getCrimeProcedure(): string
     {
         return $this->crimeType->getProcedure();
+    }
+
+    public function getNotificationTimeOfCrime(): \DateTime
+    {
+        return $this->notificationTimeOfCrime;
     }
 }
