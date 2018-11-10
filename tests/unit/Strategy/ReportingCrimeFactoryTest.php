@@ -24,14 +24,16 @@ class ReportingCrimeFactoryTest extends TestCase
 
     public function testGetRightCode(): void
     {
-        $reportingCrimeCarjacking = ReportingCrimeFactory::create('Carjacking');
-        $reportingCrimeIndecentExposure = ReportingCrimeFactory::create('indecentExposure');
-        $reportingCrimeKidnapping = ReportingCrimeFactory::create('kidnappING');
-        $reportingCrimeMurder = ReportingCrimeFactory::create('murder');
-
+        $reportingCrimeCarjacking = ReportingCrimeFactory::create(ReportingCrimeFactory::CARJACKING);
         $this->assertSame('215', $reportingCrimeCarjacking->getCrimeCode());
+
+        $reportingCrimeIndecentExposure = ReportingCrimeFactory::create('indecentExposure');
         $this->assertSame('314', $reportingCrimeIndecentExposure->getCrimeCode());
+
+        $reportingCrimeKidnapping = ReportingCrimeFactory::create('kidnappING');
         $this->assertSame('207', $reportingCrimeKidnapping->getCrimeCode());
+
+        $reportingCrimeMurder = ReportingCrimeFactory::create(ReportingCrimeFactory::MURDER);
         $this->assertSame('187', $reportingCrimeMurder->getCrimeCode());
     }
 }

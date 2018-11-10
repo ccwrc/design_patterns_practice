@@ -5,4 +5,6 @@ https://designpatternsphp.readthedocs.io/pl/latest/Behavioral/Strategy/README.ht
 
 https://4programmers.net/PHP/Wzorce_Projektowe#strategy
 
+http://itcraftsman.pl/wzorce-projektowe-strategia/
+
 https://zawarstwaabstrakcji.pl/wzorce-projektowe/strategia/

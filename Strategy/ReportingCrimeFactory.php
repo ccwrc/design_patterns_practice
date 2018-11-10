@@ -8,6 +8,11 @@ use Patterns\Strategy\PoliceProcedures\{Carjacking, IndecentExposure, Kidnapping
 
 final class ReportingCrimeFactory
 {
+    public const MURDER = 'murder';
+    public const CARJACKING = 'carjacking';
+    public const INDECENT_EXPOSURE = 'indecentexposure';
+    public const KIDNAPPING = 'kidnapping';
+
     /**
      * @param string $crimeType
      * @return ReportingCrime
