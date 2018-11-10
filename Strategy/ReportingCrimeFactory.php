@@ -12,6 +12,7 @@ final class ReportingCrimeFactory
     public const CARJACKING = 'carjacking';
     public const INDECENT_EXPOSURE = 'indecentexposure';
     public const KIDNAPPING = 'kidnapping';
+    public const OTHER_CRIME = 'other';
 
     /**
      * @param string $crimeType
