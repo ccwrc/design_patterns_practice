@@ -10,6 +10,16 @@ use PHPUnit\Framework\TestCase;
 
 class TerminatorT750Test extends TestCase
 {
+    public function testClone(): void
+    {
+        $location = 69;
+        $t750 = new TerminatorT750($location);
+        $clone = clone $t750;
+
+        $this->assertInstanceOf(TerminatorT750::class, $clone);
+        $this->assertEquals($location, $clone->getLocation());
+    }
+
     public function testProductionSpeed(): void
     {
         $t750 = new TerminatorT750(6);
