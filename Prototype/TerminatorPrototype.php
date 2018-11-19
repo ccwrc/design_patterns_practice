@@ -23,6 +23,8 @@ abstract class TerminatorPrototype implements Location
         $this->location = $locationOfTeleportation;
     }
 
+    abstract public function __clone();
+
     /**
      * @param Sarah $sarah
      * @return bool
@@ -42,8 +44,8 @@ abstract class TerminatorPrototype implements Location
     /**
      * @return null|Uuid
      */
-    public function getSerialNumber(): ?string
+    public function getSerialNumber(): ?Uuid
     {
-        return $this->serialNumber->toString();
+        return $this->serialNumber;
     }
 }
