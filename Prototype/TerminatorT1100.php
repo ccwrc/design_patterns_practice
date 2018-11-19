@@ -14,7 +14,6 @@ final class TerminatorT1100 extends TerminatorPrototype
 
     public function __clone()
     {
-        // TODO: Implement __clone() method.
     }
 
     /**

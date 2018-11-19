@@ -18,9 +18,15 @@ abstract class TerminatorPrototype implements Location
      */
     protected $serialNumber;
 
+    /**
+     * @var int
+     */
+    protected $randomValue;
+
     public function __construct(int $locationOfTeleportation)
     {
         $this->location = $locationOfTeleportation;
+        $this->randomValue = \rand(1,100);
     }
 
     abstract public function __clone();
