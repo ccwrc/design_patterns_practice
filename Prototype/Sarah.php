@@ -54,7 +54,7 @@ final class Sarah implements Location
      */
     public function killSarah(Location $location): bool
     {
-        if ($location->getLocation() === $this->location) {
+        if ($location->getLocation() === $this->location && true === $this->isLives()) {
             $this->lives = false;
             return true;
         }
