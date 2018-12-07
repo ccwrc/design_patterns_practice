@@ -5,3 +5,20 @@ To run unit tests:
 
 PHPUnit doc:   
 https://phpunit.de/getting-started/phpunit-7.html
+
+Creational:   
+- Abstract Factory
+- Builder
+- Prototype
+- Singleton
+
+Structural:   
+- Dependency Injection
+
+Behavioral:   
+- Memento
+- Null Object
+- Observer
+- Strategy
+
+
