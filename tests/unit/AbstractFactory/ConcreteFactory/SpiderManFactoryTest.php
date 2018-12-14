@@ -6,13 +6,13 @@ namespace Patterns\tests\unit\AbstractFactory\ConcreteFactory;
 
 use Patterns\AbstractFactory\ConcreteFactory\SpiderManFactory;
 
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\{Error\Error, TestCase};
 
 class SpiderManFactoryTest extends TestCase
 {
     public function testCatchCriminals(): void
     {
-        $criminals =             [
+        $criminals = [
             'Carlo Gambino',
             'Ching Shih',
             'Adam Worth',
@@ -25,7 +25,18 @@ class SpiderManFactoryTest extends TestCase
         ];
         $spiderMan = new SpiderManFactory('Peter');
 
+        // splat operator test
         $this->assertIsArray($spiderMan->catchCriminals(...$criminals));
+        $this->assertIsArray($spiderMan->catchCriminals('Carlos', 'Capone'));
         $this->assertTrue(in_array('Carlos', $spiderMan->catchCriminals('Carlos')));
+    }
+
+    /**
+     * @expectedException Error
+     */
+    function testCatchCriminalsError(): void
+    {
+        $spiderMan = new SpiderManFactory('Peter');
+        $spiderMan->catchCriminals('John', 11);
     }
 }
