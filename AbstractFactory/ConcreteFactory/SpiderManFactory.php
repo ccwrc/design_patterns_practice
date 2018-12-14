@@ -34,6 +34,10 @@ final class SpiderManFactory extends SpiderFactory
             }
         }
 
+        if (0 === count($caughtCriminals) && count($criminals) > 0) {
+            $caughtCriminals[] = $criminals[0];
+        }
+
         return $caughtCriminals;
     }
 }
