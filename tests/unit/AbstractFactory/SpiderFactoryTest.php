@@ -12,7 +12,7 @@ class SpiderFactoryTest extends TestCase
 {
     public function testCreate(): void
     {
-        $object = new class('Spider') extends SpiderFactory
+        $object = new class('Spider name') extends SpiderFactory
         {
             /**
              * @param int $strength
