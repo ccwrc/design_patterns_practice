@@ -59,7 +59,7 @@ class SpiderManFactoryTest extends TestCase
      * @depends testCreate
      * @param SpiderManFactory $spiderMan
      */
-    public function canCreateCobweb(SpiderManFactory $spiderMan): void
+    public function testCanCreateCobweb(SpiderManFactory $spiderMan): void
     {
         $this->assertInstanceOf(Cobweb::class, $spiderMan->makeWeb(13));
     }
