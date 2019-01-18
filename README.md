@@ -22,4 +22,7 @@ Behavioral:
 - Observer
 - Strategy
 
+Other:    
+- Property
+
 
