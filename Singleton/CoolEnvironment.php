@@ -7,6 +7,7 @@ namespace Patterns\Singleton;
 final class CoolEnvironment
 {
     static private $instance;
+
     private $parameters = [
         'language' => 'esperanto',
         'password' => 'doPasaCnoty',

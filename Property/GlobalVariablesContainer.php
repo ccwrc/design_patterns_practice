@@ -7,7 +7,7 @@ namespace Patterns\Property;
 final class GlobalVariablesContainer implements PropertyContainer
 {
     /**
-     * @var array
+     * @var mixed[]
      */
     private static $container = [];
 
@@ -25,7 +25,7 @@ final class GlobalVariablesContainer implements PropertyContainer
      */
     public static function addPropertyBy(string $name, $property): void
     {
-        // TODO: Implement addPropertyBy() method.
+        self::$container[$name] = $property;
     }
 
     /**
@@ -36,7 +36,7 @@ final class GlobalVariablesContainer implements PropertyContainer
      */
     public static function getPropertyBy(string $name)
     {
-        // TODO: Implement getPropertyBy() method.
+        return self::$container[$name] ?? null;
     }
 
     /**
@@ -44,7 +44,9 @@ final class GlobalVariablesContainer implements PropertyContainer
      */
     public static function removePropertyBy(string $name): void
     {
-        // TODO: Implement removePropertyBy() method.
+        if(self::isPropertyExist($name)) {
+            unset(self::$container[$name]);
+        }
     }
 
     /**
@@ -52,7 +54,11 @@ final class GlobalVariablesContainer implements PropertyContainer
      */
     public static function getPropertyKeys(): string
     {
-        // TODO: Implement getPropertyKeys() method.
+        $keys = '';
+        foreach (self::$container as $key => $property) {
+            $keys .= $key . ' ';
+        }
+        return $keys;
     }
 
     /**
@@ -61,6 +67,6 @@ final class GlobalVariablesContainer implements PropertyContainer
      */
     public static function isPropertyExist(string $name): bool
     {
-        // TODO: Implement isPropertyExist() method.
+        return isset(self::$container[$name]);
     }
 }
