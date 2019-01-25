@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Patterns\FactoryMethod;
+namespace Patterns\FactoryMethod\Accessory;
 
 interface EroticAccessory
 {

@@ -1,0 +1,34 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Patterns\FactoryMethod\Accessory;
+
+class Rope implements EroticAccessory
+{
+    /**
+     * @var int
+     */
+    private $pleasureLevel;
+
+    public function __construct(int $pleasureLevel)
+    {
+        $this->pleasureLevel = $pleasureLevel;
+    }
+
+    /**
+     * @param int $pleasureLevel negative values for masochists
+     */
+    public function setPleasureLevel(int $pleasureLevel): void
+    {
+        $this->pleasureLevel = $pleasureLevel;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPleasureLevel(): int
+    {
+        return $this->pleasureLevel;
+    }
+}
