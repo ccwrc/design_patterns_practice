@@ -11,7 +11,7 @@ class Handcuffs implements EroticAccessory
      */
     private $pleasureLevel;
 
-    public function __construct(int $pleasureLevel)
+    public function __construct(int $pleasureLevel = 0)
     {
         $this->pleasureLevel = $pleasureLevel;
     }
