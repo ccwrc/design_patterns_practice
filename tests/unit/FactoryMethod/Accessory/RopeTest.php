@@ -34,4 +34,14 @@ class RopeTest extends TestCase
         $rope->setPleasureLevel($newPleasureLevel);
         $this->assertEquals($newPleasureLevel, $rope->getPleasureLevel());
     }
+
+    /**
+     * @depends testCreate
+     * @param Rope $rope
+     */
+    public function testGetSafeWord(Rope $rope): void
+    {
+        $this->assertTrue(is_string($rope->getSafeWord()));
+        $this->assertEquals('FLÜGGÅƎNKð€CHIŒßØLSÊN', $rope->getSafeWord());
+    }
 }
