@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\FactoryMethod\Accessory;
 
-class Rope implements EroticAccessory
+final class Rope implements EroticAccessory
 {
     /**
      * @var int
@@ -30,5 +30,14 @@ class Rope implements EroticAccessory
     public function getPleasureLevel(): int
     {
         return $this->pleasureLevel;
+    }
+
+    /**
+     * @link https://www.youtube.com/watch?v=wowuE8m0JhU club vandersexxx (free t-shirt)
+     * @return string
+     */
+    public function getSafeWord(): string
+    {
+        return 'FLÜGGÅƎNKð€CHIŒßØLSÊN';
     }
 }

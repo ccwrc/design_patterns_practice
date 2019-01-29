@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\FactoryMethod\Accessory;
 
-class BenWaBalls implements EroticAccessory
+final class BenWaBalls implements EroticAccessory
 {
     /**
      * @var int

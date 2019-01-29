@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\FactoryMethod\Accessory;
 
-class Handcuffs implements EroticAccessory
+final class Handcuffs implements EroticAccessory
 {
     /**
      * @var int

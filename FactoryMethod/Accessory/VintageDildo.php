@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\FactoryMethod\Accessory;
 
-class VintageDildo implements EroticAccessory
+final class VintageDildo implements EroticAccessory
 {
     /**
      * @var int
