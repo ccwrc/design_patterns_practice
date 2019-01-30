@@ -37,7 +37,7 @@ final class VintageDildo implements EroticAccessory
      */
     public function changeSize(int $size): string
     {
-        $this->size = abs($size);
+        $this->size = \abs($size);
 
         return 'set new pleasure level';
     }

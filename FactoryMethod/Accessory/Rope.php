@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\FactoryMethod\Accessory;
 
-final class Rope implements EroticAccessory
+final class Rope implements EroticAccessory, Vandersexxx
 {
     /**
      * @var int

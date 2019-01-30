@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\FactoryMethod\Accessory;
 
-final class Handcuffs implements EroticAccessory
+final class Handcuffs implements EroticAccessory, Vandersexxx
 {
     /**
      * @var int
@@ -30,5 +30,14 @@ final class Handcuffs implements EroticAccessory
     public function getPleasureLevel(): int
     {
         return $this->pleasureLevel;
+    }
+
+    /**
+     * @link https://www.youtube.com/watch?v=wowuE8m0JhU club vandersexxx (free t-shirt)
+     * @return string
+     */
+    public function getSafeWord(): string
+    {
+        return 'Fluggaenkoecchicebolsen';
     }
 }
