@@ -9,6 +9,10 @@ final class VintageDildo implements EroticAccessory
     /**
      * @var int
      */
+    private $size = 6;
+    /**
+     * @var int
+     */
     private $pleasureLevel = 0;
 
     /**
@@ -25,5 +29,16 @@ final class VintageDildo implements EroticAccessory
     public function getPleasureLevel(): int
     {
         return $this->pleasureLevel;
+    }
+
+    /**
+     * @param int $size
+     * @return string
+     */
+    public function changeSize(int $size): string
+    {
+        $this->size = abs($size);
+
+        return 'set new pleasure level';
     }
 }
