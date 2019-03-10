@@ -6,13 +6,27 @@ namespace Patterns\SimpleFactory;
 
 class Cat implements CatInterface
 {
+    /**
+     * @var bool
+     */
+    private $fluffy;
+    /**
+     * @var bool
+     */
+    private $annoying;
+
+    public function __construct(bool $isFluffy, bool $isAnnoying)
+    {
+        $this->fluffy = $isFluffy;
+        $this->annoying = $isAnnoying;
+    }
 
     /**
      * @return bool
      */
     public function isFluffy(): bool
     {
-        // TODO: Implement isFluffy() method.
+        return $this->fluffy;
     }
 
     /**
@@ -20,7 +34,7 @@ class Cat implements CatInterface
      */
     public function isAnnoying(): bool
     {
-        // TODO: Implement isAnnoying() method.
+        return $this->annoying;
     }
 
     /**
@@ -28,6 +42,9 @@ class Cat implements CatInterface
      */
     public function getVoice(): string
     {
-        // TODO: Implement getVoice() method.
+        if ($this->annoying) {
+            return 'Go fuck yourself men!';
+        }
+        return 'meow, meow';
     }
 }
