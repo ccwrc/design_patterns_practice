@@ -13,7 +13,8 @@ https://phpunit.de/getting-started/phpunit-7.html
 - Prototype
 - Singleton
 - Property
-- Factory method  :pen:     
+- Factory method  
+- Simple Factory :pen:     
 
 **Structural:**   
 - Dependency Injection
