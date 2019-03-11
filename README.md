@@ -14,10 +14,11 @@ https://phpunit.de/getting-started/phpunit-7.html
 - Singleton
 - Property
 - Factory method  
-- Simple Factory :pen:     
+- Simple Factory  
 
 **Structural:**   
 - Dependency Injection
+- Facade  :pen:    
 
 **Behavioral:**   
 - Memento
