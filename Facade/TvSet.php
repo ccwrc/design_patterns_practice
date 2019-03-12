@@ -8,7 +8,7 @@ class TvSet
 {
     /**
      * @link https://damian.dziaduch.pl/2018/12/17/wpis-php-7-3-niescislosci/#more-441 instanceof fatal error in PHP <7.2
-     * @param $mary
+     * @param mixed $mary
      * @return bool
      */
     public static function isMaryAnTvSetObject($mary): bool

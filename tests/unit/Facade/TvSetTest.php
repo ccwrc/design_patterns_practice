@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class TvSetTest extends TestCase
 {
-    public function testSuccessIsMaryAnObject(): void
+    public function testSuccessIsMaryAnTvSetObject(): void
     {
         $object = new TvSet();
 
@@ -21,7 +21,7 @@ class TvSetTest extends TestCase
      * @link https://www.youtube.com/watch?v=VY-50K33qKk Pulp Fiction, Samuel L. Jackson
      * @throws \Exception
      */
-    public function testFailIsMaryAnObject(): void
+    public function testFailIsMaryAnTvSetObject(): void
     {
         $noObject = 'Say What Again One More Time!';
         $noObjectTvSet = new \DateTime();
