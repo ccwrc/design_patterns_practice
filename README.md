@@ -1,4 +1,4 @@
-## design_patterns_practice (PHP 7.2)    
+## design_patterns_practice (PHP 7.3)    
 
 To run unit tests:  
 ./vendor/bin/phpunit
