@@ -6,18 +6,13 @@ namespace Patterns\Facade;
 
 class TvSet
 {
-    public static function isMaryAnObject($mary): bool
+    /**
+     * @link https://damian.dziaduch.pl/2018/12/17/wpis-php-7-3-niescislosci/#more-441 instanceof fatal error in PHP <7.2
+     * @param $mary
+     * @return bool
+     */
+    public static function isMaryAnTvSetObject($mary): bool
     {
-//        try {
-//            $mary instanceof TvSet;
-//            return true;
-//        } catch (\Throwable $throwable) {
-//            return false;
-//        }
-
-//        if ($mary instanceof TvSet) {
-//            return true;
-//        }
-//        return false;
+        return $mary instanceof TvSet;
     }
 }
