@@ -31,11 +31,34 @@ class Internet implements InternetInterface
     {
         return 'I\'ll be back';
     }
-    
+
+    /**
+     * @link https://images85.fotosik.pl/662/83146eae65906369.jpg valid test link
+     * @param string $linkToPicture
+     */
     public function addLinkToPicture(string $linkToPicture): void
     {
-        if (\filter_var($linkToPicture, FILTER_VALIDATE_URL) === true) {
+        if (\filter_var($linkToPicture, FILTER_VALIDATE_URL) === true
+            && self::doesLinkLeadToPicture($linkToPicture)) {
             $this->picturesCollection[] = $linkToPicture;
         }
+    }
+
+    public function howManyPicturesInCollection(): int
+    {
+        return \count($this->picturesCollection);
+    }
+
+    /**
+     * @param string $pictureUrl
+     * @return bool
+     */
+    private function doesLinkLeadToPicture(string $pictureUrl): bool
+    {
+        $headers = \get_headers($pictureUrl, 1);
+        if (\strpos($headers['Content-Type'], 'image/') !== false) {
+            return true;
+        }
+        return false;
     }
 }
