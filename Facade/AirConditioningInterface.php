@@ -17,5 +17,8 @@ interface AirConditioningInterface
      */
     public function disableAirConditioning(): void;
 
-    public function setTemperature(): void;
+    /**
+     * @param int $temperature
+     */
+    public function setTemperature(int $temperature): void;
 }
