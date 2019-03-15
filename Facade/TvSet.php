@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\Facade;
 
-class TvSet implements TvSetInterface
+final class TvSet implements TvSetInterface
 {
     public function turnOn(): string
     {

@@ -6,7 +6,7 @@ namespace Patterns\Facade\Implementation;
 
 use Patterns\Facade\{AirConditioning, Internet, TvSet};
 
-class FullRelaxationEncore implements RelaxInterface
+final class FullRelaxationEncore implements RelaxInterface
 {
     /**
      * @var AirConditioning

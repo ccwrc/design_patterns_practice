@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\Facade;
 
-class AirConditioning implements AirConditioningInterface
+final class AirConditioning implements AirConditioningInterface
 {
     /**
      * @var bool

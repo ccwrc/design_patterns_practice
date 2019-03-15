@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\Facade;
 
-class Internet implements InternetInterface
+final class Internet implements InternetInterface
 {
     /**
      * @var string[] links to pictures
@@ -38,7 +38,7 @@ class Internet implements InternetInterface
      */
     public function addLinkToPicture(string $linkToPicture): void
     {
-        if (\filter_var($linkToPicture, FILTER_VALIDATE_URL) === true
+        if (\filter_var($linkToPicture, FILTER_VALIDATE_URL) !== false
             && self::doesLinkLeadToPicture($linkToPicture)) {
             $this->picturesCollection[] = $linkToPicture;
         }
