@@ -6,7 +6,7 @@ namespace Patterns\Facade\Implementation;
 
 use Patterns\Facade\{AirConditioning, Internet, TvSet};
 
-class FullRelaxationEncore
+class FullRelaxationEncore implements RelaxInterface
 {
     /**
      * @var AirConditioning
@@ -28,11 +28,15 @@ class FullRelaxationEncore
         $this->tvSet = new TvSet();
     }
 
+    /**
+     * Steps: set AirConditioning temperature, turn on AirConditioning, connect to Internet, turn on TvSet.
+     * @param int $temperature
+     */
     public function makeItHappen(int $temperature): void
     {
         $this->airConditioning->setTemperature($temperature);
         $this->airConditioning->turnOnAirConditioning();
         $this->internet->connect();
-        $this->tvSet->turnOnTvSet();
+        $this->tvSet->turnOn();
     }
 }

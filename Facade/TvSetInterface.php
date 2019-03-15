@@ -9,10 +9,10 @@ interface TvSetInterface
     /**
      * @return string
      */
-    public function turnOnTvSet(): string;
+    public function turnOn(): string;
 
     /**
      * @return string
      */
-    public function disableTvSet(): string;
+    public function disable(): string;
 }

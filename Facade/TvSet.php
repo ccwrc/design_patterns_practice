@@ -6,12 +6,12 @@ namespace Patterns\Facade;
 
 class TvSet implements TvSetInterface
 {
-    public function turnOnTvSet(): string
+    public function turnOn(): string
     {
         return 'tv turned on';
     }
 
-    public function disableTvSet(): string
+    public function disable(): string
     {
         return 'off...';
     }

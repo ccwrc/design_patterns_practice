@@ -31,11 +31,15 @@ class FullRelaxation implements RelaxInterface
         $this->tvSet = $tvSet;
     }
 
+    /**
+     * Steps: set AirConditioning temperature, turn on AirConditioning, connect to Internet, turn on TvSet.
+     * @param int $temperature
+     */
     public function makeItHappen(int $temperature): void
     {
         $this->airConditioning->setTemperature($temperature);
         $this->airConditioning->turnOnAirConditioning();
         $this->internet->connect();
-        $this->tvSet->turnOnTvSet();
+        $this->tvSet->turnOn();
     }
 }
