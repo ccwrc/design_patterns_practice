@@ -45,6 +45,19 @@ final class AirConditioning implements AirConditioningInterface
      */
     public function setTemperature(int $temperature): void
     {
+        if ($temperature < -5) {
+            $this->temperature = -5;
+            return;
+        }
+        if ($temperature > 25) {
+            $this->temperature = 25;
+            return;
+        }
         $this->temperature = $temperature;
+    }
+
+    public function getTemperature(): int
+    {
+        return $this->temperature;
     }
 }
