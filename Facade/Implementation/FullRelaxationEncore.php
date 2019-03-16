@@ -8,6 +8,7 @@ use Patterns\Facade\{AirConditioning, Internet, TvSet};
 
 final class FullRelaxationEncore implements RelaxInterface
 {
+    private const DEFAULT_TEMPERATURE = 20;
     /**
      * @var AirConditioning
      */
@@ -23,7 +24,7 @@ final class FullRelaxationEncore implements RelaxInterface
 
     public function __construct()
     {
-        $this->airConditioning = new AirConditioning(20);
+        $this->airConditioning = new AirConditioning(self::DEFAULT_TEMPERATURE);
         $this->internet = new Internet();
         $this->tvSet = new TvSet();
     }
@@ -38,5 +39,15 @@ final class FullRelaxationEncore implements RelaxInterface
         $this->airConditioning->turnOnAirConditioning();
         $this->internet->connect();
         $this->tvSet->turnOn();
+    }
+
+    public function hasItHappened(): bool
+    {
+        if ($this->airConditioning->getTemperature() === self::DEFAULT_TEMPERATURE
+            && $this->internet->isOnline() === true
+            && $this->tvSet->isTurnedOn() === true) {
+            return true;
+        }
+        return false;
     }
 }
