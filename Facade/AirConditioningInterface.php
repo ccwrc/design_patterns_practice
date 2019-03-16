@@ -21,4 +21,9 @@ interface AirConditioningInterface
      * @param int $temperature
      */
     public function setTemperature(int $temperature): void;
+
+    /**
+     * @return int
+     */
+    public function getTemperature(): int;
 }

@@ -6,14 +6,31 @@ namespace Patterns\Facade;
 
 final class TvSet implements TvSetInterface
 {
+    /**
+     * @var bool
+     */
+    private $turnedOn;
+
+    public function __construct()
+    {
+        $this->turnedOn = false;
+    }
+
     public function turnOn(): string
     {
+        $this->turnedOn = true;
         return 'tv turned on';
     }
 
     public function disable(): string
     {
+        $this->turnedOn = false;
         return 'off...';
+    }
+
+    public function isTurnedOn(): bool
+    {
+        return $this->turnedOn;
     }
 
     /**

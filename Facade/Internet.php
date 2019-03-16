@@ -10,10 +10,15 @@ final class Internet implements InternetInterface
      * @var string[] links to pictures
      */
     private $picturesCollection;
+    /**
+     * @var bool
+     */
+    private $online;
 
     public function __construct()
     {
         $this->picturesCollection = [];
+        $this->online = false;
     }
 
     /**
@@ -21,6 +26,7 @@ final class Internet implements InternetInterface
      */
     public function connect(): string
     {
+        $this->online = true;
         return 'My God, It\'s Full of Stars!';
     }
 
@@ -29,7 +35,13 @@ final class Internet implements InternetInterface
      */
     public function disconnect(): string
     {
+        $this->online = false;
         return 'I\'ll be back';
+    }
+
+    public function isOnline(): bool
+    {
+        return $this->online;
     }
 
     /**

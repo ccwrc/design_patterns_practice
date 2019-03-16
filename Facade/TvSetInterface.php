@@ -15,4 +15,9 @@ interface TvSetInterface
      * @return string
      */
     public function disable(): string;
+
+    /**
+     * @return bool
+     */
+    public function isTurnedOn(): bool;
 }

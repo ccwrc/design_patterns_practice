@@ -15,4 +15,9 @@ interface InternetInterface
      * @return string
      */
     public function disconnect(): string;
+
+    /**
+     * @return bool
+     */
+    public function isOnline(): bool;
 }
