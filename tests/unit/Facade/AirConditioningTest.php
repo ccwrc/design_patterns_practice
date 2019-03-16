@@ -19,15 +19,19 @@ class AirConditioningTest extends TestCase
 
     public function testSetTemperature(): void
     {
-        $ac = new AirConditioning(15);
+        $correctTemperature = \rand(AirConditioning::MIN_TEMPERATURE, AirConditioning::MAX_TEMPERATURE);
+        $belowMinTemperature = \rand(-274, AirConditioning::MIN_TEMPERATURE - 1);
+        $aboveMaxTemperature = \rand(AirConditioning::MAX_TEMPERATURE + 1, 500);
 
-        $ac->setTemperature(300);
-        $this->assertEquals(25, $ac->getTemperature());
+        $ac = new AirConditioning($correctTemperature);
 
-        $ac->setTemperature(-300);
-        $this->assertEquals(-5, $ac->getTemperature());
+        $ac->setTemperature($aboveMaxTemperature);
+        $this->assertEquals(AirConditioning::MAX_TEMPERATURE, $ac->getTemperature());
 
-        $ac->setTemperature(13);
-        $this->assertEquals(13, $ac->getTemperature());
+        $ac->setTemperature($belowMinTemperature);
+        $this->assertEquals(AirConditioning::MIN_TEMPERATURE, $ac->getTemperature());
+
+        $ac->setTemperature($correctTemperature);
+        $this->assertEquals($correctTemperature, $ac->getTemperature());
     }
 }
