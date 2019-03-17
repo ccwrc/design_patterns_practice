@@ -15,7 +15,14 @@ class InternetTest extends TestCase
         $validLink = 'https://images85.fotosik.pl/662/83146eae65906369.jpg';
         $internetObject = new Internet();
 
+        /* almost DDoS  :)
+        for ($i = 1; $i <= 10; $i++) {
+            $internetObject->addLinkToPicture($validLink);
+        }
+        */
+
         $internetObject->addLinkToPicture($validLink);
+
         $this->assertEquals(1, $internetObject->howManyPicturesInCollection());
     }
 

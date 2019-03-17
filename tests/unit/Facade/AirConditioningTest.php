@@ -12,9 +12,9 @@ class AirConditioningTest extends TestCase
 {
     public function testTurnOnAirConditioning(): void
     {
-        $ac = new AirConditioning(20);
+        $airConditioning = new AirConditioning(20);
 
-        $this->assertTrue($ac->turnOnAirConditioning());
+        $this->assertTrue($airConditioning->turnOnAirConditioning());
     }
 
     public function testSetTemperature(): void
@@ -23,15 +23,15 @@ class AirConditioningTest extends TestCase
         $belowMinTemperature = \rand(-274, AirConditioning::MIN_TEMPERATURE - 1);
         $aboveMaxTemperature = \rand(AirConditioning::MAX_TEMPERATURE + 1, 500);
 
-        $ac = new AirConditioning($correctTemperature);
+        $airConditioning = new AirConditioning($correctTemperature);
 
-        $ac->setTemperature($aboveMaxTemperature);
-        $this->assertEquals(AirConditioning::MAX_TEMPERATURE, $ac->getTemperature());
+        $airConditioning->setTemperature($aboveMaxTemperature);
+        $this->assertEquals(AirConditioning::MAX_TEMPERATURE, $airConditioning->getTemperature());
 
-        $ac->setTemperature($belowMinTemperature);
-        $this->assertEquals(AirConditioning::MIN_TEMPERATURE, $ac->getTemperature());
+        $airConditioning->setTemperature($belowMinTemperature);
+        $this->assertEquals(AirConditioning::MIN_TEMPERATURE, $airConditioning->getTemperature());
 
-        $ac->setTemperature($correctTemperature);
-        $this->assertEquals($correctTemperature, $ac->getTemperature());
+        $airConditioning->setTemperature($correctTemperature);
+        $this->assertEquals($correctTemperature, $airConditioning->getTemperature());
     }
 }

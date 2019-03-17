@@ -15,10 +15,10 @@ class FullRelaxationEncoreTest extends TestCase
      */
     public function testMakeItHappen(): void
     {
-        $fre = new FullRelaxationEncore();
-        $this->assertFalse($fre->hasItHappened());
+        $fullRelaxationEncore = new FullRelaxationEncore();
+        $this->assertFalse($fullRelaxationEncore->hasItHappened());
 
-        $fre->makeItHappen(20);
-        $this->assertTrue($fre->hasItHappened());
+        $fullRelaxationEncore->makeItHappen(20);
+        $this->assertTrue($fullRelaxationEncore->hasItHappened());
     }
 }

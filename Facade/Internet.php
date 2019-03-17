@@ -27,6 +27,7 @@ final class Internet implements InternetInterface
     public function connect(): string
     {
         $this->online = true;
+
         return 'My God, It\'s Full of Stars!';
     }
 
@@ -36,6 +37,7 @@ final class Internet implements InternetInterface
     public function disconnect(): string
     {
         $this->online = false;
+
         return 'I\'ll be back';
     }
 

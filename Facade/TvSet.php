@@ -19,13 +19,15 @@ final class TvSet implements TvSetInterface
     public function turnOn(): string
     {
         $this->turnedOn = true;
+
         return 'tv turned on';
     }
 
     public function disable(): string
     {
         $this->turnedOn = false;
-        return 'off...';
+
+        return 'welcome to real life';
     }
 
     public function isTurnedOn(): bool

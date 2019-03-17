@@ -18,18 +18,19 @@ class FullRelaxationTest extends TestCase
     {
         $temperature = 18;
         $newTemperature = 17;
-        $ac = new AirConditioning($temperature);
+
+        $airConditioning = new AirConditioning($temperature);
         $tvSet = new TvSet();
         $internet = new Internet();
 
         $fullRelaxation = new FullRelaxation(
-            $ac,
+            $airConditioning,
             $internet,
             $tvSet
         );
         $fullRelaxation->makeItHappen($newTemperature);
 
-        $this->assertEquals($newTemperature, $ac->getTemperature());
+        $this->assertEquals($newTemperature, $airConditioning->getTemperature());
         $this->assertTrue($internet->isOnline());
         $this->assertTrue($tvSet->isTurnedOn());
     }
