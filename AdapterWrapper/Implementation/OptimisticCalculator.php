@@ -30,7 +30,7 @@ final class OptimisticCalculator implements OptimisticCalculatorInterface
      */
     public function optimisticAddNumbers(int $number1, int $number2): int
     {
-        return abs($this->calculatorObject->addNumbers($number1, $number2));
+        return \abs($this->calculatorObject->addNumbers($number1, $number2));
     }
 
     /**
@@ -41,7 +41,7 @@ final class OptimisticCalculator implements OptimisticCalculatorInterface
      */
     public function optimisticMultiplyNumbers(int $number1, int $number2): int
     {
-        return abs($this->calculatorObject->multiplyNumbers($number1, $number2));
+        return \abs($this->calculatorObject->multiplyNumbers($number1, $number2));
     }
 
     /**
@@ -52,6 +52,6 @@ final class OptimisticCalculator implements OptimisticCalculatorInterface
      */
     public function optimisticCountryBudget(int $income, int $expenses): int
     {
-        return abs($this->calculatorObject->countryBudget($income, $expenses));
+        return \abs($this->calculatorObject->countryBudget($income, $expenses));
     }
 }
