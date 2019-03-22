@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\AdapterWrapper;
 
-interface OptimisticCalculator
+interface OptimisticCalculatorInterface
 {
     /**
      * returns only absolute values

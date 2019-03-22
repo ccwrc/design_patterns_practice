@@ -6,19 +6,18 @@ namespace Patterns\AdapterWrapper;
 
 final class Calculator implements CalculatorInterface
 {
-
     public function addNumbers(int $number1, int $number2): int
     {
-        // TODO: Implement addNumbers() method.
+        return $number1 + $number2;
     }
 
     public function multiplyNumbers(int $number1, int $number2): int
     {
-        // TODO: Implement multiplyNumbers() method.
+        return $number2 * $number2;
     }
 
     public function countryBudget(int $income, int $expenses): int
     {
-        // TODO: Implement countryBudget() method.
+        return $income - $expenses;
     }
 }
