@@ -26,6 +26,7 @@ class KeyloggerObserver implements \SplObserver
     }
 
     /**
+     * @link https://niebezpiecznik.pl/post/600-milionow-hasel-facebook-wyciek/
      * @param \SplSubject $subject
      * @return null|string
      */
