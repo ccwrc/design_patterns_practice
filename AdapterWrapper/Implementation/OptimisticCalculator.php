@@ -10,7 +10,7 @@ use Patterns\AdapterWrapper\{Calculator, OptimisticCalculatorInterface};
  * Class OptimisticCalculator - Calculator class Adapter
  * @package Patterns\AdapterWrapper\Implementation
  */
-class OptimisticCalculator implements OptimisticCalculatorInterface
+final class OptimisticCalculator implements OptimisticCalculatorInterface
 {
     /**
      * @var Calculator
@@ -41,7 +41,7 @@ class OptimisticCalculator implements OptimisticCalculatorInterface
      */
     public function optimisticMultiplyNumbers(int $number1, int $number2): int
     {
-        // TODO: Implement optimisticMultiplyNumbers() method.
+        return abs($this->calculatorObject->multiplyNumbers($number1, $number2));
     }
 
     /**
@@ -52,6 +52,6 @@ class OptimisticCalculator implements OptimisticCalculatorInterface
      */
     public function optimisticCountryBudget(int $income, int $expenses): int
     {
-        // TODO: Implement optimisticCountryBudget() method.
+        return abs($this->calculatorObject->countryBudget($income, $expenses));
     }
 }
