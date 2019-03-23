@@ -30,5 +30,14 @@ class CalculatorTest extends TestCase
 
         $number = 16;
         $this->assertFalse(Calculator::isSomethingCountable($number));
+
+        $countableClass = new class() implements \Countable
+        {
+            public function count(): int
+            {
+                return 13;
+            }
+        };
+        $this->assertTrue(Calculator::isSomethingCountable($countableClass));
     }
 }
