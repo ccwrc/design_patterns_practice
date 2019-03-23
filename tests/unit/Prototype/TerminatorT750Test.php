@@ -20,21 +20,25 @@ class TerminatorT750Test extends TestCase
         $this->assertEquals($location, $clone->getLocation());
     }
 
+    /**
+     * hrtime - new in PHP 7.3
+     * @link http://php.net/manual/en/function.hrtime.php doc hrtime
+     */
     public function testProductionSpeed(): void
     {
         $t750 = new TerminatorT750(6);
 
-        $startProductionClones = \microtime(true);
+        $startProductionClones = \hrtime(true);
         for ($i = 1; $i <= 1001; $i++) {
             $clone = clone $t750;
         }
-        $endProductionClones = \microtime(true);
+        $endProductionClones = \hrtime(true);
 
-        $startProductionObjects = \microtime(true);
+        $startProductionObjects = \hrtime(true);
         for ($i = 1; $i <= 1001; $i++) {
             $object = new TerminatorT750(5);
         }
-        $endProductionObjects = \microtime(true);
+        $endProductionObjects = \hrtime(true);
 
         $productionTimeOfClones = $endProductionClones - $startProductionClones;
         $productionTimeOfObjects = $endProductionObjects - $startProductionObjects;

@@ -16,6 +16,12 @@ final class Calculator implements CalculatorInterface
         return $number2 * $number2;
     }
 
+    /**
+     * returns income minus expenses
+     * @param int $income
+     * @param int $expenses
+     * @return int
+     */
     public function countryBudget(int $income, int $expenses): int
     {
         return $income - $expenses;
