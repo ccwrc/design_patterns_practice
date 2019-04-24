@@ -19,7 +19,8 @@ https://phpunit.de/getting-started/phpunit-7.html
 **Structural:**   
 - Dependency Injection
 - Facade    
-- Adapter (Wrapper)  :pen:    
+- Adapter (Wrapper)    
+- Composite  :pen:  
 
 **Behavioral:**   
 - Memento
