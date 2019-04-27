@@ -4,7 +4,13 @@ declare(strict_types=1);
 
 namespace Patterns\Composite;
 
-final class OrdinaryVoter
+/**
+ * Leaf
+ */
+final class OrdinaryVoter extends ElectionsPart
 {
-
+    public function getVotingPower(): int
+    {
+        return $this->votingPower;
+    }
 }
