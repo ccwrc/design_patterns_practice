@@ -34,6 +34,7 @@ class RichVoterTest extends TestCase
     /**
      * @depends testCreate
      * @param RichVoter $richVoter
+     * @throws \ReflectionException
      */
     public function testRemoveElectionsPart(RichVoter $richVoter): void
     {

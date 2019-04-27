@@ -37,9 +37,9 @@ final class Politician extends ElectionsPart
      */
     public function removeElectionsPart(ElectionsPart $electionsPart): void
     {
-        $id = \array_search($electionsPart, $this->electionsParts, true);
-        if (\is_int($id)) {
-            \array_splice($this->electionsParts, $id, 1, []);
+        $index = \array_search($electionsPart, $this->electionsParts, true);
+        if (\is_int($index)) {
+            \array_splice($this->electionsParts, $index, 1, []);
         }
     }
 

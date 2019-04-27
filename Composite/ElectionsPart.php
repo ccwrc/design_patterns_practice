@@ -25,19 +25,25 @@ abstract class ElectionsPart
 
     /**
      * @param ElectionsPart $electionsPart
-     * @throws \DomainException
+     * @throws \ReflectionException
+     * @throws  \DomainException
      */
     public function addElectionsPart(ElectionsPart $electionsPart): void
     {
-        throw new \DomainException(\get_class($this) . ' is a leaf');
+        $reflect = new \ReflectionClass($this);
+
+        throw new \DomainException($reflect->getShortName() . ' is a leaf');
     }
 
     /**
      * @param ElectionsPart $electionsPart
+     * @throws \ReflectionException
      * @throws \DomainException
      */
     public function removeElectionsPart(ElectionsPart $electionsPart): void
     {
-        throw new \DomainException(\get_class($this) . ' is a leaf');
+        $reflect = new \ReflectionClass($this);
+
+        throw new \DomainException($reflect->getShortName() . ' is a leaf');
     }
 }

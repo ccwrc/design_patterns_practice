@@ -34,13 +34,13 @@ class OrdinaryVoterTest extends TestCase
     /**
      * @depends testCreate
      * @param OrdinaryVoter $ordinaryVoter
+     * @throws \ReflectionException
      */
     public function testAddElectionsPartException(OrdinaryVoter $ordinaryVoter): void
     {
         $electionsPart = $this->createMock(ElectionsPart::class);
 
-        $this->expectExceptionMessage('Patterns\Composite\OrdinaryVoter is a leaf');
+        $this->expectExceptionMessage('OrdinaryVoter is a leaf');
         $ordinaryVoter->addElectionsPart($electionsPart);
     }
-
 }
