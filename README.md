@@ -20,13 +20,14 @@ https://phpunit.de/getting-started/phpunit-7.html
 - Dependency Injection
 - Facade    
 - Adapter (Wrapper)    
-- Composite  :pen:  
+- Composite   
 
 **Behavioral:**   
 - Memento
 - Null Object
 - Observer
-- Strategy
+- Strategy   
+- Visitor  :pen: 
 
 
 
