@@ -11,4 +11,6 @@ interface CountryInterface
     public function getLegend(): string;
 
     public function getTotalArea(): int;
+
+    public function gettingRidArea(int $area): int;
 }

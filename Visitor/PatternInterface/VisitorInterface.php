@@ -9,7 +9,6 @@ use Patterns\Visitor\CountryInterface;
 interface VisitorInterface
 {
     /**
-     * Countries must be different, identical = return false
      * @param CountryInterface $country
      * @return bool
      */

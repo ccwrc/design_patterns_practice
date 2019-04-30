@@ -42,4 +42,13 @@ class Ukraine implements CountryInterface, RoleVisitedInterface
     {
         return $this->totalArea;
     }
+
+    public function gettingRidArea(int $area): int
+    {
+        if ($this->totalArea <= abs($area)) {
+            $this->totalArea = 0;
+            return $this->totalArea;
+        }
+        return $this->totalArea -= abs($area);
+    }
 }
