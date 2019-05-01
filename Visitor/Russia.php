@@ -15,7 +15,7 @@ class Russia implements VisitorInterface
     public function visitCountry(CountryInterface $country): bool
     {
         // TODO exception?
-        if (get_class($this) === get_class($country)) {
+        if (\get_class($this) === \get_class($country)) {
             return false;
         }
 

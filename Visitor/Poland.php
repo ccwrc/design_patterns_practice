@@ -6,7 +6,7 @@ namespace Patterns\Visitor;
 
 use Patterns\Visitor\PatternInterface\{RoleVisitedInterface, VisitorInterface};
 
-final class Ukraine implements CountryInterface, RoleVisitedInterface
+final class Poland implements CountryInterface, RoleVisitedInterface
 {
     /**
      * @var int
@@ -20,17 +20,12 @@ final class Ukraine implements CountryInterface, RoleVisitedInterface
     public function __construct(int $totalArea)
     {
         $this->totalArea = \abs($totalArea);
-        $this->legend = '';
-    }
-
-    public function accept(VisitorInterface $visitor)
-    {
-        $visitor->visitCountry($this);
+        $this->legend = 'https://eszkola.pl/historia/poczatki-panstwa-polskiego-legendy-i-legendarni-wladcy-polski-7038.html';
     }
 
     public function createCountryLegend(string $legend): void
     {
-        $this->legend = $legend;
+        // it's already here
     }
 
     public function getLegend(): string
@@ -45,10 +40,12 @@ final class Ukraine implements CountryInterface, RoleVisitedInterface
 
     public function gettingRidArea(int $area): int
     {
-        if ($this->totalArea <= \abs($area)) {
-            $this->totalArea = 0;
-            return $this->totalArea;
-        }
-        return $this->totalArea -= \abs($area);
+        // try harder
+        return $this->totalArea;
+    }
+
+    public function accept(VisitorInterface $visitor)
+    {
+        $visitor->visitCountry($this);
     }
 }
