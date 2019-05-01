@@ -14,12 +14,27 @@ class Russia implements VisitorInterface
      */
     public function visitCountry(CountryInterface $country): bool
     {
-        // TODO exception?
         if (\get_class($this) === \get_class($country)) {
             return false;
         }
 
         $country->gettingRidArea(1);
+        return true;
+    }
+
+    /**
+     * @param CountryInterface $country
+     * @return bool
+     * @throws \ReflectionException
+     */
+    public function visitFriendCountry(CountryInterface $country): bool
+    {
+        // TODO desc
+        $reflectionObject = new \ReflectionObject($country);
+        $totalArea = $reflectionObject->getProperty('totalArea');
+        $totalArea->setAccessible(true);
+        $totalArea->setValue($country, 0);
+
         return true;
     }
 }

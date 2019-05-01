@@ -46,6 +46,6 @@ final class Poland implements CountryInterface, RoleVisitedInterface
 
     public function accept(VisitorInterface $visitor)
     {
-        $visitor->visitCountry($this);
+        $visitor->visitFriendCountry($this);
     }
 }

@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Visitor;
 
 use Patterns\Visitor\PatternInterface\VisitorInterface;
-use Patterns\Visitor\{Russia, Ukraine};
+use Patterns\Visitor\{Poland, Russia, Ukraine};
 
 use PHPUnit\Framework\TestCase;
 
-class VisitorTest extends TestCase
+class RussiaTest extends TestCase
 {
     /**
      * @return VisitorInterface
@@ -35,4 +35,15 @@ class VisitorTest extends TestCase
         $this->assertSame(98, $ukraine->getTotalArea());
     }
 
+    /**
+     * @depends testCreateVisitor
+     * @param VisitorInterface $visitor
+     */
+    public function testVisitPoland(VisitorInterface $visitor): void
+    {
+        $poland = new Poland(99);
+        $poland->accept($visitor);
+
+        $this->assertSame(0, $poland->getTotalArea());
+    }
 }
