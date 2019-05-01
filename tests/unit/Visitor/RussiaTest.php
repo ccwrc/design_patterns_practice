@@ -29,7 +29,8 @@ class RussiaTest extends TestCase
      */
     public function testVisitUkraine(VisitorInterface $visitor): void
     {
-        $ukraine = new Ukraine(99);
+        $totalArea = 99;
+        $ukraine = new Ukraine($totalArea);
         $ukraine->accept($visitor);
 
         $this->assertSame(98, $ukraine->getTotalArea());
@@ -41,7 +42,8 @@ class RussiaTest extends TestCase
      */
     public function testVisitPoland(VisitorInterface $visitor): void
     {
-        $poland = new Poland(99);
+        $totalArea = 99;
+        $poland = new Poland($totalArea);
         $poland->accept($visitor);
 
         $this->assertSame(0, $poland->getTotalArea());

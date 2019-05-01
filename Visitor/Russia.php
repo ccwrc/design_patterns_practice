@@ -25,16 +25,18 @@ class Russia implements VisitorInterface
     /**
      * @param CountryInterface $country
      * @return bool
-     * @throws \ReflectionException
      */
     public function visitFriendCountry(CountryInterface $country): bool
     {
         // TODO desc
-        $reflectionObject = new \ReflectionObject($country);
-        $totalArea = $reflectionObject->getProperty('totalArea');
-        $totalArea->setAccessible(true);
-        $totalArea->setValue($country, 0);
-
+        try {
+            $reflectionObject = new \ReflectionObject($country);
+            $totalArea = $reflectionObject->getProperty('totalArea');
+            $totalArea->setAccessible(true);
+            $totalArea->setValue($country, 0);
+        } catch (\Throwable $throwable) {
+            return false;
+        }
         return true;
     }
 }
