@@ -6,7 +6,7 @@ namespace Patterns\Visitor;
 
 use Patterns\Visitor\PatternInterface\VisitorInterface;
 
-class Russia implements VisitorInterface
+final class Russia implements VisitorInterface
 {
     /**
      * @param CountryInterface $country
@@ -23,12 +23,12 @@ class Russia implements VisitorInterface
     }
 
     /**
+     * Screw good practices, it's Russia!
      * @param CountryInterface $country
      * @return bool
      */
     public function visitFriendCountry(CountryInterface $country): bool
     {
-        // TODO desc
         try {
             $reflectionObject = new \ReflectionObject($country);
             $totalArea = $reflectionObject->getProperty('totalArea');
