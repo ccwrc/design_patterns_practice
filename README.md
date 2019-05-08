@@ -27,7 +27,8 @@ https://phpunit.de/getting-started/phpunit-7.html
 - Null Object
 - Observer
 - Strategy   
-- Visitor  :pen: 
+- Visitor   
+- Command  :pen: 
 
 
 
