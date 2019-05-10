@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\Command;
 
-class Soldier
+class Soldier implements SoldierArmyInterface
 {
     /**
      * @var string
@@ -19,7 +19,7 @@ class Soldier
      */
     private $isDead;
     /**
-     * @var int 
+     * @var int
      */
     private $calories;
 
@@ -31,4 +31,48 @@ class Soldier
         $this->calories = 10;
     }
 
+    public function dieForCountry(): void
+    {
+        $this->throwDomainExceptionIfSoldierIsDead();
+        $this->calories = 0;
+        $this->isDead = true;
+    }
+
+    public function shootForCountry(): void
+    {
+        $this->throwDomainExceptionIfSoldierIsDead();
+        $this->calories -= 1;
+        $this->checkCaloricBalance();
+    }
+
+    public function eatForGloryOfCountry(int $calories): void
+    {
+        $this->throwDomainExceptionIfSoldierIsDead();
+        $this->calories += $calories;
+        $this->checkCaloricBalance();
+    }
+
+    public function getCaloriesInfo(): int
+    {
+        return $this->calories;
+    }
+
+    public function isSoldierLive(): bool
+    {
+        return !$this->isDead;
+    }
+
+    private function throwDomainExceptionIfSoldierIsDead(): void
+    {
+        if ($this->isDead) {
+            throw new \DomainException('Soldier is dead');
+        }
+    }
+
+    private function checkCaloricBalance(): void
+    {
+        if ($this->calories <= 0) {
+            $this->isDead = true;
+        }
+    }
 }
