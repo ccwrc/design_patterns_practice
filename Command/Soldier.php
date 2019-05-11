@@ -45,14 +45,14 @@ class Soldier implements SoldierArmyInterface
     {
         $this->throwDomainExceptionIfSoldierIsDead();
         $this->calories -= 1;
-        $this->checkCaloricBalance();
+        $this->checkCaloricBalanceAndMarkIfHeDied();
     }
 
     public function eatForGloryOfCountry(int $calories): void
     {
         $this->throwDomainExceptionIfSoldierIsDead();
         $this->calories += $calories;
-        $this->checkCaloricBalance();
+        $this->checkCaloricBalanceAndMarkIfHeDied();
     }
 
     public function getCaloriesInfo(): int
@@ -72,7 +72,7 @@ class Soldier implements SoldierArmyInterface
         }
     }
 
-    private function checkCaloricBalance(): void
+    private function checkCaloricBalanceAndMarkIfHeDied(): void
     {
         if ($this->calories <= 0) {
             $this->isDead = true;
