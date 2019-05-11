@@ -60,7 +60,7 @@ class Soldier implements SoldierArmyInterface
         return $this->calories;
     }
 
-    public function isSoldierLive(): bool
+    public function isLive(): bool
     {
         return !$this->isDead;
     }
