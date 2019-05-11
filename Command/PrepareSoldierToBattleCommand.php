@@ -4,10 +4,23 @@ declare(strict_types=1);
 
 namespace Patterns\Command;
 
+/**
+ * Concrete command
+ */
 final class PrepareSoldierToBattleCommand extends Command
 {
-    public function execute(SoldierArmyInterface $soldierArmy)
+    /**
+     * @var SoldierArmyInterface
+     */
+    private $soldierArmy;
+
+    public function __construct(SoldierArmyInterface $soldierArmy)
     {
-        $soldierArmy->eatForGloryOfCountry(3500);
+        $this->soldierArmy = $soldierArmy;
+    }
+
+    public function execute()
+    {
+        $this->soldierArmy->eatForGloryOfCountry(3500);
     }
 }

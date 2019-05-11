@@ -6,5 +6,5 @@ namespace Patterns\Command;
 
 abstract class Command
 {
-    abstract public function execute(SoldierArmyInterface $soldierArmy);
+    abstract public function execute();
 }
