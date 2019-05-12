@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Patterns\Command;
 
 /**
- * Concrete command
+ * Concrete command (pattern implementation)
  */
 final class PrepareSoldierToBattleCommand extends Command
 {

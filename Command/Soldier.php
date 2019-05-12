@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Patterns\Command;
 
 /**
- * Receiver
+ * Receiver (pattern implementation)
  */
 class Soldier implements SoldierArmyInterface
 {

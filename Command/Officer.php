@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Patterns\Command;
 
 /**
- * Invoker
+ * Invoker (pattern implementation)
  */
-final class Officer
+final class Officer implements CommandInvokerInterface
 {
     /**
      * @var Command
@@ -22,5 +22,13 @@ final class Officer
     public function run(): void
     {
         $this->command->execute();
+    }
+
+    /**
+     * @param string $jsonToDecode
+     */
+    public function doesJsonNowThrowExceptions(string $jsonToDecode): void
+    {
+        json_decode($jsonToDecode, false, 512, JSON_THROW_ON_ERROR);
     }
 }
