@@ -9,6 +9,8 @@ namespace Patterns\Command;
  */
 final class PrepareSoldierToBattleCommand extends Command
 {
+    public const CALORIES_FOR_BATTLE = 3500;
+
     /**
      * @var SoldierArmyInterface
      */
@@ -19,8 +21,8 @@ final class PrepareSoldierToBattleCommand extends Command
         $this->soldierArmy = $soldierArmy;
     }
 
-    public function execute()
+    public function execute(): void
     {
-        $this->soldierArmy->eatForGloryOfCountry(3500);
+        $this->soldierArmy->eatForGloryOfCountry(self::CALORIES_FOR_BATTLE);
     }
 }

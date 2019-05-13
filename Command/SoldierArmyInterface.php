@@ -6,6 +6,8 @@ namespace Patterns\Command;
 
 interface SoldierArmyInterface
 {
+    public const INITIAL_CALORIES = 10;
+
     public function dieForCountry(): void;
 
     public function shootForCountry(): void;

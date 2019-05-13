@@ -7,7 +7,7 @@ namespace Patterns\Command;
 /**
  * Receiver (pattern implementation)
  */
-class Soldier implements SoldierArmyInterface
+final class Soldier implements SoldierArmyInterface
 {
     /**
      * @var string
@@ -31,7 +31,7 @@ class Soldier implements SoldierArmyInterface
         $this->rank = $rank;
         $this->name = $name;
         $this->isDead = false;
-        $this->calories = 10;
+        $this->calories = self::INITIAL_CALORIES;
     }
 
     public function dieForCountry(): void

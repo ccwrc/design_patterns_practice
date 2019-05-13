@@ -37,7 +37,7 @@ class OfficerTest extends TestCase
      */
     public function testValidDoesJsonNowThrowExceptions(Officer $officer): void
     {
-        $this->assertTrue($officer->doesJsonNowThrowExceptions('{ "valid" : "json" }'));
+        $this->assertFalse($officer->doesJsonNowThrowExceptions('{ "valid" : "json" }'));
     }
 
     /**
@@ -46,10 +46,17 @@ class OfficerTest extends TestCase
      */
     public function testShowArrayFirstKey(Officer $officer): void
     {
-        $plainArray = ['plain', 111, 'array'];
+        $plainArray = [
+            'plain',
+            111,
+            'array'
+        ];
         $this->assertEquals(0, $officer->showArrayFirstKey($plainArray)['key']);
 
-        $associativeArray = ['one' => 111, 'two' => 888];
+        $associativeArray = [
+            'one' => 111,
+            'two' => 888
+        ];
         $this->assertEquals('one', $officer->showArrayFirstKey($associativeArray)['key']);
     }
 }

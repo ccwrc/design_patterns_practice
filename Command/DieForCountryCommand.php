@@ -19,7 +19,7 @@ final class DieForCountryCommand extends Command
         $this->soldierArmy = $soldierArmy;
     }
 
-    public function execute()
+    public function execute(): void
     {
         $this->soldierArmy->dieForCountry();
     }

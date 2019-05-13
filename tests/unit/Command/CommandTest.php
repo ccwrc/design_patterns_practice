@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\tests\unit\Command;
 
-use Patterns\Command\{DieForCountryCommand, Officer, PrepareSoldierToBattleCommand, Soldier};
+use Patterns\Command\{DieForCountryCommand, Officer, PrepareSoldierToBattleCommand, Soldier, SoldierFactory};
 
 use PHPUnit\Framework\TestCase;
 
@@ -15,20 +15,25 @@ class CommandTest extends TestCase
         $officer = new Officer();
         $soldier = new Soldier('Private', 'Ryan');
 
+        $caloriesCounter = Soldier::INITIAL_CALORIES + PrepareSoldierToBattleCommand::CALORIES_FOR_BATTLE;
         $officer->setCommand(new PrepareSoldierToBattleCommand($soldier));
         $officer->run();
 
-        $this->assertEquals(3510, $soldier->getCaloriesInfo());
+        $this->assertEquals($caloriesCounter, $soldier->getCaloriesInfo());
     }
 
     public function testDieForCountryCommand(): void
     {
         $officer = new Officer();
         $soldier = new Soldier('Private', 'Adrian Caparzo');
+        $anonymousSoldier = SoldierFactory::createSoldier();
 
         $officer->setCommand(new DieForCountryCommand($soldier));
         $officer->run();
-
         $this->assertFalse($soldier->isLive());
+
+        $officer->setCommand(new DieForCountryCommand($anonymousSoldier));
+        $officer->run();
+        $this->assertFalse($anonymousSoldier->isLive());
     }
 }
