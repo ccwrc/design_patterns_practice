@@ -21,6 +21,7 @@ https://phpunit.de/getting-started/phpunit-7.html
 - Facade    
 - Adapter (Wrapper)    
 - Composite   
+- Fluent Interface  :pen: 
 
 **Behavioral:**   
 - Memento
@@ -28,7 +29,7 @@ https://phpunit.de/getting-started/phpunit-7.html
 - Observer
 - Strategy   
 - Visitor   
-- Command  :pen: 
+- Command  
 
 
 
