@@ -22,7 +22,7 @@ final class Questionnaire
     /**
      * Function allows chaining.
      * @param string $title
-     * @return Questionnaire
+     * @return self
      */
     public function setTitle(string $title): self
     {
@@ -34,7 +34,7 @@ final class Questionnaire
     /**
      * Function allows chaining.
      * @param Question $question
-     * @return Questionnaire
+     * @return self
      */
     public function addQuestion(Question $question): self
     {
