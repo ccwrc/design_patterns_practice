@@ -54,7 +54,7 @@ final class Questionnaire
     /**
      * @return Question[]
      */
-    public function getQuestions(): array
+    public function getQuestions(): iterable
     {
         return $this->questions;
     }
