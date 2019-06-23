@@ -47,6 +47,6 @@ class MagicMethod
      */
     public function __destruct()
     {
-        echo 'I\'m going to heaven.';
+        MicroLogger::addLog('I\'m going to heaven.');
     }
 }

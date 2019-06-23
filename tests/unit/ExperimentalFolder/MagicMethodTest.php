@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\tests\unit\ExperimentalFolder;
 
-use Patterns\ExperimentalFolder\MagicMethod;
+use Patterns\ExperimentalFolder\{MagicMethod, MicroLogger};
 
 use PHPUnit\Framework\TestCase;
 
@@ -26,5 +26,13 @@ class MagicMethodTest extends TestCase
     {
         echo $magicMethod;
         $this->expectOutputString('Harry Houdini');
+    }
+
+    public function testDestruct(): void
+    {
+        $object = new MagicMethod('Maciej Pol', 7);
+        unset($object);
+
+        $this->assertTrue(MicroLogger::isLogPresent('I\'m going to heaven.'));
     }
 }
