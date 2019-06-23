@@ -35,4 +35,20 @@ class MagicMethodTest extends TestCase
 
         $this->assertTrue(MicroLogger::isLogPresent('I\'m going to heaven.'));
     }
+
+    /**
+     * @depends testCreate
+     * @param MagicMethod $magicMethod
+     */
+    public function testCall(MagicMethod $magicMethod): void
+    {
+        $this->expectException(\Exception::class);
+        $magicMethod->fakeMethodName();
+    }
+
+    public function testCallStatic(): void
+    {
+        $this->expectException(\Exception::class);
+        MagicMethod::fakeStaticMethodName();
+    }
 }

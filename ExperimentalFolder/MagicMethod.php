@@ -25,6 +25,31 @@ class MagicMethod
         $this->number = $number;
     }
 
+    public function getNumber(): int
+    {
+        return $this->number;
+    }
+
+    /**
+     * @param string $name
+     * @param array $arguments
+     * @throws \Exception
+     */
+    public function __call(string $name, array $arguments)
+    {
+        throw new \Exception('Method does not exist.');
+    }
+
+    /**
+     * @param string $name
+     * @param array $arguments
+     * @throws \Exception
+     */
+    public static function __callStatic(string $name, array $arguments)
+    {
+        throw new \Exception('Static method does not exist.');
+    }
+
     /**
      * @link https://sekurak.pl/php-object-injection-malo-znana-krytyczna-klasa-podatnosci/ How to avoid problems.
      * @return string
