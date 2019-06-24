@@ -76,6 +76,7 @@ class MagicMethod
     }
 
     /**
+     * Warning: magic is slower (than getters/setters)
      * @param string $name
      * @return mixed
      * @throws \Exception
@@ -88,5 +89,6 @@ class MagicMethod
         }
 
         throw new \Exception('No access to property.');
+        // or trigger_error('message', E_USER_NOTICE);
     }
 }
