@@ -20,4 +20,12 @@ final class MicroLogger
     {
         return \in_array($log, self::$logs, true);
     }
+
+    /**
+     * @return string[]
+     */
+    public static function getLogCollection(): array
+    {
+        return self::$logs;
+    }
 }
