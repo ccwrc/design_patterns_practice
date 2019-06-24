@@ -30,6 +30,11 @@ class MagicMethod
         return $this->number;
     }
 
+    public function setNumber(int $number): void
+    {
+        $this->number = $number;
+    }
+
     /**
      * @param string $name
      * @param mixed[] $arguments
@@ -88,7 +93,18 @@ class MagicMethod
             return $this->$methodName();
         }
 
-        throw new \Exception('No access to property.');
-        // or trigger_error('message', E_USER_NOTICE);
+        throw new \Exception('No access to property or property does not exist.');
+        // worse way: trigger_error('message', E_USER_NOTICE);
+    }
+
+    /**
+     * @param string $name
+     * @param mixed $value
+     * @throws \Exception
+     */
+    public function __set(string $name, $value)
+    {
+        throw new \Exception('No access to property or property does not exist.');
+        // or logic: check name, check and filter value, fun with reflection, etc.
     }
 }
