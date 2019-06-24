@@ -24,8 +24,18 @@ final class MicroLogger
     /**
      * @return string[]
      */
-    public static function getLogCollection(): array
+    public static function getAllLogs(): array
     {
         return self::$logs;
+    }
+
+    private function addLogToTxtFile(): void
+    {
+        // TODO
+        // check dir is r/w
+        // check is file exists / create
+        // open w
+        // write
+        // close
     }
 }

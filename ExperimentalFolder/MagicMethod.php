@@ -32,7 +32,7 @@ class MagicMethod
 
     /**
      * @param string $name
-     * @param array $arguments
+     * @param mixed[] $arguments
      * @throws \Exception
      */
     public function __call(string $name, array $arguments)
@@ -42,7 +42,7 @@ class MagicMethod
 
     /**
      * @param string $name
-     * @param array $arguments
+     * @param mixed[] $arguments
      * @throws \Exception
      */
     public static function __callStatic(string $name, array $arguments)
@@ -73,5 +73,20 @@ class MagicMethod
     public function __destruct()
     {
         MicroLogger::addLog('I\'m going to heaven.');
+    }
+
+    /**
+     * @param string $name
+     * @return mixed
+     * @throws \Exception
+     */
+    public function __get(string $name)
+    {
+        $methodName = "get{$name}";
+        if (method_exists($this, $methodName)) {
+            return $this->$methodName();
+        }
+
+        throw new \Exception('No access to property.');
     }
 }

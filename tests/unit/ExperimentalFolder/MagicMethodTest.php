@@ -51,4 +51,16 @@ class MagicMethodTest extends TestCase
         $this->expectException(\Exception::class);
         MagicMethod::fakeStaticMethodName();
     }
+
+    /**
+     * @depends testCreate
+     * @param MagicMethod $magicMethod
+     */
+    public function testGet(MagicMethod $magicMethod): void
+    {
+        $this->assertEquals(6, $magicMethod->number);
+
+        $this->expectException(\Exception::class);
+        $magicMethod->fakeProperty;
+    }
 }
