@@ -13,7 +13,18 @@ class NumberPerBitTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testThrowException(): void
+    public function testCreate(): void
+    {
+        $object = new NumberPerBit(7);
+
+        $this->assertInstanceOf(NumberPerBit::class, $object);
+        $this->assertSame('1', $object[30]);
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function testThrowExceptionIfIntTooBig(): void
     {
         $tooBigNumber = NumberPerBit::MAX_32_BIT_INT + 1;
 
