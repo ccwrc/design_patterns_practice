@@ -9,6 +9,8 @@ namespace Patterns\ExperimentalFolder;
  */
 final class NumberPerBit implements \ArrayAccess
 {
+    private const BITS_ARRAY_LENGTH = 32;
+    public const MAX_32_BIT_INT = 2147483647;
     /**
      * @var int
      */
@@ -18,12 +20,37 @@ final class NumberPerBit implements \ArrayAccess
      */
     private $intDividedIntoBits;
 
+    /**
+     * NumberPerBit constructor.
+     * @param int $number
+     * @throws \Exception
+     */
     public function __construct(int $number)
     {
-        $this->originalInt = $number;
-        // or add bits '0' to full 32-bit length
-        $this->intDividedIntoBits = \str_split(\decbin($number), 1);
+        if (\abs($number) > self::MAX_32_BIT_INT) {
+            throw new \Exception('Number too big');
+        }
 
+        $this->originalInt = $number;
+        $this->intDividedIntoBits = self::convertTo32length($number);
+        // TODO index[0] negative/positive value?
+    }
+
+    /**
+     * @param int $number (negative values will be converted into positive values)
+     * @return string[]
+     */
+    private static function convertTo32length(int $number): array
+    {
+        $number = \abs($number);
+        $reverseBits = \array_reverse(\str_split(\decbin($number), 1));
+        $reverseBitsSize = \count($reverseBits);
+
+        for ($i = 1; $i <= (self::BITS_ARRAY_LENGTH - $reverseBitsSize); $i++) {
+            $reverseBits[] = '0';
+        }
+
+        return \array_reverse($reverseBits);
     }
 
     /**
@@ -71,7 +98,7 @@ final class NumberPerBit implements \ArrayAccess
      */
     public function offsetSet($offset, $value): void
     {
-        if (is_null($offset)) {
+        if (\is_null($offset)) {
             // or do nothing
             $this->intDividedIntoBits[] = $value;
         } else {

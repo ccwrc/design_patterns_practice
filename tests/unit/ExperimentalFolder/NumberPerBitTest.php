@@ -5,16 +5,19 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\ExperimentalFolder;
 
 use Patterns\ExperimentalFolder\NumberPerBit;
+
 use PHPUnit\Framework\TestCase;
 
 class NumberPerBitTest extends TestCase
 {
-    public function testCreate(): void
+    /**
+     * @throws \Exception
+     */
+    public function testThrowException(): void
     {
-        $object = new NumberPerBit(4);
+        $tooBigNumber = NumberPerBit::MAX_32_BIT_INT + 1;
 
-        // TODO
-        //var_dump($object);
+        $this->expectException(\Exception::class);
+        new NumberPerBit($tooBigNumber);
     }
-
 }
