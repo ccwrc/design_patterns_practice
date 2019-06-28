@@ -11,6 +11,13 @@ final class MicroLogger
      */
     private static $logs = [];
 
+    /**
+     * Class instance is not required and not desirable.
+     */
+    private function __construct()
+    {
+    }
+
     public static function addLog(string $log): void
     {
         self::$logs[] = $log;
