@@ -32,4 +32,7 @@ https://phpunit.de/getting-started/phpunit-7.html
 - Command  
 
 
+Notice: class Patterns\ExperimentalFolder\MicroLogger.php creates log file in current directory.
+
+
 

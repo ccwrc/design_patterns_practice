@@ -84,6 +84,7 @@ class MagicMethod
     public function __destruct()
     {
         MicroLogger::addLog('I\'m going to heaven.');
+        MicroLogger::addLog(__CLASS__ . ' ' . $this->name);
     }
 
     /**
