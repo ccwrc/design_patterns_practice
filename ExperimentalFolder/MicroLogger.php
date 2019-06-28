@@ -21,6 +21,9 @@ final class MicroLogger
     public static function addLog(string $log): void
     {
         self::$logs[] = $log;
+
+        $actualDateTime = \date('Y-m-d G:i:s');
+        self::addLogToTxtFile('Time: ' . $actualDateTime . ' LOG: ' . $log . "\n");
     }
 
     public static function isLogPresent(string $log): bool
@@ -36,13 +39,24 @@ final class MicroLogger
         return self::$logs;
     }
 
-    private function addLogToTxtFile(): void
+    /**
+     * Saves log to hardcoded MicroLogger.txt file in current directory.
+     * @param string $log
+     */
+    private static function addLogToTxtFile(string $log): void
     {
-        // TODO
-        // check dir is r/w
-        // check is file exists / create
-        // open w
-        // write
-        // close
+        try {
+            if (\is_writable(__DIR__ . '/MicroLogger.txt')) {
+                $file = \fopen(__DIR__ . '/MicroLogger.txt', 'a');
+                \fwrite($file, $log);
+                \fclose($file);
+                return;
+            }
+            $file = \fopen(__DIR__ . '/MicroLogger.txt', 'w');
+            \fwrite($file, $log);
+            \fclose($file);
+        } catch (\Throwable $throwable) {
+            return;
+        }
     }
 }

@@ -19,6 +19,12 @@ class MagicMethod
      */
     private $number;
 
+    /**
+     * MagicMethod constructor.
+     * @link https://kursphp.com/programowanie-obiektowe-php/konstruktor/ Multiple constructor & copy constructor.
+     * @param string $name
+     * @param int $number
+     */
     public function __construct(string $name, int $number)
     {
         $this->name = $name;
