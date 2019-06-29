@@ -54,6 +54,8 @@ final class NumberPerBit implements \ArrayAccess
     }
 
     /**
+     * For the needs of the class: offset is fixed from 0 to 31.
+     *
      * Whether a offset exists
      * @link https://php.net/manual/en/arrayaccess.offsetexists.php
      * @param mixed $offset <p>
@@ -81,10 +83,12 @@ final class NumberPerBit implements \ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return isset($this->intDividedIntoBits[$offset]) ? $this->intDividedIntoBits[$offset] : null;
+        return $this->intDividedIntoBits[$offset] ?? null;
     }
 
     /**
+     * For the needs of the class: offset is fixed from 0 to 31, the only parameters saved are strings '0' and '1'
+     *
      * Offset to set
      * @link https://php.net/manual/en/arrayaccess.offsetset.php
      * @param mixed $offset <p>
@@ -98,15 +102,20 @@ final class NumberPerBit implements \ArrayAccess
      */
     public function offsetSet($offset, $value): void
     {
-        if (\is_null($offset)) {
-            // or do nothing
-            $this->intDividedIntoBits[] = $value;
-        } else {
+        if (!\is_int($offset)
+            || $offset < 0
+            || $offset > 31) {
+            return;
+        }
+
+        if ('0' === $value || '1' === $value) {
             $this->intDividedIntoBits[$offset] = $value;
         }
     }
 
     /**
+     * For the needs of the class: there is no way to reset the value.
+     *
      * Offset to unset
      * @link https://php.net/manual/en/arrayaccess.offsetunset.php
      * @param mixed $offset <p>
@@ -115,8 +124,7 @@ final class NumberPerBit implements \ArrayAccess
      * @return void
      * @since 5.0.0
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
-        unset($this->intDividedIntoBits[$offset]);
     }
 }
