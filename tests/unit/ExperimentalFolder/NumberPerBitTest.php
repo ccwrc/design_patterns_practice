@@ -92,4 +92,21 @@ class NumberPerBitTest extends TestCase
         unset($number[31]);
         $this->assertEquals('1', $number[31]);
     }
+
+    /**
+     * @throws \Exception
+     */
+    public function testMaxAcceptableInt(): void
+    {
+        $maxInt = NumberPerBit::MAX_32_BIT_INT;
+        $object = new NumberPerBit($maxInt);
+
+        $counter = 0;
+        foreach ($object->getStringBits() as $value) {
+            if ('1' === $value) {
+                $counter++;
+            }
+        }
+        $this->assertEquals(31, $counter);
+    }
 }

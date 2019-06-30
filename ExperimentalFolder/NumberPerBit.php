@@ -16,13 +16,14 @@ final class NumberPerBit implements \ArrayAccess
      */
     private $originalInt;
     /**
+     * bit indexes are arranged from index[0] = 2**31 to index[31] = 2**0 (order from the left)
      * @var string[]
      */
     private $intDividedIntoBits;
 
     /**
      * NumberPerBit constructor.
-     * @param int $number
+     * @param int $number (negative values will be converted into positive values)
      * @throws \Exception
      */
     public function __construct(int $number)
@@ -32,15 +33,29 @@ final class NumberPerBit implements \ArrayAccess
         }
 
         $this->originalInt = $number;
-        $this->intDividedIntoBits = self::convertTo32length($number);
-        // TODO index[0] negative/positive value?
+        $this->intDividedIntoBits = self::convertTo32lengthStringsArray($number);
     }
 
     /**
+     * @return string[]
+     */
+    public function getStringBits(): array
+    {
+        return $this->intDividedIntoBits;
+    }
+
+    public function getOriginalInt(): int
+    {
+        return $this->originalInt;
+    }
+
+    /**
+     * bit indexes are arranged from index[0] = 2**31 to index[31] = 2**0 (order from the left)
+     *
      * @param int $number (negative values will be converted into positive values)
      * @return string[]
      */
-    private static function convertTo32length(int $number): array
+    private static function convertTo32lengthStringsArray(int $number): array
     {
         $number = \abs($number);
         $reverseBits = \array_reverse(\str_split(\decbin($number), 1));
