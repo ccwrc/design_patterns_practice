@@ -29,7 +29,7 @@ class NumberPerBitTest extends TestCase
      */
     public function testThrowExceptionIfIntTooBig(): void
     {
-        $tooBigNumber = NumberPerBit::MAX_32_BIT_INT + 1;
+        $tooBigNumber = NumberPerBit::MAX_INT_FOR_32_BIT + 1;
 
         $this->expectException(\Exception::class);
         new NumberPerBit($tooBigNumber);
@@ -98,7 +98,7 @@ class NumberPerBitTest extends TestCase
      */
     public function testMaxAcceptableInt(): void
     {
-        $maxInt = NumberPerBit::MAX_32_BIT_INT;
+        $maxInt = NumberPerBit::MAX_INT_FOR_32_BIT;
         $object = new NumberPerBit($maxInt);
 
         $counter = 0;
@@ -107,6 +107,6 @@ class NumberPerBitTest extends TestCase
                 $counter++;
             }
         }
-        $this->assertEquals(31, $counter);
+        $this->assertEquals(32, $counter);
     }
 }

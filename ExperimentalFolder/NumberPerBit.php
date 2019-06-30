@@ -10,7 +10,7 @@ namespace Patterns\ExperimentalFolder;
 final class NumberPerBit implements \ArrayAccess
 {
     private const BITS_ARRAY_LENGTH = 32;
-    public const MAX_32_BIT_INT = 2147483647;
+    public const MAX_INT_FOR_32_BIT = 4294967295; // (2**32 - 1)
     /**
      * @var int
      */
@@ -28,7 +28,7 @@ final class NumberPerBit implements \ArrayAccess
      */
     public function __construct(int $number)
     {
-        if (\abs($number) > self::MAX_32_BIT_INT) {
+        if (\abs($number) > self::MAX_INT_FOR_32_BIT) {
             throw new \Exception('Number too big');
         }
 
