@@ -25,6 +25,7 @@ class NumberPerBitTest extends TestCase
     }
 
     /**
+     * Warning: var $tooBigNumber in 32-bit system will be converted to float and will generate an error.
      * @throws \Exception
      */
     public function testThrowExceptionIfIntTooBig(): void
