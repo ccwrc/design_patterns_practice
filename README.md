@@ -21,7 +21,7 @@ https://phpunit.de/getting-started/phpunit-7.html
 - Facade    
 - Adapter (Wrapper)    
 - Composite   
-- Fluent Interface  :pen: 
+- Fluent Interface   
 
 **Behavioral:**   
 - Memento
@@ -30,6 +30,7 @@ https://phpunit.de/getting-started/phpunit-7.html
 - Strategy   
 - Visitor   
 - Command  
+- State  :pen: 
 
 
 Notice: class Patterns\ExperimentalFolder\MicroLogger.php creates log file in current directory.
