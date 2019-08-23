@@ -6,6 +6,7 @@ namespace Patterns\State;
 
 /**
  * Context.
+ * @link https://www.youtube.com/watch?v=Fe93CLbHjxQ Who do you gone call?
  */
 class Phone
 {
@@ -24,8 +25,13 @@ class Phone
         $this->state = $state;
     }
 
-    public function checkState(): PhoneState
+    public function getStateName(): string
     {
-        return $this->state;
+        return $this->state->getStateName();
+    }
+
+    public function isBusy(): bool
+    {
+        return $this->state->isLineBusy();
     }
 }

@@ -6,13 +6,13 @@ namespace Patterns\State\PhoneStates;
 
 use Patterns\State\PhoneState;
 
-class PhoneStateRinging extends PhoneState
+class PhoneStateIdle extends PhoneState
 {
     /**
      * @return bool
      */
     public function isLineBusy(): bool
     {
-        return true;
+        return false;
     }
 }

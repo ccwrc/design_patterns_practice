@@ -8,5 +8,11 @@ use Patterns\State\PhoneState;
 
 class PhoneStateTalk extends PhoneState
 {
-
+    /**
+     * @return bool
+     */
+    public function isLineBusy(): bool
+    {
+        return true;
+    }
 }
