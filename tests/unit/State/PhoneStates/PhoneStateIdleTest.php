@@ -19,7 +19,9 @@ class PhoneStateIdleTest extends TestCase
 
     public function testGetStateName(): void
     {
-        //
+        $fullClassName = 'Patterns\State\PhoneStates\PhoneStateIdle';
+
+        $this->assertEquals($fullClassName, PhoneStateIdle::create()->getStateName());
     }
 
     public function testIsLineBusy(): void

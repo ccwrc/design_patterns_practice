@@ -15,4 +15,9 @@ class PhoneStateTalk extends PhoneState
     {
         return true;
     }
+
+    public function stateAfterShortPressRedButton(): PhoneState
+    {
+        return PhoneStateIdle::create();
+    }
 }

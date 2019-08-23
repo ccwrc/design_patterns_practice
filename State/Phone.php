@@ -20,11 +20,6 @@ class Phone
         $this->state = $state;
     }
 
-    public function changeStateTo(PhoneState $state): void
-    {
-        $this->state = $state;
-    }
-
     public function getStateName(): string
     {
         return $this->state->getStateName();
@@ -33,5 +28,10 @@ class Phone
     public function isBusy(): bool
     {
         return $this->state->isLineBusy();
+    }
+
+    public function shortPressRedButton(): void
+    {
+        $this->state = $this->state->stateAfterShortPressRedButton();
     }
 }

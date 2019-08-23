@@ -23,4 +23,6 @@ abstract class PhoneState
     {
         return new static();
     }
+
+    abstract public function stateAfterShortPressRedButton(): PhoneState;
 }
