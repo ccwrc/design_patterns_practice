@@ -30,10 +30,13 @@ https://phpunit.de/getting-started/phpunit-7.html
 - Strategy   
 - Visitor   
 - Command  
-- State  :pen: 
+- State    
+
+**Others:**   
+- Value Object   :pen: 
 
 
-Notice: class Patterns\ExperimentalFolder\MicroLogger.php creates log file in current directory.
+ :warning: Notice: class Patterns\ExperimentalFolder\MicroLogger.php creates log file in current directory.
 
 
 
