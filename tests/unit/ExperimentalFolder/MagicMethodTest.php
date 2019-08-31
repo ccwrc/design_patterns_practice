@@ -80,10 +80,12 @@ class MagicMethodTest extends TestCase
         $number = 747;
         $mm = new MagicMethod($name, $number);
         $this->assertSame($name, $mm->getName());
+        $this->assertSame($number, $mm->getNumber());
 
         $serializedMm = serialize($mm);
         /** @var $unserializableMm MagicMethod */
         $unserializableMm = unserialize($serializedMm);
         $this->assertSame(MagicMethod::UNSERIALIZABLE_NAME, $unserializableMm->getName());
+        $this->assertSame($number, $unserializableMm->getNumber());
     }
 }
