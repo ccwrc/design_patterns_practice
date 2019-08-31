@@ -22,6 +22,22 @@ class MagicMethodTest extends TestCase
      * @depends testCreate
      * @param MagicMethod $magicMethod
      */
+    public function testCall(MagicMethod $magicMethod): void
+    {
+        $this->expectException(\Exception::class);
+        $magicMethod->fakeMethodName();
+    }
+
+    public function testCallStatic(): void
+    {
+        $this->expectException(\Exception::class);
+        MagicMethod::fakeStaticMethodName();
+    }
+
+    /**
+     * @depends testCreate
+     * @param MagicMethod $magicMethod
+     */
     public function testToString(MagicMethod $magicMethod): void
     {
         echo $magicMethod;
@@ -34,22 +50,6 @@ class MagicMethodTest extends TestCase
         unset($object);
 
         $this->assertTrue(MicroLogger::isLogPresent('I\'m going to heaven.'));
-    }
-
-    /**
-     * @depends testCreate
-     * @param MagicMethod $magicMethod
-     */
-    public function testCall(MagicMethod $magicMethod): void
-    {
-        $this->expectException(\Exception::class);
-        $magicMethod->fakeMethodName();
-    }
-
-    public function testCallStatic(): void
-    {
-        $this->expectException(\Exception::class);
-        MagicMethod::fakeStaticMethodName();
     }
 
     /**
@@ -72,5 +72,18 @@ class MagicMethodTest extends TestCase
     {
         $this->expectException(\Exception::class);
         $magicMethod->fakeProperty = 11;
+    }
+
+    public function testSleepAndWakeUp(): void
+    {
+        $name = 'plain name';
+        $number = 747;
+        $mm = new MagicMethod($name, $number);
+        $this->assertSame($name, $mm->getName());
+
+        $serializedMm = serialize($mm);
+        /** @var $unserializableMm MagicMethod */
+        $unserializableMm = unserialize($serializedMm);
+        $this->assertSame(MagicMethod::UNSERIALIZABLE_NAME, $unserializableMm->getName());
     }
 }

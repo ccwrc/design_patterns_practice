@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Patterns\ExperimentalFolder;
 
 /**
- * @link https://www.php.net/manual/en/language.oop5.magic.php offical.
- * @link https://www.tutorialdocs.com/article/16-php-magic-methods.html unoffical.
+ * @link https://www.php.net/manual/en/language.oop5.magic.php offical docs.
+ * @link https://www.tutorialdocs.com/article/16-php-magic-methods.html unoffical docs.
  */
-class MagicMethod
+final class MagicMethod
 {
+    public const UNSERIALIZABLE_NAME = 'new';
+
     /**
      * @var string
      */
@@ -31,14 +33,20 @@ class MagicMethod
         $this->number = $number;
     }
 
+    /**
+     * Method used to test magic method '__get'
+     */
     public function getNumber(): int
     {
         return $this->number;
     }
 
-    public function setNumber(int $number): void
+    /**
+     * Method used to test magic methods '__sleep' & '__wakeup'
+     */
+    public function getName(): string
     {
-        $this->number = $number;
+        return $this->name;
     }
 
     /**
@@ -72,14 +80,7 @@ class MagicMethod
 
     /**
      * @link https://www.owasp.org/index.php/PHP_Object_Injection How to avoid problems.
-     */
-    public function __wakeup()
-    {
-        // TODO: Implement __wakeup() method.
-    }
-
-    /**
-     * @link https://www.owasp.org/index.php/PHP_Object_Injection How to avoid problems.
+     * No returned value.
      */
     public function __destruct()
     {
@@ -109,9 +110,25 @@ class MagicMethod
      * @param mixed $value
      * @throws \Exception
      */
-    public function __set(string $name, $value)
+    public function __set(string $name, $value): void
     {
         throw new \Exception('No access to property or property does not exist.');
-        // or logic: check name, check and filter value, fun with reflection, etc.
+        // (note) or logic: check name, check and filter value, fun with reflection, etc.
+    }
+
+    /**
+     * @link https://www.php.net/manual/en/language.oop5.magic.php#object.sleep docs.
+     */
+    public function __sleep(): array
+    {
+        return ['number'];
+    }
+
+    /**
+     * @link https://www.owasp.org/index.php/PHP_Object_Injection How to avoid problems.
+     */
+    public function __wakeup(): void
+    {
+        $this->name = self::UNSERIALIZABLE_NAME;
     }
 }
