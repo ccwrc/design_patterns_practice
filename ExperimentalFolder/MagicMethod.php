@@ -20,11 +20,11 @@ final class MagicMethod
     /**
      * @var null | int
      */
-    private $cloneNumber = null;
+    private $cloneNumber;
     /**
      * @var bool
      */
-    private $isClone = false;
+    private $isClone;
     /**
      * @var string
      */
@@ -42,6 +42,8 @@ final class MagicMethod
      */
     public function __construct(string $name, int $number)
     {
+        $this->cloneNumber = null;
+        $this->isClone = false;
         $this->name = $name;
         $this->number = $number;
     }
@@ -185,6 +187,7 @@ final class MagicMethod
     }
 
     /**
+     * Method is run for the clone, not the original object.
      * @link https://www.youtube.com/watch?v=Sz-Abh8opLo just a movie trailer.
      */
     public function __clone()

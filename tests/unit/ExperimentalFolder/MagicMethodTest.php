@@ -50,7 +50,7 @@ class MagicMethodTest extends TestCase
     public function testToString(MagicMethod $magicMethod): void
     {
         echo $magicMethod;
-        $this->expectOutputString('Harry Houdini');
+        $this->expectOutputString(MagicMethodTest::$magicMethodName);
     }
 
     public function testDestruct(): void
@@ -67,7 +67,7 @@ class MagicMethodTest extends TestCase
      */
     public function testGet(MagicMethod $magicMethod): void
     {
-        $this->assertEquals(6, $magicMethod->number);
+        $this->assertEquals(MagicMethodTest::$magicMethodNumber, $magicMethod->number);
 
         $this->expectException(\Exception::class);
         $magicMethod->fakeProperty;
@@ -134,9 +134,12 @@ class MagicMethodTest extends TestCase
      */
     public function testClone(MagicMethod $magicMethod): void
     {
+        $counterForFirstClone = 1;
+        $counterForThirdClone = 3;
+
         $cloneNo1 = clone $magicMethod;
         $this->assertTrue($cloneNo1->isClone());
-        $this->assertSame(1, $cloneNo1->getCloneNumber());
+        $this->assertSame($counterForFirstClone, $cloneNo1->getCloneNumber());
 
         $cloneNo2 = clone $magicMethod;
         $this->assertSame(MagicMethodTest::$magicMethodName, $cloneNo2->getName());
@@ -144,7 +147,7 @@ class MagicMethodTest extends TestCase
 
         $cloneNo3 = clone $magicMethod;
         $this->assertTrue($cloneNo3->isClone());
-        $this->assertSame(3, $cloneNo3->getCloneNumber());
+        $this->assertSame($counterForThirdClone, $cloneNo3->getCloneNumber());
 
         $this->assertFalse($magicMethod->isClone());
         $this->assertSame(null, $magicMethod->getCloneNumber());
