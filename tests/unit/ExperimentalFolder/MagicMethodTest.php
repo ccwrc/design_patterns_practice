@@ -58,7 +58,7 @@ class MagicMethodTest extends TestCase
         $object = new MagicMethod('Maciej Pol', 7);
         unset($object);
 
-        $this->assertTrue(MicroLogger::isLogPresent('I\'m going to heaven.'));
+        $this->assertTrue(MicroLogger::isLogPresent(MagicMethod::DESTRUCT_MESSAGE));
     }
 
     /**

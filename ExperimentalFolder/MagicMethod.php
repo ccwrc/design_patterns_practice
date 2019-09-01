@@ -12,6 +12,7 @@ final class MagicMethod
 {
     public const NAME_AFTER_DESERIALIZATION = 'new';
     public const INVOKE_MESSAGE = 'I am not a function, I am a class!';
+    public const DESTRUCT_MESSAGE = 'I\'m going to heaven.';
 
     /**
      * @var int
@@ -109,7 +110,7 @@ final class MagicMethod
      */
     public function __destruct()
     {
-        MicroLogger::addLog('I\'m going to heaven.');
+        MicroLogger::addLog(self::DESTRUCT_MESSAGE);
         MicroLogger::addLog(__CLASS__ . ' ' . $this->name);
     }
 
