@@ -10,9 +10,18 @@ use PHPUnit\Framework\TestCase;
 
 class MagicMethodTest extends TestCase
 {
+    /**
+     * @var string
+     */
+    private static $magicMethodName = 'Harry Houdini';
+    /**
+     * @var int
+     */
+    private static $magicMethodNumber = 6;
+
     public function testCreate(): MagicMethod
     {
-        $object = new MagicMethod('Harry Houdini', 6);
+        $object = new MagicMethod(MagicMethodTest::$magicMethodName, MagicMethodTest::$magicMethodNumber);
         $this->assertInstanceOf(MagicMethod::class, $object);
 
         return $object;
@@ -117,5 +126,27 @@ class MagicMethodTest extends TestCase
     {
         $this->expectException(\Exception::class);
         unset($magicMethod->nonexistentProperty);
+    }
+
+    /**
+     * @depends testCreate
+     * @param MagicMethod $magicMethod
+     */
+    public function testClone(MagicMethod $magicMethod): void
+    {
+        $cloneNo1 = clone $magicMethod;
+        $this->assertTrue($cloneNo1->isClone());
+        $this->assertSame(1, $cloneNo1->getCloneNumber());
+
+        $cloneNo2 = clone $magicMethod;
+        $this->assertSame(MagicMethodTest::$magicMethodName, $cloneNo2->getName());
+        $this->assertSame(MagicMethodTest::$magicMethodNumber, $cloneNo2->getNumber());
+
+        $cloneNo3 = clone $magicMethod;
+        $this->assertTrue($cloneNo3->isClone());
+        $this->assertSame(3, $cloneNo3->getCloneNumber());
+
+        $this->assertFalse($magicMethod->isClone());
+        $this->assertSame(null, $magicMethod->getCloneNumber());
     }
 }

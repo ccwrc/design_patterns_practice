@@ -14,9 +14,17 @@ final class MagicMethod
     public const INVOKE_MESSAGE = 'I am not a function, I am a class!';
 
     /**
-     * @var int 
+     * @var int
      */
-    private static $cloneNumber = 1;
+    private static $cloneCounter = 1;
+    /**
+     * @var null | int
+     */
+    private $cloneNumber = null;
+    /**
+     * @var bool
+     */
+    private $isClone = false;
     /**
      * @var string
      */
@@ -36,6 +44,16 @@ final class MagicMethod
     {
         $this->name = $name;
         $this->number = $number;
+    }
+
+    public function isClone(): bool
+    {
+        return $this->isClone;
+    }
+
+    public function getCloneNumber(): ?int
+    {
+        return $this->cloneNumber;
     }
 
     /**
@@ -164,5 +182,15 @@ final class MagicMethod
     public function __unset($name): void
     {
         throw new \Exception($name . 'property does not exist or is protected/private.');
+    }
+
+    /**
+     * @link https://www.youtube.com/watch?v=Sz-Abh8opLo just a movie trailer.
+     */
+    public function __clone()
+    {
+        $this->isClone = true;
+        $this->cloneNumber = static::$cloneCounter;
+        static::$cloneCounter++;
     }
 }
