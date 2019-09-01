@@ -11,6 +11,7 @@ namespace Patterns\ExperimentalFolder;
 final class MagicMethod
 {
     public const UNSERIALIZABLE_NAME = 'new';
+    public const INVOKE_MESSAGE = 'I am not a function, I am a class!';
 
     /**
      * @var string
@@ -102,7 +103,7 @@ final class MagicMethod
         }
 
         throw new \Exception('No access to property or property does not exist.');
-        // worse way: trigger_error('message', E_USER_NOTICE);
+        // (note) worse way: trigger_error('message', E_USER_NOTICE);
     }
 
     /**
@@ -130,5 +131,13 @@ final class MagicMethod
     public function __wakeup(): void
     {
         $this->name = self::UNSERIALIZABLE_NAME;
+    }
+
+    /**
+     * Method is called when a script tries to call an object as a function.
+     */
+    public function __invoke(): string
+    {
+        return self::INVOKE_MESSAGE;
     }
 }

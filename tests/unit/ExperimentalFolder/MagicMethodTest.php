@@ -88,4 +88,15 @@ class MagicMethodTest extends TestCase
         $this->assertSame(MagicMethod::UNSERIALIZABLE_NAME, $unserializableMm->getName());
         $this->assertSame($number, $unserializableMm->getNumber());
     }
+
+    /**
+     * @depends testCreate
+     * @param MagicMethod $magicMethod
+     */
+    public function testInvoke(MagicMethod $magicMethod): void
+    {
+        $this->assertTrue(is_callable($magicMethod));
+        $this->assertTrue(is_string($magicMethod()));
+        $this->assertSame(MagicMethod::INVOKE_MESSAGE, $magicMethod());
+    }
 }
