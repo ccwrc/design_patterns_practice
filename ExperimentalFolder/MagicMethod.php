@@ -10,9 +10,13 @@ namespace Patterns\ExperimentalFolder;
  */
 final class MagicMethod
 {
-    public const UNSERIALIZABLE_NAME = 'new';
+    public const NAME_AFTER_DESERIALIZATION = 'new';
     public const INVOKE_MESSAGE = 'I am not a function, I am a class!';
 
+    /**
+     * @var int 
+     */
+    private static $cloneNumber = 1;
     /**
      * @var string
      */
@@ -130,7 +134,7 @@ final class MagicMethod
      */
     public function __wakeup(): void
     {
-        $this->name = self::UNSERIALIZABLE_NAME;
+        $this->name = self::NAME_AFTER_DESERIALIZATION;
     }
 
     /**
@@ -139,5 +143,26 @@ final class MagicMethod
     public function __invoke(): string
     {
         return self::INVOKE_MESSAGE;
+    }
+
+    /**
+     * When the property does not exist or is protected/private, return false.
+     * @param $name
+     * @return bool
+     */
+    public function __isset($name): bool
+    {
+        return false;
+    }
+
+    /**
+     * When the property does not exist or is protected/private, throw Exception.
+     * The exception is thrown only for testing purposes.
+     * @param $name
+     * @throws \Exception
+     */
+    public function __unset($name): void
+    {
+        throw new \Exception($name . 'property does not exist or is protected/private.');
     }
 }

@@ -85,7 +85,7 @@ class MagicMethodTest extends TestCase
         $serializedMm = serialize($mm);
         /** @var $unserializableMm MagicMethod */
         $unserializableMm = unserialize($serializedMm);
-        $this->assertSame(MagicMethod::UNSERIALIZABLE_NAME, $unserializableMm->getName());
+        $this->assertSame(MagicMethod::NAME_AFTER_DESERIALIZATION, $unserializableMm->getName());
         $this->assertSame($number, $unserializableMm->getNumber());
     }
 
@@ -98,5 +98,24 @@ class MagicMethodTest extends TestCase
         $this->assertTrue(is_callable($magicMethod));
         $this->assertTrue(is_string($magicMethod()));
         $this->assertSame(MagicMethod::INVOKE_MESSAGE, $magicMethod());
+    }
+
+    /**
+     * @depends testCreate
+     * @param MagicMethod $magicMethod
+     */
+    public function testIsSet(MagicMethod $magicMethod): void
+    {
+        $this->assertFalse(isset($magicMethod->nonexistentProperty));
+    }
+
+    /**
+     * @depends testCreate
+     * @param MagicMethod $magicMethod
+     */
+    public function testUnset(MagicMethod $magicMethod): void
+    {
+        $this->expectException(\Exception::class);
+        unset($magicMethod->nonexistentProperty);
     }
 }
