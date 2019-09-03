@@ -13,6 +13,7 @@ final class MagicMethod
     public const NAME_AFTER_DESERIALIZATION = 'new';
     public const INVOKE_MESSAGE = 'I am not a function, I am a class!';
     public const DESTRUCT_MESSAGE = 'I\'m going to heaven.';
+    public const SET_STATE_MESSAGE = 'Is it working?';
 
     /**
      * @var int
@@ -196,5 +197,17 @@ final class MagicMethod
         $this->isClone = true;
         $this->cloneNumber = static::$cloneCounter;
         static::$cloneCounter++;
+    }
+
+    /**
+     * @link https://stackoverflow.com/questions/46441958/what-is-the-real-purpose-of-magic-method-set-state-in-php Better
+     *  than official docs.
+     * @link http://docs.php.net/manual/pl/function.var-export.php var_export() docs
+     * @param array $array
+     * @return string
+     */
+    public static function __set_state(array $array): string
+    {
+        return self::SET_STATE_MESSAGE;
     }
 }

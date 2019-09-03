@@ -152,4 +152,16 @@ class MagicMethodTest extends TestCase
         $this->assertFalse($magicMethod->isClone());
         $this->assertSame(null, $magicMethod->getCloneNumber());
     }
+
+    /**
+     * @link http://docs.php.net/manual/pl/function.eval.php eval() docs.
+     * @link http://docs.php.net/manual/pl/function.var-export.php var_export() docs
+     * @depends testCreate
+     * @param MagicMethod $magicMethod
+     */
+    public function testSetState(MagicMethod $magicMethod): void
+    {
+        eval('$variableOutOfNowhere = ' . var_export($magicMethod, true) . ';'); // $variableOutOfNowhere is born here
+        $this->assertEquals(MagicMethod::SET_STATE_MESSAGE, $variableOutOfNowhere);
+    }
 }
