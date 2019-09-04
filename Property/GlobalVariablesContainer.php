@@ -30,9 +30,9 @@ final class GlobalVariablesContainer implements PropertyContainer
 
     /**
      * @param string $name
-     * @link https://stackoverflow.com/questions/37033142/multiple-return-types-php-7 abut mixed
+     * @return mixed | null
      * @link https://wiki.php.net/rfc/mixed-typehint mixed typehint
-     * @return mixed
+     * @link https://stackoverflow.com/questions/37033142/multiple-return-types-php-7 abut mixed
      */
     public static function getPropertyBy(string $name)
     {
