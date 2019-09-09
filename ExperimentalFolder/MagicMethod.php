@@ -14,6 +14,7 @@ final class MagicMethod
     public const INVOKE_MESSAGE = 'I am not a function, I am a class!';
     public const DESTRUCT_MESSAGE = 'I\'m going to heaven.';
     public const SET_STATE_MESSAGE = 'Is it working?';
+    public const VAR_DUMP_MESSAGE = 'I\'m a dump';
 
     /**
      * @var int
@@ -209,5 +210,12 @@ final class MagicMethod
     public static function __set_state(array $array): string
     {
         return self::SET_STATE_MESSAGE;
+    }
+
+    public function __debugInfo(): array
+    {
+        return [
+            self::VAR_DUMP_MESSAGE => self::VAR_DUMP_MESSAGE
+        ];
     }
 }
