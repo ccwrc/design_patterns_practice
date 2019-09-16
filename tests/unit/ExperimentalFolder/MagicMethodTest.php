@@ -171,6 +171,8 @@ class MagicMethodTest extends TestCase
      */
     public function testDebugInfo(MagicMethod $magicMethod): void
     {
-        //todo
+        $message = MagicMethod::VAR_DUMP_MESSAGE;
+        $this->expectOutputRegex("/$message/");
+        print_r($magicMethod);
     }
 }

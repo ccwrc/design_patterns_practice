@@ -7,6 +7,9 @@ namespace Patterns\ExperimentalFolder;
 /**
  * @link https://www.php.net/manual/en/language.oop5.magic.php offical docs.
  * @link https://www.tutorialdocs.com/article/16-php-magic-methods.html unoffical docs.
+ *
+ * Function __autoload() has been DEPRECATED as of PHP 7.2.0. Use instead PSR-4 standard.
+ * @link https://www.php-fig.org/psr/psr-4/ PSR-4.
  */
 final class MagicMethod
 {
