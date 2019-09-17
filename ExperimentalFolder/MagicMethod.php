@@ -215,6 +215,10 @@ final class MagicMethod
         return self::SET_STATE_MESSAGE;
     }
 
+    /**
+     * Called by var_dump() or print_r().
+     * @return array
+     */
     public function __debugInfo(): array
     {
         return [
