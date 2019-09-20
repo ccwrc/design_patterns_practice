@@ -9,6 +9,9 @@ namespace Patterns\ExperimentalFolder\Php72features;
  */
 class TypehintObject
 {
+    /**
+     * @var \DateTime
+     */
     private $justPlainDate;
 
     public function __construct(object $dateTime)
