@@ -7,7 +7,7 @@ namespace Patterns\ExperimentalFolder\Php72features;
 /**
  * @link https://wiki.php.net/rfc/object-typehint Docs.
  */
-class TypehintObject
+class TypeHintObject
 {
     /**
      * @var \DateTime
@@ -21,5 +21,13 @@ class TypehintObject
             return;
         }
         $this->justPlainDate = new \DateTime();
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getJustPlainDate(): object
+    {
+        return $this->justPlainDate;
     }
 }
