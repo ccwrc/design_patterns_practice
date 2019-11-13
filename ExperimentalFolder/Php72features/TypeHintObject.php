@@ -7,7 +7,7 @@ namespace Patterns\ExperimentalFolder\Php72features;
 /**
  * @link https://wiki.php.net/rfc/object-typehint Docs.
  */
-class TypeHintObject
+final class TypeHintObject
 {
     /**
      * @var \DateTime

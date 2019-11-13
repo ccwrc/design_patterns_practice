@@ -1,7 +1,9 @@
 ## design_patterns_practice (PHP 7.3)    
 
 To run unit tests:  
-./vendor/bin/phpunit
+./vendor/bin/phpunit   
+or with a detailed description:    
+./vendor/bin/phpunit --verbose
 
 PHPUnit doc:   
 https://phpunit.de/getting-started/phpunit-7.html   
