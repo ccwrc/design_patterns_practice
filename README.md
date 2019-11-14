@@ -1,5 +1,7 @@
 ## design_patterns_practice (PHP 7.3)    
 
+Create your own .env file and copy the contents of .env.dist (in the same directory) to it.
+
 To run unit tests:  
 ./vendor/bin/phpunit   
 or with a detailed description:    
@@ -38,7 +40,6 @@ https://phpunit.de/getting-started/phpunit-7.html
 - Value Object   :pen: 
 
 
- :warning: Notice: class Patterns\ExperimentalFolder\MicroLogger.php creates log file in current directory.
 
 
 
