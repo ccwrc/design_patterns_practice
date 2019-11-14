@@ -23,7 +23,11 @@ final class MicroLogger
         self::$logs[] = $log;
 
         $actualDateTime = \date('Y-m-d G:i:s');
-        self::addLogToTxtFile('Time: ' . $actualDateTime . ' LOG: ' . $log . "\n");
+
+        EnvironmentVariables::load();
+        if ('true' === $_ENV['SAVE_LOGS_TO_FILE']) {
+            self::addLogToTxtFile('Time: ' . $actualDateTime . ' LOG: ' . $log . "\n");
+        }
     }
 
     public static function isLogPresent(string $log): bool
