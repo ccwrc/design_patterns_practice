@@ -1,6 +1,6 @@
 ## design_patterns_practice (PHP 7.3)    
 
-Create your own .env file and copy the contents of .env.dist (in the same directory) to it.
+Create your own .env file and copy the contents of .env.dist to it (in the same directory).
 
 To run unit tests:  
 ./vendor/bin/phpunit   

@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder;
 
+/**
+ * Creates log file in current directory if needed.
+ */
 final class MicroLogger
 {
     /**
@@ -25,7 +28,7 @@ final class MicroLogger
         $actualDateTime = \date('Y-m-d G:i:s');
 
         EnvironmentVariables::load();
-        if ('true' === $_ENV['SAVE_LOGS_TO_FILE']) {
+        if ('true' === ($_ENV['SAVE_LOGS_TO_FILE'] ?? false)) {
             self::addLogToTxtFile('Time: ' . $actualDateTime . ' LOG: ' . $log . "\n");
         }
     }

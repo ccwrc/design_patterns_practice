@@ -21,6 +21,6 @@ final class EnvironmentVariables
     public static function load(): void
     {
         $dotEnv = new Dotenv();
-        $dotEnv->load(dirname(__DIR__, 1) . '/.env');
+        $dotEnv->load(\dirname(__DIR__, 1) . '/.env');
     }
 }
