@@ -17,10 +17,11 @@ final class EnvironmentVariables
 
     /**
      * Gets var from .env file. Variables available in the global array $_ENV ( $_ENV['key'] ) or $_SERVER, $GLOBALS.
+     * @link https://symfony.com/doc/current/components/dotenv.html docs.
      */
     public static function load(): void
     {
         $dotEnv = new Dotenv();
-        $dotEnv->load(\dirname(__DIR__, 1) . '/.env');
+        $dotEnv->loadEnv(\dirname(__DIR__, 1) . '/.env');
     }
 }
