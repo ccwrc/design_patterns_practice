@@ -17,7 +17,7 @@ class EnvironmentVariablesTest extends TestCase
         $this->assertSame(
             EnvironmentVariables::VALIDATION_STRING_FOR_ENV_FILE,
             ($_ENV['VALIDATION_DATA'] ?? 'fail'),
-            'Create and complete your own .env file in the main location based on .env.dist'
+            'Create and complete your own .env file in the main directory based on .env.dist'
         );
     }
 }
