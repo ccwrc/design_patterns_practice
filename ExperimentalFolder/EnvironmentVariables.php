@@ -8,6 +8,8 @@ use Symfony\Component\Dotenv\Dotenv;
 
 final class EnvironmentVariables
 {
+    public const VALIDATION_STRING_FOR_ENV_FILE = 'giraffesEnterTheCloset';
+
     /**
      * Class instance is not required and not desirable.
      */
