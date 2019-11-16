@@ -25,10 +25,9 @@ final class MicroLogger
     {
         self::$logs[] = $log;
 
-        $actualDateTime = \date('Y-m-d G:i:s');
-
         EnvironmentVariables::load();
         if ('true' === ($_ENV['SAVE_LOGS_TO_FILE'] ?? false)) {
+            $actualDateTime = \date('Y-m-d G:i:s');
             self::addLogToTxtFile('Time: ' . $actualDateTime . ' LOG: ' . $log . "\n");
         }
     }
