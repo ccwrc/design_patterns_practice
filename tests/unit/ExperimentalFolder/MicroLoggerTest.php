@@ -16,7 +16,7 @@ class MicroLoggerTest extends TestCase
 
         if ('true' === ($_ENV['TEST_IS_EXPERIMENTAL_FOLDER_IS_WRITABLE'] ?? false)) {
             $this->assertTrue(\is_writable(\dirname(__DIR__, 3) . '/ExperimentalFolder'));
-        } else if ('true' !== ($_ENV['TEST_IS_EXPERIMENTAL_FOLDER_IS_WRITABLE'] ?? false)) {
+        } else {
             $this->markTestSkipped('Test disabled in the configuration .env (.env.dist) file.');
         }
     }
