@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder;
 
-class MultipleConstructor
+final class MultipleConstructor
 {
     public const DEFAULT_CONTENT = 'default';
     /**
@@ -12,7 +12,7 @@ class MultipleConstructor
      */
     private $content;
 
-    function __construct()
+    public function __construct()
     {
         $this->content = self::DEFAULT_CONTENT;
 
