@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11e2ac6752d17946fc5d128dd9583ac6",
+    "content-hash": "ac0884aecd3884f20c29a68502d61b40",
     "packages": [
         {
             "name": "paragonie/random_compat",
@@ -1669,7 +1669,8 @@
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.3",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-pdo": "*"
     },
     "platform-dev": []
 }
