@@ -12,9 +12,10 @@ final class CurrencyChecker implements CurrencyCheckerNbpTableA
     public static $dailyExchangeRates = [];
 
     /**
+     * Get exchange rates from NBP API http://api.nbp.pl/ (table A, json format).
      * @param \DateTime $dateTime
-     * @return string
      * @throws CurrencyCheckerException
+     * @return string
      */
     public static function getExchangeRatesBy(\DateTime $dateTime): string
     {
@@ -38,7 +39,7 @@ final class CurrencyChecker implements CurrencyCheckerNbpTableA
 
     private static function getNbpFormattedDateFrom(\DateTime $dateTime): string
     {
-        return $dateTime->format(self::NBP_DATE_FORMAT);
+        return $dateTime->format(self::NBP_API_DATE_FORMAT);
     }
 
     private static function isRatesForDayIsPresent(string $dateForNbpApi): bool
