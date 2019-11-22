@@ -44,6 +44,6 @@ final class CurrencyChecker implements CurrencyCheckerNbpTableA
 
     private static function isRatesForDayIsPresent(string $dateForNbpApi): bool
     {
-        return \in_array($dateForNbpApi, self::$dailyExchangeRates, true);
+        return \array_key_exists($dateForNbpApi, self::$dailyExchangeRates);
     }
 }
