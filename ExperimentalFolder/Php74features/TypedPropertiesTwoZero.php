@@ -6,9 +6,6 @@ namespace Patterns\ExperimentalFolder\Php74features;
 
 class TypedPropertiesTwoZero
 {
-    /**
-     * @var int|null
-     */
     public ?int $int;
 
     public string $string;
