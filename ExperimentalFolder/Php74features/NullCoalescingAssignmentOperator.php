@@ -8,11 +8,11 @@ class NullCoalescingAssignmentOperator
 {
     public static function writeSomethingToArrayWhenIndexNotExists(
         array $array,
-        string $index,
+        string $anyIndexToArray,
         string $something
     ): array
     {
-        $array[$index] ??= $something;
+        $array[$anyIndexToArray] ??= $something;
 
         return $array;
     }
