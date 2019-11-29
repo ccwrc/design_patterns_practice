@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder\Php74features;
 
-class NullCoalescingAssignmentOperator
+/**
+ * @link https://wiki.php.net/rfc/null_coalesce_equal_operator docs
+ */
+final class NullCoalescingAssignmentOperator
 {
     public static function writeSomethingToArrayWhenIndexNotExists(
         array $array,
