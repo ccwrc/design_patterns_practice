@@ -50,4 +50,14 @@ class TypedPropertiesTwoZeroTest extends TestCase
         $this->expectException(\TypeError::class);
         $twoZero->int = $string;
     }
+
+    /**
+     * @depends testCreate
+     * @param TypedPropertiesTwoZero $twoZero
+     */
+    public function testUninitializedVar(TypedPropertiesTwoZero $twoZero): void
+    {
+        $this->expectException(\Error::class);
+        $twoZero->uninitialized;
+    }
 }
