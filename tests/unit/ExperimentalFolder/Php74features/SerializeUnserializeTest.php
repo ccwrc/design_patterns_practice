@@ -15,8 +15,8 @@ class SerializeUnserializeTest extends TestCase
         $originalName = 'Maggie';
         $originalObject = new SerializeUnserialize($originalName);
 
-        $afterSerializedName = SerializeUnserialize::WARNING_MESSAGE . $originalName;
-        $afterSerializedIsZombie = true;
+        $afterDeserializationName = SerializeUnserialize::WARNING_MESSAGE . $originalName;
+        $afterDeserializationIsZombie = true;
 
         $serializedObject = \serialize($originalObject);
 
@@ -24,7 +24,7 @@ class SerializeUnserializeTest extends TestCase
         $unserializedObject = \unserialize($serializedObject);
 
         $this->assertInstanceOf(SerializeUnserialize::class, $unserializedObject);
-        $this->assertEquals($afterSerializedName, $unserializedObject->getName());
-        $this->assertEquals($afterSerializedIsZombie, $unserializedObject->isZombie);
+        $this->assertEquals($afterDeserializationName, $unserializedObject->getName());
+        $this->assertEquals($afterDeserializationIsZombie, $unserializedObject->isZombie);
     }
 }
