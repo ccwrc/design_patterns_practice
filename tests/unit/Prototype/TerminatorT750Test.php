@@ -26,17 +26,18 @@ class TerminatorT750Test extends TestCase
      */
     public function testProductionSpeed(): void
     {
-        $t750 = new TerminatorT750(6);
+        $t750 = new TerminatorT750(5);
+        $numberOfRepetitions = 2001;
 
         $startProductionClones = \hrtime(true);
-        for ($i = 1; $i <= 1001; $i++) {
-            $clone = clone $t750;
+        for ($i = 1; $i <= $numberOfRepetitions; $i++) {
+            clone $t750;
         }
         $endProductionClones = \hrtime(true);
 
         $startProductionObjects = \hrtime(true);
-        for ($i = 1; $i <= 1001; $i++) {
-            $object = new TerminatorT750(5);
+        for ($i = 1; $i <= $numberOfRepetitions; $i++) {
+            new TerminatorT750(5);
         }
         $endProductionObjects = \hrtime(true);
 
