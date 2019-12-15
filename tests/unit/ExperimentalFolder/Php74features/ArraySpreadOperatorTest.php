@@ -33,23 +33,21 @@ class ArraySpreadOperatorTest extends TestCase
 
     public function testErrorGlueThreeArrays(): void
     {
-        $array1 = ['one' => 1];
-        $array2 = ['two' => 2];
-        $array3 = ['three' => 3];
+        $array = ['one' => 1];
 
         $this->expectException(\Error::class);
         ArraySpreadOperator::glueThreeArrays(
-            $array1,
-            $array2,
-            $array3
+            $array,
+            $array,
+            $array
         );
     }
 
     public function testGlueSpeed(): void
     {
-        $array1 = [1, 2, 3];
-        $array2 = [4, 5];
-        $array3 = [6];
+        $array1 = [2, 3, 4];
+        $array2 = [5, 6];
+        $array3 = [7];
         $numberOfRepetitions = 520;
 
         $startGlue = \hrtime(true);
@@ -64,11 +62,11 @@ class ArraySpreadOperatorTest extends TestCase
         }
         $endGlueOldWay = \hrtime(true);
 
-        $productionTimeGlue = $endGlue - $startGlue;
-        $productionTimeGlueOldWay = $endGlueOldWay - $startGlueOldWay;
-        MicroLogger::addLog('glue: ' . $productionTimeGlue);
-        MicroLogger::addLog('glueOldWay: ' . $productionTimeGlueOldWay);
+        $executionTimeGlue = $endGlue - $startGlue;
+        $executionTimeGlueOldWay = $endGlueOldWay - $startGlueOldWay;
+        MicroLogger::addLog('glue: ' . $executionTimeGlue);
+        MicroLogger::addLog('glueOldWay: ' . $executionTimeGlueOldWay);
 
-        $this->assertGreaterThan($productionTimeGlue, $productionTimeGlueOldWay);
+        $this->assertGreaterThan($executionTimeGlue, $executionTimeGlueOldWay);
     }
 }
