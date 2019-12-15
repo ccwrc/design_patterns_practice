@@ -28,6 +28,6 @@ final class ArraySpreadOperator
         array $array3
     ): array
     {
-        return array_merge($array1, $array2, $array3);
+        return \array_merge($array1, $array2, $array3);
     }
 }
