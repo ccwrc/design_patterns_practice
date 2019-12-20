@@ -4,29 +4,41 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder\Other;
 
-class AtariChristmasTree2019
+class AtariChristmasTreeContest2019
 {
     private const ATARI_FANS = [
         'fan 1',
         'fan 2',
         'fan 3',
-        'fan 4',
+        'fan 4'
     ];
 
     /**
      * @var string[]
      */
-    private array $supervisorsEmails;
+    private $supervisorsEmails;
 
     public function __construct(array $supervisorsEmails)
     {
         $this->supervisorsEmails = self::verifyEmailsFrom($supervisorsEmails);
     }
 
-    public function drawOneFan(): string
+    public function andTheWinnerIs(): string
+    {
+        $winner = $this->drawOneFan();
+
+        // todo sending emails
+
+        return $winner;
+    }
+
+    private function drawOneFan(): string
     {
         $first = 0;
-        // todo
+        $last = \sizeof(self::ATARI_FANS) - 1;
+        $winner = \rand($first, $last);
+
+        return self::ATARI_FANS[$winner];
     }
 
     private static function verifyEmailsFrom(array $array): array
