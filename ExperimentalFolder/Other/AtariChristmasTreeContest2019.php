@@ -4,16 +4,21 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder\Other;
 
+use Patterns\ExperimentalFolder\MicroLogger;
+
+use PHPMailer\PHPMailer\Exception;
+
 /**
  * @link http://atarionline.pl/forum/comments.php?DiscussionID=5179 contest
  */
-class AtariChristmasTreeContest2019
+final class AtariChristmasTreeContest2019
 {
-    private const ATARI_FANS = [
+    private const ATARI_HOTHEADS = [
         'IRATA4',
         'pin',
         'mgr_inz_rafal',
-        'bocianu'
+        'bocianu',
+        'Pecet'
     ];
 
     /**
@@ -26,24 +31,38 @@ class AtariChristmasTreeContest2019
         $this->supervisorsEmails = self::verifyEmailsFrom($supervisorsEmails);
     }
 
+    /**
+     * @throws Exception
+     */
     public function andTheWinnerIs(): string
     {
-        $winner = $this->drawOneFan();
+        $winner = $this->drawOneHothead();
 
-        // todo sending emails
+        SendEmailFromGmail::sendMailToManyPeopleBcc(
+            'Atari Christmas Tree Contest 2019 winner is ',
+            $winner,
+            $this->supervisorsEmails
+        );
+        MicroLogger::addLog('Atari Christmas Tree Contest 2019 winner is: ' . $winner);
 
         return $winner;
     }
 
-    private function drawOneFan(): string
+    private function drawOneHothead(): string
     {
+        $arrayWithoutDuplicates = array_unique(self::ATARI_HOTHEADS, SORT_STRING);
+
         $first = 0;
-        $last = \sizeof(self::ATARI_FANS) - 1;
+        $last = \sizeof($arrayWithoutDuplicates) - 1;
         $winner = \rand($first, $last);
 
-        return self::ATARI_FANS[$winner];
+        return (string)$arrayWithoutDuplicates[$winner];
     }
 
+    /**
+     * @param string[] $array
+     * @return string[]
+     */
     private static function verifyEmailsFrom(array $array): array
     {
         $verifiedEmails = [];

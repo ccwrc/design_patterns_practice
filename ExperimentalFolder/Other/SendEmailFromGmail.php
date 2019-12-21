@@ -6,39 +6,95 @@ namespace Patterns\ExperimentalFolder\Other;
 
 use Patterns\ExperimentalFolder\EnvironmentVariables;
 
-use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\{Exception, PHPMailer};
 
-class SendEmailFromGmail
+/**
+ * @link https://myaccount.google.com/lesssecureapps Check if you have problems with gmail.
+ */
+final class SendEmailFromGmail
 {
-    public function sendMail(
-        string $title,
+    /**
+     * @throws Exception
+     */
+    public static function sendMail(
+        string $subject,
         string $content,
         string $email
-    )
+    ): void
     {
-        $mailer = new PHPMailer(true);
+        $mailer = self::getConfiguredPhpMailer();
+        $mailer->addAddress($email);
+        $mailer->Subject = $subject;
+        $mailer->Body = htmlentities(trim($content), ENT_QUOTES, "UTF-8");
+
+        if (!$mailer->send()) {
+            throw new Exception($mailer->ErrorInfo);
+        }
     }
 
-    public function sendMailToManyPeople(
-        string $title,
+    /**
+     * @param string[] $emails You must provide at least one recipient email address.
+     * @throws Exception
+     */
+    public static function sendMailToManyPeopleBcc(
+        string $subject,
         string $content,
         array $emails
-    )
+    ): void
     {
-        //
+        $mailer = self::getConfiguredPhpMailer();
+
+        foreach ($emails as $email) {
+            if (\filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $mailer->addBCC($email);
+            }
+        }
+
+        $mailer->Subject = $subject;
+        $mailer->Body = htmlentities(trim($content), ENT_QUOTES, "UTF-8");
+
+        if (!$mailer->send()) {
+            throw new Exception($mailer->ErrorInfo);
+        }
+    }
+
+    /**
+     * @throws Exception
+     */
+    private static function getConfiguredPhpMailer(): PHPMailer
+    {
+        $gmailAddress = self::getGmailAddress();
+        $gmailPassword = self::getGmailPassword();
+        if (('' == $gmailPassword) || ('empty' == $gmailAddress)) {
+            throw new Exception('Check if you have entered email and password.');
+        }
+
+        $mailer = new PHPMailer(true);
+        $mailer->isSMTP();
+        $mailer->Host = 'smtp.gmail.com';
+        $mailer->SMTPAuth = true;
+        $mailer->Username = $gmailAddress;
+        $mailer->Password = $gmailPassword;
+        $mailer->SMTPSecure = 'tls';
+        $mailer->Port = 587;
+        $mailer->CharSet = "UTF-8";
+        $mailer->setFrom($gmailAddress);
+        $mailer->addReplyTo($gmailAddress);
+
+        return $mailer;
     }
 
     private static function getGmailAddress(): string
     {
         EnvironmentVariables::load();
 
-        return $_ENV['GMAIL_ADDRESS'] ??= 'empty';
+        return $_ENV['GMAIL_ADDRESS'] ?? 'empty';
     }
 
     private static function getGmailPassword(): string
     {
         EnvironmentVariables::load();
 
-        return $_ENV['GMAIL_PASSWORD'] ??= 'empty';
+        return $_ENV['GMAIL_PASSWORD'] ?? 'empty';
     }
 }
