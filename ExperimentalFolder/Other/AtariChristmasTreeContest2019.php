@@ -4,13 +4,16 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder\Other;
 
+/**
+ * @link http://atarionline.pl/forum/comments.php?DiscussionID=5179 contest
+ */
 class AtariChristmasTreeContest2019
 {
     private const ATARI_FANS = [
-        'fan 1',
-        'fan 2',
-        'fan 3',
-        'fan 4'
+        'IRATA4',
+        'pin',
+        'mgr_inz_rafal',
+        'bocianu'
     ];
 
     /**
