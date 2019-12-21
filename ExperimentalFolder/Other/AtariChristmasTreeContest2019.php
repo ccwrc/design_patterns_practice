@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder\Other;
 
-use Patterns\ExperimentalFolder\MicroLogger;
-
 use PHPMailer\PHPMailer\Exception;
 
 /**
@@ -26,6 +24,9 @@ final class AtariChristmasTreeContest2019
      */
     private $supervisorsEmails;
 
+    /**
+     * @param string[] $supervisorsEmails
+     */
     public function __construct(array $supervisorsEmails)
     {
         $this->supervisorsEmails = self::verifyEmailsFrom($supervisorsEmails);
@@ -39,11 +40,10 @@ final class AtariChristmasTreeContest2019
         $winner = $this->drawOneHothead();
 
         SendEmailFromGmail::sendMailToManyPeopleBcc(
-            'Atari Christmas Tree Contest 2019 winner is ',
+            'Atari Christmas Tree Contest 2019 winner is',
             $winner,
             $this->supervisorsEmails
         );
-        MicroLogger::addLog('Atari Christmas Tree Contest 2019 winner is: ' . $winner);
 
         return $winner;
     }
