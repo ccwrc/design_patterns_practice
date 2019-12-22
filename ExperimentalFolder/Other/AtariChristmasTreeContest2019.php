@@ -28,15 +28,15 @@ final class AtariChristmasTreeContest2019
      */
     private array $supervisorsEmails;
 
-    private bool $sendEmails = false;
+    private bool $permissionToSendEmails = false;
 
     /**
      * @param string[] $supervisorsEmails
      */
-    public function __construct(array $supervisorsEmails, bool $sendEmails = false)
+    public function __construct(array $supervisorsEmails, bool $permissionToSendEmails = false)
     {
         $this->supervisorsEmails = self::verifyEmailsFrom($supervisorsEmails);
-        $this->sendEmails = $sendEmails;
+        $this->permissionToSendEmails = $permissionToSendEmails;
     }
 
     /**
@@ -46,7 +46,7 @@ final class AtariChristmasTreeContest2019
     {
         $winner = $this->drawOneHothead();
 
-        if ($this->sendEmails) {
+        if ($this->permissionToSendEmails) {
             SendEmailFromGmail::sendMailToManyPeopleBcc(
                 'Atari Christmas Tree Contest 2019 winner is',
                 $winner,
@@ -59,7 +59,7 @@ final class AtariChristmasTreeContest2019
 
     private function drawOneHothead(): string
     {
-        $arrayWithoutDuplicates = array_unique(self::ATARI_HOTHEADS, SORT_STRING);
+        $arrayWithoutDuplicates = \array_unique(self::ATARI_HOTHEADS, SORT_STRING);
         $firstKey = \array_key_first($arrayWithoutDuplicates);
         $lastKey = \array_key_last($arrayWithoutDuplicates);
         $winner = \rand($firstKey, $lastKey);

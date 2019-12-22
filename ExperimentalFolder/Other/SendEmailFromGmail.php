@@ -19,13 +19,13 @@ final class SendEmailFromGmail
     public static function sendMail(
         string $subject,
         string $content,
-        string $email
+        string $emailAddress
     ): void
     {
         $mailer = self::getConfiguredPhpMailer();
-        $mailer->addAddress($email);
+        $mailer->addAddress($emailAddress);
         $mailer->Subject = $subject;
-        $mailer->Body = htmlentities(trim($content), ENT_QUOTES, "UTF-8");
+        $mailer->Body = \htmlentities(\trim($content), ENT_QUOTES, "UTF-8");
 
         if (!$mailer->send()) {
             throw new Exception($mailer->ErrorInfo);
@@ -33,25 +33,25 @@ final class SendEmailFromGmail
     }
 
     /**
-     * @param string[] $emails You must provide at least one recipient email address.
+     * @param string[] $emailAddresses You must provide at least one recipient email address.
      * @throws Exception
      */
     public static function sendMailToManyPeopleBcc(
         string $subject,
         string $content,
-        array $emails
+        array $emailAddresses
     ): void
     {
         $mailer = self::getConfiguredPhpMailer();
 
-        foreach ($emails as $email) {
+        foreach ($emailAddresses as $email) {
             if (\filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $mailer->addBCC($email);
             }
         }
 
         $mailer->Subject = $subject;
-        $mailer->Body = htmlentities(trim($content), ENT_QUOTES, "UTF-8");
+        $mailer->Body = \htmlentities(\trim($content), ENT_QUOTES, "UTF-8");
 
         if (!$mailer->send()) {
             throw new Exception($mailer->ErrorInfo);
