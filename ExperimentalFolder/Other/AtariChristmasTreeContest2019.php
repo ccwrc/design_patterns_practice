@@ -16,7 +16,11 @@ final class AtariChristmasTreeContest2019
         'pin',
         'mgr_inz_rafal',
         'bocianu',
-        'Pecet'
+        'Pecet',
+        'larek',
+        'duncan',
+        'bandolier',
+        'mysiek'
     ];
 
     /**
