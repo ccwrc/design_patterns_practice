@@ -20,7 +20,8 @@ final class AtariChristmasTreeContest2019
         'larek',
         'duncan',
         'bandolier',
-        'mysiek'
+        'mysiek',
+        'renton'
     ];
 
     /**
