@@ -21,7 +21,8 @@ final class AtariChristmasTreeContest2019
         'duncan',
         'bandolier',
         'mysiek',
-        'renton'
+        'renton',
+        'TMJ'
     ];
 
     /**
