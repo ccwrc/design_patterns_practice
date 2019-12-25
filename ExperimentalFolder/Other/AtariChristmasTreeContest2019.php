@@ -43,7 +43,8 @@ final class AtariChristmasTreeContest2019
     public function __construct(
         SendEmailInterface $sendEmail,
         array $supervisorsEmails,
-        bool $permissionToSendEmails = false)
+        bool $permissionToSendEmails = false
+    )
     {
         $this->sendEmail = $sendEmail;
         $this->supervisorsEmails = self::verifyEmailsFrom($supervisorsEmails);
