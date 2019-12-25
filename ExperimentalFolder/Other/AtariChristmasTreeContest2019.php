@@ -21,7 +21,8 @@ final class AtariChristmasTreeContest2019
         'mysiek',
         'renton',
         'TMJ',
-        'GRooBY'
+        'GRooBY',
+        'martinez'
     ];
 
     /**
