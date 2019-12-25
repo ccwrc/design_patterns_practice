@@ -9,7 +9,7 @@ namespace Patterns\ExperimentalFolder\Other;
  */
 final class AtariChristmasTreeContest2019
 {
-    private const ATARI_HOTHEADS = [
+    public const ATARI_HOTHEADS = [
         'IRATA4',
         'pin',
         'mgr_inz_rafal',
