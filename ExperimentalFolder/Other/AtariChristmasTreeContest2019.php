@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder\Other;
 
-use PHPMailer\PHPMailer\Exception;
-
 /**
  * @link http://atarionline.pl/forum/comments.php?DiscussionID=5179 contest
  */
@@ -22,7 +20,8 @@ final class AtariChristmasTreeContest2019
         'bandolier',
         'mysiek',
         'renton',
-        'TMJ'
+        'TMJ',
+        'GRooBY'
     ];
 
     /**
@@ -33,23 +32,32 @@ final class AtariChristmasTreeContest2019
     private bool $permissionToSendEmails = false;
 
     /**
+     * @var SendEmailInterface
+     */
+    private $sendEmail;
+
+    /**
      * @param string[] $supervisorsEmails
      */
-    public function __construct(array $supervisorsEmails, bool $permissionToSendEmails = false)
+    public function __construct(
+        SendEmailInterface $sendEmail,
+        array $supervisorsEmails,
+        bool $permissionToSendEmails = false)
     {
+        $this->sendEmail = $sendEmail;
         $this->supervisorsEmails = self::verifyEmailsFrom($supervisorsEmails);
         $this->permissionToSendEmails = $permissionToSendEmails;
     }
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function andTheWinnerIs(): string
     {
         $winner = $this->drawOneHothead();
 
         if ($this->permissionToSendEmails) {
-            SendEmailFromGmail::sendMailToManyPeopleBcc(
+            $this->sendEmail::sendMailToManyPeopleBcc(
                 'Atari Christmas Tree Contest 2019 winner is',
                 $winner,
                 $this->supervisorsEmails

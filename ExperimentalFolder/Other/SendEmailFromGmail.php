@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\{Exception, PHPMailer};
 /**
  * @link https://myaccount.google.com/lesssecureapps Check if you have problems with gmail.
  */
-final class SendEmailFromGmail
+final class SendEmailFromGmail implements SendEmailInterface
 {
     /**
      * @throws Exception
