@@ -23,7 +23,8 @@ final class AtariChristmasTreeContest2019
         'TMJ',
         'GRooBY',
         'martinez',
-        'Creonix'
+        'Creonix',
+        'kris3d'
     ];
 
     /**
@@ -75,9 +76,9 @@ final class AtariChristmasTreeContest2019
         $arrayWithoutDuplicates = \array_unique(self::ATARI_HOTHEADS, SORT_STRING);
         $firstKey = \array_key_first($arrayWithoutDuplicates);
         $lastKey = \array_key_last($arrayWithoutDuplicates);
-        $winner = \rand($firstKey, $lastKey);
+        $winnerKey = \rand($firstKey, $lastKey);
 
-        return (string)$arrayWithoutDuplicates[$winner];
+        return (string)$arrayWithoutDuplicates[$winnerKey];
     }
 
     /**
