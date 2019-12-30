@@ -22,8 +22,14 @@ final class AtariChristmasTreeContest2019
         'renton',
         'TMJ',
         'GRooBY',
-        'martinez'
+        'martinez',
+        'Creonix'
     ];
+
+    /**
+     * @var SendEmailInterface
+     */
+    private $sendEmail;
 
     /**
      * @var string[]
@@ -31,11 +37,6 @@ final class AtariChristmasTreeContest2019
     private array $supervisorsEmails;
 
     private bool $permissionToSendEmails = false;
-
-    /**
-     * @var SendEmailInterface
-     */
-    private $sendEmail;
 
     /**
      * @param string[] $supervisorsEmails
