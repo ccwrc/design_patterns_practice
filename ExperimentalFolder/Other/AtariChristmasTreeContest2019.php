@@ -24,7 +24,11 @@ final class AtariChristmasTreeContest2019
         'GRooBY',
         'martinez',
         'Creonix',
-        'kris3d'
+        'kris3d',
+        'kamilosik',
+        'astrofor',
+        'drygol',
+        'hubowski'
     ];
 
     /**
