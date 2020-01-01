@@ -28,7 +28,9 @@ final class AtariChristmasTreeContest2019
         'kamilosik',
         'astrofor',
         'drygol',
-        'hubowski'
+        'hubowski',
+        'ZuluGula',
+        'Kaz'
     ];
 
     /**
