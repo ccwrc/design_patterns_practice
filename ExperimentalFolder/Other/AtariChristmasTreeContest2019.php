@@ -30,7 +30,9 @@ final class AtariChristmasTreeContest2019
         'drygol',
         'hubowski',
         'ZuluGula',
-        'Kaz'
+        'Kaz',
+        'QTZ',
+        'Kroll'
     ];
 
     /**
