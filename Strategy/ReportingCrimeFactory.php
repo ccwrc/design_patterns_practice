@@ -18,7 +18,7 @@ final class ReportingCrimeFactory
      * @param string $crimeType
      * @return ReportingCrime
      */
-    static public function create(string $crimeType): ReportingCrime
+    public static function create(string $crimeType): ReportingCrime
     {
         switch (strtolower($crimeType)) {
             case 'carjacking':
