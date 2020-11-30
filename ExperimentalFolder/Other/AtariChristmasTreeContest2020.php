@@ -11,7 +11,6 @@ final class AtariChristmasTreeContest2020
 {
     public const PEOPLE_OF_CARBON_AND_STEEL = [
         'bocianu',
-        'GRooBY',
         'sun',
         'pustak',
         'Kaz',
@@ -21,5 +20,10 @@ final class AtariChristmasTreeContest2020
         'mav',
         'xtrem007',
         'string',
+        'IRATA4',
+    ];
+
+    public const LAST_CONTEST_WINNER = [
+        'GRooBY'
     ];
 }
