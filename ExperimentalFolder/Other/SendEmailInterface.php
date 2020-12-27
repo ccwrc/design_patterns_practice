@@ -18,7 +18,7 @@ interface SendEmailInterface
     /**
      * @param string $subject
      * @param string $content
-     * @param string[] $emailAddresses You must provide at least one recipient email address.
+     * @param string[] $emailAddresses
      *
      * @throws \Exception
      */

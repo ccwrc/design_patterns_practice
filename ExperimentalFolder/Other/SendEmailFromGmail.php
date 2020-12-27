@@ -39,7 +39,7 @@ final class SendEmailFromGmail implements SendEmailInterface
     /**
      * @param string $subject
      * @param string $content
-     * @param string[] $emailAddresses You must provide at least one recipient email address.
+     * @param string[] $emailAddresses
      *
      * @throws Exception
      */
@@ -49,6 +49,10 @@ final class SendEmailFromGmail implements SendEmailInterface
         array $emailAddresses
     ): void
     {
+        if (empty($emailAddresses)) {
+            return;
+        }
+
         $mailer = self::getConfiguredPhpMailer();
 
         foreach ($emailAddresses as $email) {

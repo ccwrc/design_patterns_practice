@@ -32,11 +32,15 @@ final class AtariChristmasTreeContest2020
     ];
 
     /**
+     * Handle for sending e-mails.
+     *
      * @var SendEmailInterface
      */
     private SendEmailInterface $sendEmail;
 
     /**
+     * Emails of persons supervising the draw.
+     *
      * @var string[]
      */
     private array $supervisorsEmails;
@@ -51,6 +55,8 @@ final class AtariChristmasTreeContest2020
     }
 
     /**
+     * Draws a winner and sends information to supervisors.
+     *
      * @throws \Exception
      */
     public function andTheWinnerIs(): string
@@ -69,6 +75,8 @@ final class AtariChristmasTreeContest2020
     }
 
     /**
+     * Draws the winner.
+     *
      * @return string
      */
     private function drawOne(): string
@@ -83,6 +91,8 @@ final class AtariChristmasTreeContest2020
     }
 
     /**
+     * Returns valid email addresses.
+     *
      * @param string[] $array
      *
      * @return string[]
@@ -101,6 +111,8 @@ final class AtariChristmasTreeContest2020
     }
 
     /**
+     * Generates the content of the message for the persons supervising the draw.
+     *
      * @param string $winner
      *
      * @return string
