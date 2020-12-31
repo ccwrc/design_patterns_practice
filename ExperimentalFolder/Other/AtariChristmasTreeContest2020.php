@@ -25,6 +25,9 @@ final class AtariChristmasTreeContest2020
         'xtrem007',
         'string',
         'IRATA4',
+        'Kroll',
+        'Barnaba',
+        'jhusak',
     ];
 
     public const LAST_CONTEST_WINNER = [
