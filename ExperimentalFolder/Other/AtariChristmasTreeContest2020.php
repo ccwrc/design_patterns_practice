@@ -28,6 +28,8 @@ final class AtariChristmasTreeContest2020
         'Kroll',
         'Barnaba',
         'jhusak',
+        'laoo',
+        'mkolodziejski',
     ];
 
     public const LAST_CONTEST_WINNER = [
