@@ -23,7 +23,7 @@ final class AtariChristmasTreeContest2020
         'zaxon',
         'mav',
         'xtrem007',
-        'string',
+        'string', //winner
         'IRATA4',
         'Kroll',
         'Barnaba',
