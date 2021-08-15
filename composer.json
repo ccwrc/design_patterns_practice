@@ -14,9 +14,10 @@
     "ext-pdo": "*",
     "ext-mysqli": "*",
     "ext-xml": "*",
-    "phpmailer/phpmailer": "^6.1.6"
+    "phpmailer/phpmailer": "^v6.5.0"
   },
   "require-dev": {
+    "roave/security-advisories": "dev-latest",
     "phpunit/phpunit": "^7"
   }
 }

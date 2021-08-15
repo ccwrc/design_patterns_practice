@@ -12,25 +12,38 @@ use PHPUnit\Framework\TestCase;
 class GeneratorFeatureTest extends TestCase
 {
     /**
-     * Run tests twice (switch comment/uncomment lines) and look at MicroLogger.txt file.
-     * Above file in Patterns\ExperimentalFolder\MicroLogger.txt
-     *
      * My results:
      * 45 142 016 (bytes) used memory - $generator->operateOnFileNoUseGenerator();
      * 15 777 792 (bytes) used memory - $generator->operateOnFileWithGenerator();
      */
-    public function testMemoryGetPeakUsage(): void
+    public function testMemoryGetPeakUsageWithGenerator(): int
     {
         $generator = new GeneratorFeature(300000);
 
-        // Comment/uncomment the following two lines:
-        //$generator->operateOnFileNoUseGenerator();
-        //MicroLogger::addLog('Test memory no Generator: ' . memory_get_peak_usage(true));
-
-        // Comment/uncomment the following two lines:
         $generator->operateOnFileWithGenerator();
-        MicroLogger::addLog('Test memory with Generator: ' . memory_get_peak_usage(true));
+        $memoryPeakUsage = memory_get_peak_usage(true);
+        MicroLogger::addLog('Test memory with Generator: ' . $memoryPeakUsage);
 
-        $this->markTestSkipped('Memory test.');
+        $this->assertGreaterThan(1, $memoryPeakUsage);
+
+        return $memoryPeakUsage;
+    }
+
+    /**
+     * My results:
+     * 45 142 016 (bytes) used memory - $generator->operateOnFileNoUseGenerator();
+     * 15 777 792 (bytes) used memory - $generator->operateOnFileWithGenerator();
+     *
+     * @depends testMemoryGetPeakUsageWithGenerator
+     */
+    public function testMemoryGetPeakUsageNoGenerator(int $memoryPeakUsageWithGenerator): void
+    {
+        $generator = new GeneratorFeature(300000);
+
+        $generator->operateOnFileNoUseGenerator();
+        $memoryPeakUsageNoGenerator = memory_get_peak_usage(true);
+        MicroLogger::addLog('Test memory no Generator: ' . $memoryPeakUsageNoGenerator);
+
+        $this->assertGreaterThan($memoryPeakUsageWithGenerator, $memoryPeakUsageNoGenerator);
     }
 }
