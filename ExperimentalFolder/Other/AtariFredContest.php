@@ -25,7 +25,7 @@ final class AtariFredContest
         'GRooBY (atarionline.pl)',
         'Barnaba (atarionline.pl)',
         //'pgru (atarionline.pl)', //did not meet the requirements
-        'solaris104 (oldcomp.cz)',
+        'solaris104 (oldcomp.cz)', //28.08.2021 winner
     ];
 
     public const BEST_PHOTO = 'Mr.Bacardi (atariage.com)';
