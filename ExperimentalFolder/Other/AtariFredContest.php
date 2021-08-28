@@ -24,17 +24,13 @@ final class AtariFredContest
     public const PEOPLE_OF_CARBON_AND_STEEL = [
         'GRooBY (atarionline.pl)',
         'Barnaba (atarionline.pl)',
-        //'pgru (atarionline.pl)', //todo so far it does not meet the requirements
-        'Mr.Bacardi (atariage.com)',
-        //'devwebcl (atariage.com)', //todo drawings
+        //'pgru (atarionline.pl)', //did not meet the requirements
         'solaris104 (oldcomp.cz)',
     ];
 
-    public const BEST_PHOTOGRAPHY = [
-        //todo choose the best photos
-        'test photo 1',
-        'test photo 2',
-    ];
+    public const BEST_PHOTO = 'Mr.Bacardi (atariage.com)';
+
+    public const BEST_PHOTO_AGAINST_THE_RULES = 'devwebcl (atariage.com)';
 
     /**
      * Handle for sending e-mails.
@@ -116,10 +112,14 @@ final class AtariFredContest
      */
     private function createEmailContent(string $winner): string
     {
-        $counter = count(array_merge(self::PEOPLE_OF_CARBON_AND_STEEL, self::BEST_PHOTOGRAPHY));
+        $arrayForCounter = self::PEOPLE_OF_CARBON_AND_STEEL;
+        $arrayForCounter[] = self::BEST_PHOTO;
+        $arrayForCounter[] = self::BEST_PHOTO_AGAINST_THE_RULES;
 
         return 'Winner: ' . $winner . "\n"
-            . 'Number of people of carbon and steel: ' . $counter . "\n"
+            . 'Best photo: ' . self::BEST_PHOTO . "\n"
+            . 'Best photo against the rules: ' . self::BEST_PHOTO_AGAINST_THE_RULES . "\n"
+            . 'Number of people of carbon and steel: ' . count($arrayForCounter) . "\n"
             . 'Link to contest: ' . self::LINK_TO_CONTEST . "\n"
             . "\n"
             . 'Greetings, ' . "\n"
