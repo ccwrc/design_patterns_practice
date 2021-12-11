@@ -9,10 +9,7 @@ namespace Patterns\Command;
  */
 final class Officer implements CommandInvokerInterface
 {
-    /**
-     * @var Command
-     */
-    private $command;
+    private Command $command;
 
     public function setCommand(Command $command): void
     {
@@ -26,7 +23,9 @@ final class Officer implements CommandInvokerInterface
 
     /**
      * @link https://wiki.php.net/rfc/json_throw_on_error JsonException is available from PHP 7.3
+     *
      * @param string $jsonToDecode
+     *
      * @throws \JsonException
      * @return bool
      */
@@ -39,14 +38,21 @@ final class Officer implements CommandInvokerInterface
 
     /**
      * Which key is the key to the military latrine.
+     *
      * @link https://wiki.php.net/rfc/array_key_first_last array_key_first() and array_key_last() implemented in PHP 7.3
+     *
      * @param array $array
-     * @return array
+     *
+     * @return array [
+     *                 'key' => int|string|NULL
+     *               ]
      */
     public function showArrayFirstKey(array $array): array
     {
         $firstKey = array_key_first($array);
 
-        return ['key' => $firstKey];
+        return [
+            'key' => $firstKey
+        ];
     }
 }

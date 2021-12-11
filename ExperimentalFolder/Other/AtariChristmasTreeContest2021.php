@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder\Other;
 
-use Patterns\ExperimentalFolder\MicroLogger;
-use Patterns\ExperimentalFolder\Utils\VerifyEmails;
+use Patterns\ExperimentalFolder\{MicroLogger, Utils\VerifyEmails};
 
 /**
  * @link https://atarionline.pl/forum/comments.php?DiscussionID=6245 contest
@@ -18,8 +17,6 @@ final class AtariChristmasTreeContest2021
 
     public const PEOPLE_OF_CARBON_AND_STEEL = [
         'lopez',
-        'for_test', //todo del
-        'for_test_2', //todo del
     ];
 
     /**
@@ -36,7 +33,7 @@ final class AtariChristmasTreeContest2021
 
     public function __construct(
         SendEmailInterface $sendEmail,
-        array $supervisorsEmails
+        array              $supervisorsEmails
     )
     {
         $this->sendEmail = $sendEmail;

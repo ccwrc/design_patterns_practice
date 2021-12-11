@@ -10,6 +10,7 @@ final class SpiderManFactory extends SpiderFactory
 {
     /**
      * @param int $strength
+     *
      * @return Cobweb
      */
     public function makeWeb(int $strength): Cobweb
@@ -21,6 +22,7 @@ final class SpiderManFactory extends SpiderFactory
      * @link http://php.net/manual/en/migration56.new-features.php splat operator
      * @link http://itcraftsman.pl/co-nowego-w-php-5-6/ splat operator examples
      * @param string ...$criminals
+     *
      * @return string[]
      */
     public function catchCriminals(string ...$criminals): array

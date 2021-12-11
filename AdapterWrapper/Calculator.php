@@ -17,10 +17,7 @@ final class Calculator implements CalculatorInterface
     }
 
     /**
-     * returns income minus expenses
-     * @param int $income
-     * @param int $expenses
-     * @return int
+     * @inheritDoc
      */
     public function countryBudget(int $income, int $expenses): int
     {
@@ -29,8 +26,10 @@ final class Calculator implements CalculatorInterface
 
     /**
      * is_countable - new in PHP 7.3
+     *
      * @link http://php.net/manual/en/function.is-countable.php doc is_countable
      * @param mixed $something
+     *
      * @return bool
      */
     public static function isSomethingCountable($something): bool

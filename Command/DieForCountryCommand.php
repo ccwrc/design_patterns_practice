@@ -9,10 +9,7 @@ namespace Patterns\Command;
  */
 final class DieForCountryCommand extends Command
 {
-    /**
-     * @var SoldierArmyInterface
-     */
-    private $soldierArmy;
+    private SoldierArmyInterface $soldierArmy;
 
     public function __construct(SoldierArmyInterface $soldierArmy)
     {

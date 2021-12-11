@@ -11,10 +11,7 @@ final class PrepareSoldierToBattleCommand extends Command
 {
     public const CALORIES_FOR_BATTLE = 3500;
 
-    /**
-     * @var SoldierArmyInterface
-     */
-    private $soldierArmy;
+    private SoldierArmyInterface $soldierArmy;
 
     public function __construct(SoldierArmyInterface $soldierArmy)
     {

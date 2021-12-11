@@ -9,22 +9,13 @@ namespace Patterns\Command;
  */
 final class Soldier implements SoldierArmyInterface
 {
-    /**
-     * @var string
-     */
-    private $rank;
-    /**
-     * @var string
-     */
-    private $name;
-    /**
-     * @var bool
-     */
-    private $isDead;
-    /**
-     * @var int
-     */
-    private $calories;
+    private string $rank;
+
+    private string $name;
+
+    private bool $isDead;
+
+    private int $calories;
 
     public function __construct(string $rank, string $name)
     {
@@ -44,10 +35,13 @@ final class Soldier implements SoldierArmyInterface
     public function shootForCountry(): void
     {
         $this->throwDomainExceptionIfSoldierIsDead();
-        $this->calories -= 1;
+        --$this->calories;
         $this->checkCaloricBalanceAndMarkIfHeDied();
     }
 
+    /**
+     * @inheritDoc
+     */
     public function eatForGloryOfCountry(int $calories): void
     {
         $this->throwDomainExceptionIfSoldierIsDead();

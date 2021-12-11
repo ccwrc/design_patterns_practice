@@ -12,10 +12,7 @@ use Patterns\AdapterWrapper\{Calculator, OptimisticCalculatorInterface};
  */
 final class OptimisticCalculator implements OptimisticCalculatorInterface
 {
-    /**
-     * @var Calculator
-     */
-    private $calculatorObject;
+    private Calculator $calculatorObject;
 
     public function __construct()
     {
@@ -23,10 +20,7 @@ final class OptimisticCalculator implements OptimisticCalculatorInterface
     }
 
     /**
-     * returns only absolute values
-     * @param int $number1
-     * @param int $number2
-     * @return int
+     * @inheritDoc
      */
     public function optimisticAddNumbers(int $number1, int $number2): int
     {
@@ -34,10 +28,7 @@ final class OptimisticCalculator implements OptimisticCalculatorInterface
     }
 
     /**
-     * returns only absolute values
-     * @param int $number1
-     * @param int $number2
-     * @return int
+     * @inheritDoc
      */
     public function optimisticMultiplyNumbers(int $number1, int $number2): int
     {
@@ -45,10 +36,7 @@ final class OptimisticCalculator implements OptimisticCalculatorInterface
     }
 
     /**
-     * returns only absolute values
-     * @param int $income
-     * @param int $expenses
-     * @return int
+     * @inheritDoc
      */
     public function optimisticCountryBudget(int $income, int $expenses): int
     {

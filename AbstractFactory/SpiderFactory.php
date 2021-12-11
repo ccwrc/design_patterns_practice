@@ -6,10 +6,7 @@ namespace Patterns\AbstractFactory;
 
 abstract class SpiderFactory
 {
-    /**
-     * @var string
-     */
-    public $name;
+    public string $name;
 
     public function __construct(string $name)
     {

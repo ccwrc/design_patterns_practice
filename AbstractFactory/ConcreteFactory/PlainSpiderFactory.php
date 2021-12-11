@@ -10,6 +10,7 @@ final class PlainSpiderFactory extends SpiderFactory
 {
     /**
      * @param int $strength
+     *
      * @return Cobweb
      */
     public function makeWeb(int $strength): Cobweb

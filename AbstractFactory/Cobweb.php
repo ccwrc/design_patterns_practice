@@ -6,14 +6,9 @@ namespace Patterns\AbstractFactory;
 
 abstract class Cobweb
 {
-    /**
-     * @var int
-     */
-    protected $strength;
-    /**
-     * @var string
-     */
-    protected $productionTechnology;
+    protected int $strength;
+
+    protected string $productionTechnology;
 
     public function __construct(int $strength)
     {

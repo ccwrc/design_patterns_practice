@@ -6,9 +6,9 @@ namespace Patterns\Builder;
 
 class AtariMotherboardBuilder implements MotherboardBuilder
 {
-    private $pcb;
-    private $lan;
-    private $audioCard;
+    private string $pcb;
+    private string $lan;
+    private string $audioCard;
 
     public function createPcb(): void
     {
