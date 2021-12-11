@@ -25,12 +25,10 @@ class ChinaFactoryTest extends TestCase
         $this->assertInstanceOf(EroticAccessory::class, ChinaFactory::createEroticAccessoryFor(ChinaFactory::FOR_BI));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage is not a valid sex
-     */
     public function testInvalidSexArgument(): void
     {
+        $this->expectExceptionMessage("is not a valid sex");
+        $this->expectException(\InvalidArgumentException::class);
         ChinaFactory::createEroticAccessoryFor('Cat');
     }
 }

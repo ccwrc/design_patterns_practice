@@ -56,7 +56,7 @@ class SarahTest extends TestCase
     {
         $sarah = new Sarah(true);
 
-        $this->assertInternalType('int', $sarah->getLocation());
+        $this->assertIsInt($sarah->getLocation());
     }
 
     public function testChangeLocation(): void

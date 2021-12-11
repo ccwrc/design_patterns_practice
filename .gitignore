@@ -4,6 +4,7 @@ notes.txt
 index.php
 test.php
 .env
+.phpunit.result.cache
 
 ExperimentalFolder/MicroLogger.txt
 ExperimentalFolder/Php55features/TestGenerator.txt

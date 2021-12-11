@@ -48,7 +48,7 @@ class TerminatorT1100Test extends TestCase
 
         for ($i = 1; $i <= 10; $i++) {
             if ($sarah->isLives()) {
-                $this->assertInternalType('bool', $t1100->tryKillSarah($sarah));
+                $this->assertIsBool($t1100->tryKillSarah($sarah));
             }
             if (!$sarah->isLives()) {
                 $this->assertFalse($t1100->tryKillSarah($sarah));
@@ -60,16 +60,16 @@ class TerminatorT1100Test extends TestCase
     {
         $t1100 = new TerminatorT1100(6);
 
-        $this->assertInternalType('int', $t1100->getLocation());
+        $this->assertIsInt($t1100->getLocation());
     }
 
     public function testSetSerialNumber(): void
     {
         $t1100 = new TerminatorT1100(6);
         if ($t1100->setSerialNumber()) {
-            $this->assertInternalType('string', $t1100->getSerialNumber()->toString());
+            $this->assertIsString($t1100->getSerialNumber()->toString());
         } else {
-            $this->assertInternalType('null', $t1100->getSerialNumber());
+            $this->assertNull($t1100->getSerialNumber());
         }
     }
 }

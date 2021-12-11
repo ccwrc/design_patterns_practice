@@ -6,7 +6,7 @@ namespace Patterns\tests\unit\AbstractFactory\ConcreteFactory;
 
 use Patterns\AbstractFactory\{Cobweb, ConcreteFactory\SpiderManFactory};
 
-use PHPUnit\Framework\{Error\Error, TestCase};
+use PHPUnit\Framework\{TestCase};
 
 class SpiderManFactoryTest extends TestCase
 {
@@ -42,16 +42,16 @@ class SpiderManFactoryTest extends TestCase
         // splat operator test
         $this->assertIsArray($spiderMan->catchCriminals(...$criminals));
         $this->assertIsArray($spiderMan->catchCriminals('Carlos', 'Capone'));
-        $this->assertTrue(in_array('Carlos', $spiderMan->catchCriminals('Carlos')));
+        $this->assertContains('Carlos', $spiderMan->catchCriminals('Carlos'));
     }
 
     /**
      * @depends testCreate
      * @param SpiderManFactory $spiderMan
-     * @expectedException Error
      */
-    function testCatchCriminalsError(SpiderManFactory $spiderMan): void
+    public function testCatchCriminalsError(SpiderManFactory $spiderMan): void
     {
+        $this->expectError();
         $spiderMan->catchCriminals('John', 911);
     }
 
