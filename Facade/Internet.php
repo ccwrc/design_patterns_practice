@@ -9,11 +9,11 @@ final class Internet implements InternetInterface
     /**
      * @var string[] links to pictures
      */
-    private $picturesCollection;
+    private array $picturesCollection;
     /**
      * @var bool
      */
-    private $online;
+    private bool $online;
 
     public function __construct()
     {
@@ -48,12 +48,13 @@ final class Internet implements InternetInterface
 
     /**
      * @link https://images85.fotosik.pl/662/83146eae65906369.jpg valid test link
+     *
      * @param string $linkToPicture
      */
     public function addLinkToPicture(string $linkToPicture): void
     {
         if (\filter_var($linkToPicture, FILTER_VALIDATE_URL) !== false
-            && self::doesLinkLeadToPicture($linkToPicture)) {
+            && $this->doesLinkLeadToPicture($linkToPicture)) {
             $this->picturesCollection[] = $linkToPicture;
         }
     }
@@ -65,14 +66,13 @@ final class Internet implements InternetInterface
 
     /**
      * @param string $pictureUrl
+     *
      * @return bool
      */
     private function doesLinkLeadToPicture(string $pictureUrl): bool
     {
         $headers = \get_headers($pictureUrl, 1);
-        if (\strpos($headers['Content-Type'], 'image/') !== false) {
-            return true;
-        }
-        return false;
+
+        return \strpos($headers['content-type'] ?? '', 'image/') !== false;
     }
 }
