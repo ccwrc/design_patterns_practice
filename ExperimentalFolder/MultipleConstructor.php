@@ -6,32 +6,33 @@ namespace Patterns\ExperimentalFolder;
 
 final class MultipleConstructor
 {
-    public const DEFAULT_CONTENT = 'default';
-    /**
-     * @var string
-     */
-    private $content;
+    public const DEFAULT_CONTENT = 'everything will be fine';
+
+    private string $content;
 
     public function __construct()
     {
         $this->content = self::DEFAULT_CONTENT;
 
-        if (\method_exists($this, $function='__construct' . \func_num_args())) {
+        if (\method_exists($this, $function = '__construct' . \func_num_args())) {
             \call_user_func_array([$this, $function], \func_get_args());
         }
     }
 
-    private function __construct1(string $content) {
+    private function __construct1(string $content)
+    {
         $this->content = $content;
     }
 
-    private function __construct2(string $content, bool $isContentImportant) {
+    private function __construct2(string $content, bool $isContentImportant)
+    {
         $content = $isContentImportant ? \strtoupper($content) : $content;
 
         $this->__construct1($content);
     }
 
-    private function __construct3(string $content, bool $isContentImportant, int $markerToContent) {
+    private function __construct3(string $content, bool $isContentImportant, int $markerToContent)
+    {
         $content .= $markerToContent;
 
         $this->__construct2($content, $isContentImportant);

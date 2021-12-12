@@ -9,10 +9,12 @@ namespace Patterns\ExperimentalFolder;
  */
 final class MicroLogger
 {
+    public const LOGGER_FILENAME = 'MicroLogger.txt';
+
     /**
      * @var string[]
      */
-    private static $logs = [];
+    private static array $logs = [];
 
     /**
      * Class instance is not required and not desirable.
@@ -21,6 +23,11 @@ final class MicroLogger
     {
     }
 
+    /**
+     * Add log with actual date & time.
+     *
+     * @param string $log
+     */
     public static function addLog(string $log): void
     {
         self::$logs[] = $log;
@@ -47,21 +54,26 @@ final class MicroLogger
 
     /**
      * Saves log to hardcoded MicroLogger.txt file in current directory.
+     *
      * @param string $log
      */
     private static function addLogToTxtFile(string $log): void
     {
+        $path = __DIR__ . DIRECTORY_SEPARATOR . self::LOGGER_FILENAME;
+
         try {
-            if (\is_writable(__DIR__ . '/MicroLogger.txt')) {
-                $file = \fopen(__DIR__ . '/MicroLogger.txt', 'a');
+            if (\is_writable($path)) {
+                $file = \fopen($path, 'a');
                 \fwrite($file, $log);
                 \fclose($file);
+
                 return;
             }
-            $file = \fopen(__DIR__ . '/MicroLogger.txt', 'w');
+            $file = \fopen($path, 'w');
             \fwrite($file, $log);
             \fclose($file);
         } catch (\Throwable $throwable) {
+
             return;
         }
     }

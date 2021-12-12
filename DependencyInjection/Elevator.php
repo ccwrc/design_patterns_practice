@@ -6,18 +6,21 @@ namespace Patterns\DependencyInjection;
 
 final class Elevator
 {
-    private $rope;
-    private $floor;
+    private Rope $rope;
+
+    private Floor $floor;
 
     /**
      * Elevator constructor.
+     *
      * @param Rope $rope
      * @param Floor $floor
      */
     public function __construct(
-        Rope $rope,
+        Rope  $rope,
         Floor $floor
-    ) {
+    )
+    {
         $this->rope = $rope;
         $this->floor = $floor;
     }
@@ -28,8 +31,10 @@ final class Elevator
     public function showMaxStrength(): int
     {
         if ($this->floor->getStrength() < $this->rope->getStrength()) {
+
             return $this->floor->getStrength();
         }
+
         return $this->rope->getStrength();
     }
 

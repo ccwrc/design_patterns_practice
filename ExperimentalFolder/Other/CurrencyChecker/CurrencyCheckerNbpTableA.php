@@ -12,7 +12,9 @@ interface CurrencyCheckerNbpTableA
 
     /**
      * Get exchange rates from NBP API http://api.nbp.pl/ (table A, json format).
+     *
      * @param \DateTime $dateTime
+     *
      * @throws CurrencyCheckerException
      * @return string
      */

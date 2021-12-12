@@ -24,6 +24,7 @@ final class ExceptionInToString
     public function __toString(): string
     {
         if (self::EXCEPTION_THROWING_STRING === $this->string) {
+
             throw new \Exception('Politically incorrect exception.');
         }
 

@@ -7,7 +7,7 @@ namespace Patterns\AdapterWrapper;
 interface OptimisticCalculatorInterface
 {
     /**
-     * returns only absolute values
+     * Returns only absolute values.
      *
      * @param int $number1
      * @param int $number2
@@ -17,7 +17,7 @@ interface OptimisticCalculatorInterface
     public function optimisticAddNumbers(int $number1, int $number2): int;
 
     /**
-     * returns only absolute values
+     * Returns only absolute values.
      *
      * @param int $number1
      * @param int $number2
@@ -27,7 +27,7 @@ interface OptimisticCalculatorInterface
     public function optimisticMultiplyNumbers(int $number1, int $number2): int;
 
     /**
-     * returns only absolute values
+     * Returns only absolute values.
      *
      * @param int $income
      * @param int $expenses

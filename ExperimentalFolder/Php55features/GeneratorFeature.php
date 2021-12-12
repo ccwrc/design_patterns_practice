@@ -9,7 +9,7 @@ namespace Patterns\ExperimentalFolder\Php55features;
  */
 final class GeneratorFeature
 {
-    private static $pathToTestTxtFile = __DIR__ . '/TestGenerator.txt';
+    private static string $pathToTestTxtFile = __DIR__ . '/TestGenerator.txt';
 
     public function __construct(int $numberOfLinesInFileForTesting)
     {
@@ -31,7 +31,7 @@ final class GeneratorFeature
 
     public function operateOnFileWithGenerator(): void
     {
-        function getLines($file)
+        function getLines($file): \Generator
         {
             while ($line = fgets($file)) {
                 yield $line;

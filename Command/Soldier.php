@@ -17,7 +17,10 @@ final class Soldier implements SoldierArmyInterface
 
     private int $calories;
 
-    public function __construct(string $rank, string $name)
+    public function __construct(
+        string $rank,
+        string $name
+    )
     {
         $this->rank = $rank;
         $this->name = $name;
@@ -62,6 +65,7 @@ final class Soldier implements SoldierArmyInterface
     private function throwDomainExceptionIfSoldierIsDead(): void
     {
         if ($this->isDead) {
+
             throw new \DomainException('Soldier is dead');
         }
     }

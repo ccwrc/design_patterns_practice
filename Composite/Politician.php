@@ -12,20 +12,22 @@ final class Politician extends ElectionsPart
     /**
      * @var ElectionsPart[]
      */
-    private $electionsParts;
+    private array $electionsParts;
 
     public function __construct(string $name)
     {
         parent::__construct($name);
+
         $this->electionsParts = [];
     }
 
     /**
-     * @param ElectionsPart $electionsPart
+     * @inheritDoc
      */
     public function addElectionsPart(ElectionsPart $electionsPart): void
     {
         if (\in_array($electionsPart, $this->electionsParts, true)) {
+
             return;
         }
         $this->electionsParts[] = $electionsPart;
@@ -33,7 +35,7 @@ final class Politician extends ElectionsPart
 
 
     /**
-     * @param ElectionsPart $electionsPart
+     * @inheritDoc
      */
     public function removeElectionsPart(ElectionsPart $electionsPart): void
     {
@@ -49,6 +51,7 @@ final class Politician extends ElectionsPart
         foreach ($this->electionsParts as $electionsPart) {
             $sumOfVotingPower += $electionsPart->getVotingPower();
         }
+
         return $sumOfVotingPower;
     }
 }

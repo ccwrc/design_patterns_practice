@@ -8,18 +8,11 @@ use Patterns\Facade\{AirConditioningInterface, InternetInterface, TvSetInterface
 
 final class FullRelaxation implements RelaxInterface
 {
-    /**
-     * @var AirConditioningInterface
-     */
-    private $airConditioning;
-    /**
-     * @var InternetInterface
-     */
-    private $internet;
-    /**
-     * @var TvSetInterface
-     */
-    private $tvSet;
+    private AirConditioningInterface $airConditioning;
+
+    private InternetInterface $internet;
+
+    private TvSetInterface $tvSet;
 
     public function __construct(
         AirConditioningInterface $airConditioning,
@@ -32,8 +25,7 @@ final class FullRelaxation implements RelaxInterface
     }
 
     /**
-     * Steps: set AirConditioning temperature, turn on AirConditioning, connect to Internet, turn on TvSet.
-     * @param int $temperature
+     * @inheritDoc
      */
     public function makeItHappen(int $temperature): void
     {

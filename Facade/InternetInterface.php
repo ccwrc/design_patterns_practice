@@ -7,13 +7,15 @@ namespace Patterns\Facade;
 interface InternetInterface
 {
     /**
-     * connect to Internet - set flag
+     * Connect to Internet - set flag.
+     *
      * @return string
      */
     public function connect(): string;
 
     /**
-     * disconnect from the Internet - set flag
+     * Disconnect from the Internet - set flag.
+     *
      * @return string
      */
     public function disconnect(): string;

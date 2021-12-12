@@ -26,6 +26,7 @@ class NumberPerBitTest extends TestCase
 
     /**
      * Warning: var $tooBigNumber in 32-bit system will be converted to float and will generate an error.
+     *
      * @throws \Exception
      */
     public function testThrowExceptionIfIntTooBig(): void
@@ -38,6 +39,7 @@ class NumberPerBitTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param NumberPerBit $number
      */
     public function testOffsetExists(NumberPerBit $number): void
@@ -46,24 +48,26 @@ class NumberPerBitTest extends TestCase
             $this->assertTrue(isset($number[$i]));
         }
         $this->assertFalse(isset($number[32]));
-        $this->assertTrue(empty($number[66]));
+        $this->assertEmpty($number[66]);
     }
 
     /**
      * @depends testCreate
+     *
      * @param NumberPerBit $number
      */
     public function testOffsetGet(NumberPerBit $number): void
     {
         for ($i = 0; $i <= 31; $i++) {
-            $this->assertTrue(is_string($number[$i]));
+            $this->assertIsString($number[$i]);
         }
-        $this->assertTrue(is_null($number[56]));
-        $this->assertTrue(is_null($number[32]));
+        $this->assertNull($number[56]);
+        $this->assertNull($number[32]);
     }
 
     /**
      * @depends testCreate
+     *
      * @param NumberPerBit $number
      */
     public function testOffsetSet(NumberPerBit $number): void
@@ -85,6 +89,7 @@ class NumberPerBitTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param NumberPerBit $number
      */
     public function testOffsetUnset(NumberPerBit $number): void

@@ -12,6 +12,7 @@ final class RichVoter extends ElectionsPart
     public function __construct(string $name)
     {
         parent::__construct($name);
+
         $this->votingPower = 2;
     }
 

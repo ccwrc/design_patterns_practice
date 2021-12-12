@@ -13,7 +13,7 @@ final class AtariChristmasTreeContest2021
 {
     public const LINK_TO_CONTEST = 'https://atarionline.pl/forum/comments.php?DiscussionID=6245';
 
-    public const LAST_CONTEST_WINNER = 'string';
+    public const WINNER_PREVIOUS_CONTEST = 'string';
 
     public const PEOPLE_OF_CARBON_AND_STEEL = [
         'lopez',
@@ -71,7 +71,7 @@ final class AtariChristmasTreeContest2021
         shuffle($array);
 
         $probablyWinner = $array[array_key_first($array)];
-        if (self::LAST_CONTEST_WINNER === $probablyWinner) {
+        if (self::WINNER_PREVIOUS_CONTEST === $probablyWinner) {
             shuffle($array);
 
             return $array[array_key_first($array)];

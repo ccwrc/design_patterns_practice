@@ -11,7 +11,7 @@ interface CalculatorInterface
     public function multiplyNumbers(int $number1, int $number2): int;
 
     /**
-     * returns income minus expenses
+     * Returns income minus expenses.
      *
      * @param int $income
      * @param int $expenses

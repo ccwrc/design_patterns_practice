@@ -6,14 +6,9 @@ namespace Patterns\Composite;
 
 abstract class ElectionsPart
 {
-    /**
-     * @var string
-     */
-    protected $name;
-    /**
-     * @var int
-     */
-    protected $votingPower;
+    protected string $name;
+
+    protected int $votingPower;
 
     public function __construct(string $name)
     {
@@ -25,7 +20,7 @@ abstract class ElectionsPart
 
     /**
      * @param ElectionsPart $electionsPart
-     * @throws \ReflectionException
+     *
      * @throws  \DomainException
      */
     public function addElectionsPart(ElectionsPart $electionsPart): void
@@ -37,7 +32,7 @@ abstract class ElectionsPart
 
     /**
      * @param ElectionsPart $electionsPart
-     * @throws \ReflectionException
+     *
      * @throws \DomainException
      */
     public function removeElectionsPart(ElectionsPart $electionsPart): void

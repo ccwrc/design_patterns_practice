@@ -13,5 +13,10 @@ abstract class SpiderFactory
         $this->name = $name;
     }
 
+    /**
+     * @param int $strength
+     *
+     * @return Cobweb
+     */
     abstract public function makeWeb(int $strength): Cobweb;
 }

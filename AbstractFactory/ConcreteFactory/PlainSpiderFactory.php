@@ -9,9 +9,7 @@ use Patterns\AbstractFactory\{Cobweb, Product\PlainSpiderCobweb, SpiderFactory};
 final class PlainSpiderFactory extends SpiderFactory
 {
     /**
-     * @param int $strength
-     *
-     * @return Cobweb
+     * @inheritDoc
      */
     public function makeWeb(int $strength): Cobweb
     {

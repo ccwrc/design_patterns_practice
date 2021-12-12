@@ -8,6 +8,7 @@ use Patterns\AdapterWrapper\{Calculator, OptimisticCalculatorInterface};
 
 /**
  * Class OptimisticCalculator - Calculator class Adapter
+ *
  * @package Patterns\AdapterWrapper\Implementation
  */
 final class OptimisticCalculator implements OptimisticCalculatorInterface

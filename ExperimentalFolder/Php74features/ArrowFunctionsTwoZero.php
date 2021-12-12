@@ -20,13 +20,14 @@ final class ArrowFunctionsTwoZero
 
     public function modifyArrayOldSyntax(): array
     {
-        return \array_map(function ($probablyLocationInString) {
+        return \array_map(static function ($probablyLocationInString) {
+
             return \is_string($probablyLocationInString) ? $probablyLocationInString . self::WORLD_STAMP : self::WORLD_STAMP;
         }, $this->array);
     }
 
     public function modifyArrayNewSyntax(): array
     {
-        return \array_map(fn($location) => \is_string($location) ? $location . self::WORLD_STAMP : self::WORLD_STAMP, $this->array);
+        return \array_map(static fn($location) => \is_string($location) ? $location . self::WORLD_STAMP : self::WORLD_STAMP, $this->array);
     }
 }

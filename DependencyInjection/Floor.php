@@ -6,10 +6,11 @@ namespace Patterns\DependencyInjection;
 
 final class Floor
 {
-    private $strength;
+    private int $strength;
 
     /**
      * Floor constructor.
+     *
      * @param int $strength
      */
     public function __construct(int $strength)

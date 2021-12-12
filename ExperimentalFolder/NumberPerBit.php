@@ -10,25 +10,32 @@ namespace Patterns\ExperimentalFolder;
 final class NumberPerBit implements \ArrayAccess
 {
     private const BITS_ARRAY_LENGTH = 32;
-    public const MAX_INT_FOR_32_BIT = 4294967295; // (2**32 - 1)
+
     /**
-     * @var int
+     * 2**32 - 1
      */
-    private $originalInt;
+    public const MAX_INT_FOR_32_BIT = 4294967295;
+
+    private int $originalInt;
+
     /**
-     * bit indexes are arranged from index[0] = 2**31 to index[31] = 2**0 (order from the left)
+     * Bit indexes are arranged from index[0] = 2**31 to index[31] = 2**0 (order from the left)
+     *
      * @var string[]
      */
-    private $intDividedIntoBits;
+    private array $intDividedIntoBits;
 
     /**
      * NumberPerBit constructor.
+     *
      * @param int $number (negative values will be converted into positive values)
+     *
      * @throws \Exception
      */
     public function __construct(int $number)
     {
         if (\abs($number) > self::MAX_INT_FOR_32_BIT) {
+
             throw new \Exception('Number too big');
         }
 
@@ -50,9 +57,10 @@ final class NumberPerBit implements \ArrayAccess
     }
 
     /**
-     * bit indexes are arranged from index[0] = 2**31 to index[31] = 2**0 (order from the left)
+     * Bit indexes are arranged from index[0] = 2**31 to index[31] = 2**0 (order from the left).
      *
      * @param int $number (negative values will be converted into positive values)
+     *
      * @return string[]
      */
     private static function convertTo32lengthStringsArray(int $number): array
@@ -120,6 +128,7 @@ final class NumberPerBit implements \ArrayAccess
         if (!\is_int($offset)
             || $offset < 0
             || $offset > 31) {
+
             return;
         }
 

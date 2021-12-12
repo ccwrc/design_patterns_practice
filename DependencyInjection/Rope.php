@@ -6,18 +6,21 @@ namespace Patterns\DependencyInjection;
 
 final class Rope
 {
-    private $strength;
-    private $length;
+    private int $strength;
+
+    private int $length;
 
     /**
      * Rope constructor.
+     *
      * @param int $strength
      * @param int $length
      */
     public function __construct(
         int $strength,
         int $length
-    ) {
+    )
+    {
         $this->strength = $strength;
         $this->length = $length;
     }

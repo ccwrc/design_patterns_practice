@@ -14,11 +14,7 @@ use PHPMailer\PHPMailer\{Exception, PHPMailer};
 final class SendEmailFromGmail implements SendEmailInterface
 {
     /**
-     * @param string $subject
-     * @param string $content
-     * @param string $emailAddress
-     *
-     * @throws Exception
+     * @inheritDoc
      */
     public static function sendMail(
         string $subject,
@@ -32,24 +28,22 @@ final class SendEmailFromGmail implements SendEmailInterface
         $mailer->Body = \htmlentities(\trim($content), ENT_QUOTES, "UTF-8");
 
         if (!$mailer->send()) {
+
             throw new Exception($mailer->ErrorInfo);
         }
     }
 
     /**
-     * @param string $subject
-     * @param string $content
-     * @param string[] $emailAddresses
-     *
-     * @throws Exception
+     * @inheritDoc
      */
     public static function sendMailToManyPeopleBcc(
         string $subject,
         string $content,
-        array $emailAddresses
+        array  $emailAddresses
     ): void
     {
         if (empty($emailAddresses)) {
+
             return;
         }
 
@@ -65,6 +59,7 @@ final class SendEmailFromGmail implements SendEmailInterface
         $mailer->Body = \htmlentities(\trim($content), ENT_QUOTES, "UTF-8");
 
         if (!$mailer->send()) {
+
             throw new Exception($mailer->ErrorInfo);
         }
     }
@@ -77,6 +72,7 @@ final class SendEmailFromGmail implements SendEmailInterface
         $gmailAddress = self::getGmailAddress();
         $gmailPassword = self::getGmailPassword();
         if (('' === $gmailPassword) || ('empty' === $gmailAddress)) {
+
             throw new Exception('Check if you have entered email and password.');
         }
 

@@ -9,15 +9,13 @@ namespace Patterns\ExperimentalFolder\Php72features;
  */
 final class TypeHintObject
 {
-    /**
-     * @var \DateTime
-     */
-    private $justPlainDate;
+    private \DateTime $justPlainDate;
 
     public function __construct(object $dateTime)
     {
         if ($dateTime instanceof \DateTime) {
             $this->justPlainDate = $dateTime;
+
             return;
         }
         $this->justPlainDate = new \DateTime();

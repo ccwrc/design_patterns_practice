@@ -19,34 +19,28 @@ final class MagicMethod
     public const SET_STATE_MESSAGE = 'Is it working?';
     public const VAR_DUMP_MESSAGE = 'I\'m a dump';
 
-    /**
-     * @var int
-     */
-    private static $cloneCounter = 1;
-    /**
-     * @var null | int
-     */
-    private $cloneNumber;
-    /**
-     * @var bool
-     */
-    private $isClone;
-    /**
-     * @var string
-     */
-    private $name;
-    /**
-     * @var int
-     */
-    private $number;
+    private static int $cloneCounter = 1;
+
+    private ?int $cloneNumber;
+
+    private bool $isClone;
+
+    private string $name;
+
+    private int $number;
 
     /**
      * MagicMethod constructor.
+     *
      * @link https://kursphp.com/programowanie-obiektowe-php/konstruktor/ Multiple constructor & copy constructor.
+     *
      * @param string $name
      * @param int $number
      */
-    public function __construct(string $name, int $number)
+    public function __construct(
+        string $name,
+        int $number
+    )
     {
         $this->cloneNumber = null;
         $this->isClone = false;
@@ -82,7 +76,8 @@ final class MagicMethod
 
     /**
      * @param string $name
-     * @param mixed[] $arguments
+     * @param array $arguments
+     *
      * @throws \Exception
      */
     public function __call(string $name, array $arguments)
@@ -92,7 +87,8 @@ final class MagicMethod
 
     /**
      * @param string $name
-     * @param mixed[] $arguments
+     * @param array $arguments
+     *
      * @throws \Exception
      */
     public static function __callStatic(string $name, array $arguments)
@@ -102,6 +98,7 @@ final class MagicMethod
 
     /**
      * @link https://sekurak.pl/php-object-injection-malo-znana-krytyczna-klasa-podatnosci/ How to avoid problems.
+     *
      * @return string
      */
     public function __toString(): string
@@ -111,7 +108,6 @@ final class MagicMethod
 
     /**
      * @link https://www.owasp.org/index.php/PHP_Object_Injection How to avoid problems.
-     * No returned value.
      */
     public function __destruct()
     {
@@ -121,7 +117,9 @@ final class MagicMethod
 
     /**
      * Warning: magic is slower (than getters/setters)
+     *
      * @param string $name
+     *
      * @return mixed
      * @throws \Exception
      */
@@ -129,6 +127,7 @@ final class MagicMethod
     {
         $methodName = "get{$name}";
         if (method_exists($this, $methodName)) {
+
             return $this->$methodName();
         }
 
@@ -139,6 +138,7 @@ final class MagicMethod
     /**
      * @param string $name
      * @param mixed $value
+     *
      * @throws \Exception
      */
     public function __set(string $name, $value): void
@@ -173,7 +173,9 @@ final class MagicMethod
 
     /**
      * When the property does not exist or is protected/private, return false.
+     *
      * @param $name
+     *
      * @return bool
      */
     public function __isset($name): bool
@@ -184,7 +186,9 @@ final class MagicMethod
     /**
      * When the property does not exist or is protected/private, throw Exception.
      * The exception is thrown only for testing purposes.
+     *
      * @param $name
+     *
      * @throws \Exception
      */
     public function __unset($name): void
@@ -207,7 +211,9 @@ final class MagicMethod
      * @link https://stackoverflow.com/questions/46441958/what-is-the-real-purpose-of-magic-method-set-state-in-php Better
      *  than official docs.
      * @link http://docs.php.net/manual/pl/function.var-export.php var_export() docs
+     *
      * @param array $array
+     *
      * @return string
      */
     public static function __set_state(array $array): string

@@ -9,13 +9,10 @@ final class CurrencyChecker implements CurrencyCheckerNbpTableA
     /**
      * @var string[]
      */
-    public static $dailyExchangeRates = [];
+    public static array $dailyExchangeRates = [];
 
     /**
-     * Get exchange rates from NBP API http://api.nbp.pl/ (table A, json format).
-     * @param \DateTime $dateTime
-     * @throws CurrencyCheckerException
-     * @return string
+     * @inheritDoc
      */
     public static function getExchangeRatesBy(\DateTime $dateTime): string
     {

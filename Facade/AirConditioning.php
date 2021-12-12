@@ -8,14 +8,10 @@ final class AirConditioning implements AirConditioningInterface
 {
     public const MIN_TEMPERATURE = -5;
     public const MAX_TEMPERATURE = 25;
-    /**
-     * @var bool
-     */
-    private $isWorking;
-    /**
-     * @var int
-     */
-    private $temperature;
+
+    private bool $isWorking;
+
+    private int $temperature;
 
     public function __construct(int $temperature)
     {
@@ -24,8 +20,7 @@ final class AirConditioning implements AirConditioningInterface
     }
 
     /**
-     * turn on AC - set flag
-     * @return bool
+     * @inheritDoc
      */
     public function turnOnAirConditioning(): bool
     {
@@ -35,7 +30,7 @@ final class AirConditioning implements AirConditioningInterface
     }
 
     /**
-     * turn off AC - set flag
+     * @inheritDoc
      */
     public function disableAirConditioning(): void
     {
@@ -43,13 +38,16 @@ final class AirConditioning implements AirConditioningInterface
     }
 
     /**
-     * @param int $temperature
+     * @inheritDoc
      */
     public function setTemperature(int $temperature): void
     {
         $this->temperature = self::getCorrectTemperature($temperature);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getTemperature(): int
     {
         return $this->temperature;
@@ -58,11 +56,14 @@ final class AirConditioning implements AirConditioningInterface
     private static function getCorrectTemperature(int $temperature): int
     {
         if ($temperature < self::MIN_TEMPERATURE) {
+
             return self::MIN_TEMPERATURE;
         }
         if ($temperature > self::MAX_TEMPERATURE) {
+
             return self::MAX_TEMPERATURE;
         }
+
         return $temperature;
     }
 }
