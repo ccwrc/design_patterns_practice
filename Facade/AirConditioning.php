@@ -56,11 +56,10 @@ final class AirConditioning implements AirConditioningInterface
     private static function getCorrectTemperature(int $temperature): int
     {
         if ($temperature < self::MIN_TEMPERATURE) {
-
             return self::MIN_TEMPERATURE;
         }
-        if ($temperature > self::MAX_TEMPERATURE) {
 
+        if ($temperature > self::MAX_TEMPERATURE) {
             return self::MAX_TEMPERATURE;
         }
 

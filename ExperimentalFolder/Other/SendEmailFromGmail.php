@@ -28,7 +28,6 @@ final class SendEmailFromGmail implements SendEmailInterface
         $mailer->Body = \htmlentities(\trim($content), ENT_QUOTES, "UTF-8");
 
         if (!$mailer->send()) {
-
             throw new Exception($mailer->ErrorInfo);
         }
     }
@@ -43,7 +42,6 @@ final class SendEmailFromGmail implements SendEmailInterface
     ): void
     {
         if (empty($emailAddresses)) {
-
             return;
         }
 
@@ -59,7 +57,6 @@ final class SendEmailFromGmail implements SendEmailInterface
         $mailer->Body = \htmlentities(\trim($content), ENT_QUOTES, "UTF-8");
 
         if (!$mailer->send()) {
-
             throw new Exception($mailer->ErrorInfo);
         }
     }
@@ -72,7 +69,6 @@ final class SendEmailFromGmail implements SendEmailInterface
         $gmailAddress = self::getGmailAddress();
         $gmailPassword = self::getGmailPassword();
         if (('' === $gmailPassword) || ('empty' === $gmailAddress)) {
-
             throw new Exception('Check if you have entered email and password.');
         }
 

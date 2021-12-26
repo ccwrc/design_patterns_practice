@@ -29,6 +29,7 @@ final class CurrencyChecker implements CurrencyCheckerNbpTableA
         if (false === $json) {
             throw new CurrencyCheckerException('Date out of range or 404 error.');
         }
+
         self::$dailyExchangeRates[$dateForNbpApi] = $json;
 
         return $json;

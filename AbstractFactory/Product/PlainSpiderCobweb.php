@@ -11,7 +11,6 @@ final class PlainSpiderCobweb extends Cobweb
     public function __construct(int $strength)
     {
         parent::__construct($strength);
-
         $this->productionTechnology = 'Biological';
     }
 }

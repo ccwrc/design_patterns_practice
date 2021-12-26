@@ -35,7 +35,6 @@ final class NumberPerBit implements \ArrayAccess
     public function __construct(int $number)
     {
         if (\abs($number) > self::MAX_INT_FOR_32_BIT) {
-
             throw new \Exception('Number too big');
         }
 
@@ -128,11 +127,11 @@ final class NumberPerBit implements \ArrayAccess
         if (!\is_int($offset)
             || $offset < 0
             || $offset > 31) {
-
             return;
         }
 
-        if ('0' === $value || '1' === $value) {
+        if ('0' === $value
+            || '1' === $value) {
             $this->intDividedIntoBits[$offset] = $value;
         }
     }

@@ -17,6 +17,8 @@ final class AtariChristmasTreeContest2021
 
     public const PEOPLE_OF_CARBON_AND_STEEL = [
         'lopez',
+        'pustak',
+        'Kroll',
     ];
 
     /**

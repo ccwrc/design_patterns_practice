@@ -69,11 +69,11 @@ final class MicroLogger
 
                 return;
             }
+
             $file = \fopen($path, 'w');
             \fwrite($file, $log);
             \fclose($file);
         } catch (\Throwable $throwable) {
-
             return;
         }
     }

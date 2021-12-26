@@ -31,7 +31,6 @@ final class Elevator
     public function showMaxStrength(): int
     {
         if ($this->floor->getStrength() < $this->rope->getStrength()) {
-
             return $this->floor->getStrength();
         }
 

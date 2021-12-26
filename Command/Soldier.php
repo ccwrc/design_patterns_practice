@@ -65,7 +65,6 @@ final class Soldier implements SoldierArmyInterface
     private function throwDomainExceptionIfSoldierIsDead(): void
     {
         if ($this->isDead) {
-
             throw new \DomainException('Soldier is dead');
         }
     }

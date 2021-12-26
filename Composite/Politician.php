@@ -17,7 +17,6 @@ final class Politician extends ElectionsPart
     public function __construct(string $name)
     {
         parent::__construct($name);
-
         $this->electionsParts = [];
     }
 
@@ -27,9 +26,9 @@ final class Politician extends ElectionsPart
     public function addElectionsPart(ElectionsPart $electionsPart): void
     {
         if (\in_array($electionsPart, $this->electionsParts, true)) {
-
             return;
         }
+
         $this->electionsParts[] = $electionsPart;
     }
 
