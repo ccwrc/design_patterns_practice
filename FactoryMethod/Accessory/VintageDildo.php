@@ -6,17 +6,12 @@ namespace Patterns\FactoryMethod\Accessory;
 
 final class VintageDildo implements EroticAccessory
 {
-    /**
-     * @var int
-     */
-    private $size = 6;
-    /**
-     * @var int
-     */
-    private $pleasureLevel = 0;
+    private int $size = 6;
+
+    private int $pleasureLevel = 0;
 
     /**
-     * @param int $pleasureLevel negative values for masochists
+     * @inheritDoc
      */
     public function setPleasureLevel(int $pleasureLevel): void
     {
@@ -24,7 +19,7 @@ final class VintageDildo implements EroticAccessory
     }
 
     /**
-     * @return int
+     * @inheritDoc
      */
     public function getPleasureLevel(): int
     {
@@ -33,6 +28,7 @@ final class VintageDildo implements EroticAccessory
 
     /**
      * @param int $size
+     *
      * @return string
      */
     public function changeSize(int $size): string

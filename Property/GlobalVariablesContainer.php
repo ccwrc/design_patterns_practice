@@ -6,10 +6,7 @@ namespace Patterns\Property;
 
 final class GlobalVariablesContainer implements PropertyContainer
 {
-    /**
-     * @var mixed[]
-     */
-    private static $container = [];
+    private static array $container = [];
 
     /**
      * GlobalVariablesContainer constructor.
@@ -20,8 +17,7 @@ final class GlobalVariablesContainer implements PropertyContainer
     }
 
     /**
-     * @param string $name
-     * @param mixed $property
+     * @inheritDoc
      */
     public static function addPropertyBy(string $name, $property): void
     {
@@ -29,10 +25,7 @@ final class GlobalVariablesContainer implements PropertyContainer
     }
 
     /**
-     * @param string $name
-     * @return mixed | null
-     * @link https://wiki.php.net/rfc/mixed-typehint mixed typehint
-     * @link https://stackoverflow.com/questions/37033142/multiple-return-types-php-7 abut mixed
+     * @inheritDoc
      */
     public static function getPropertyBy(string $name)
     {
@@ -40,7 +33,7 @@ final class GlobalVariablesContainer implements PropertyContainer
     }
 
     /**
-     * @param string $name
+     * @inheritDoc
      */
     public static function removePropertyBy(string $name): void
     {
@@ -50,7 +43,7 @@ final class GlobalVariablesContainer implements PropertyContainer
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public static function getPropertyKeys(): string
     {
@@ -58,12 +51,12 @@ final class GlobalVariablesContainer implements PropertyContainer
         foreach (self::$container as $key => $property) {
             $keys .= $key . ' ';
         }
+
         return $keys;
     }
 
     /**
-     * @param string $name
-     * @return bool
+     * @inheritDoc
      */
     public static function isPropertyExist(string $name): bool
     {

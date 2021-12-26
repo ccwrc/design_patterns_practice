@@ -6,10 +6,7 @@ namespace Patterns\FactoryMethod\Accessory;
 
 final class Rope implements EroticAccessory, Vandersexxx
 {
-    /**
-     * @var int
-     */
-    private $pleasureLevel;
+    private int $pleasureLevel;
 
     public function __construct(int $pleasureLevel = 0)
     {
@@ -17,7 +14,7 @@ final class Rope implements EroticAccessory, Vandersexxx
     }
 
     /**
-     * @param int $pleasureLevel negative values for masochists
+     * @inheritDoc
      */
     public function setPleasureLevel(int $pleasureLevel): void
     {
@@ -25,7 +22,7 @@ final class Rope implements EroticAccessory, Vandersexxx
     }
 
     /**
-     * @return int
+     * @inheritDoc
      */
     public function getPleasureLevel(): int
     {
@@ -33,8 +30,7 @@ final class Rope implements EroticAccessory, Vandersexxx
     }
 
     /**
-     * @link https://www.youtube.com/watch?v=wowuE8m0JhU club vandersexxx (free t-shirt)
-     * @return string
+     * @inheritDoc
      */
     public function getSafeWord(): string
     {

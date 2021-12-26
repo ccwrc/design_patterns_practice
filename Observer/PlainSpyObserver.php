@@ -9,7 +9,7 @@ class PlainSpyObserver implements \SplObserver
     /**
      * @var \SplSubject[]
      */
-    private $subjects = [];
+    private array $subjects = [];
 
     /**
      * @param \SplSubject $subject

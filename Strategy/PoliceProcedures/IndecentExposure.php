@@ -8,13 +8,22 @@ use Patterns\Strategy\PatternInterface\CrimeType;
 
 final class IndecentExposure implements CrimeType
 {
+    private const CODE = '314';
+    private const PROCEDURE = 'Prepare a blanket, catch a suspect, cover with a blanket';
+
+    /**
+     * @inheritDoc
+     */
     public function getProcedure(): string
     {
-        return 'Prepare a blanket, catch a suspect, cover with a blanket.';
+        return self::PROCEDURE;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getCode(): string
     {
-        return '314';
+        return self::CODE;
     }
 }

@@ -8,14 +8,9 @@ use Patterns\Strategy\PatternInterface\CrimeType;
 
 final class Murder implements CrimeType
 {
-    /**
-     * @var string
-     */
-    private $code;
-    /**
-     * @var string
-     */
-    private $procedure;
+    private string $code;
+
+    private string $procedure;
 
     public function __construct()
     {
@@ -23,11 +18,17 @@ final class Murder implements CrimeType
         $this->procedure = 'Call for support, pursue.';
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getProcedure(): string
     {
         return $this->procedure;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getCode(): string
     {
         return $this->code;

@@ -9,6 +9,7 @@ class CatFactory
     /**
      * @param bool $isFluffy
      * @param bool $isAnnoying
+     *
      * @return Cat
      */
     public static function createCat(bool $isFluffy, bool $isAnnoying): Cat
@@ -18,6 +19,7 @@ class CatFactory
 
     /**
      * @param bool $isAnnoying
+     *
      * @return Cat
      */
     public static function createFluffyCat(bool $isAnnoying): Cat

@@ -6,10 +6,7 @@ namespace Patterns\Memento;
 
 abstract class ForAnonymousClassTesting
 {
-    /**
-     * @var string
-     */
-    private $name;
+    private string $name;
 
     public function __construct(string $name)
     {

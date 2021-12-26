@@ -6,10 +6,7 @@ namespace Patterns\FluentInterface;
 
 class Question
 {
-    /**
-     * @var string
-     */
-    private $content;
+    private string $content;
 
     public function __construct(string $content)
     {

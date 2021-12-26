@@ -8,14 +8,9 @@ use Patterns\Visitor\PatternInterface\{RoleVisitedInterface, VisitorInterface};
 
 final class Ukraine implements CountryInterface, RoleVisitedInterface
 {
-    /**
-     * @var int
-     */
-    private $totalArea;
-    /**
-     * @var string
-     */
-    private $legend;
+    private int $totalArea;
+
+    private string $legend;
 
     public function __construct(int $totalArea)
     {
@@ -23,7 +18,7 @@ final class Ukraine implements CountryInterface, RoleVisitedInterface
         $this->legend = '';
     }
 
-    public function accept(VisitorInterface $visitor)
+    public function accept(VisitorInterface $visitor): void
     {
         $visitor->visitCountry($this);
     }
@@ -47,8 +42,10 @@ final class Ukraine implements CountryInterface, RoleVisitedInterface
     {
         if ($this->totalArea <= \abs($area)) {
             $this->totalArea = 0;
+
             return $this->totalArea;
         }
+
         return $this->totalArea -= \abs($area);
     }
 }

@@ -8,20 +8,11 @@ use Ramsey\Uuid\Uuid;
 
 abstract class TerminatorPrototype implements Location
 {
-    /**
-     * @var int
-     */
-    protected $location;
+    protected int $location;
 
-    /**
-     * @var null|Uuid
-     */
-    protected $serialNumber;
+    protected ?Uuid $serialNumber;
 
-    /**
-     * @var int
-     */
-    protected $randomValue;
+    protected int $randomValue;
 
     public function __construct(int $locationOfTeleportation)
     {
@@ -33,6 +24,7 @@ abstract class TerminatorPrototype implements Location
 
     /**
      * @param Sarah $sarah
+     *
      * @return bool
      */
     abstract public function tryKillSarah(Sarah $sarah): bool;
@@ -41,6 +33,7 @@ abstract class TerminatorPrototype implements Location
     {
         try {
             $this->serialNumber = Uuid::uuid4();
+
             return true;
         } catch (\Throwable $throwable) {
             return false;

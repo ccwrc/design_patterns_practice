@@ -9,19 +9,18 @@ namespace Patterns\FluentInterface;
  */
 final class Questionnaire
 {
-    /**
-     * @var string
-     */
-    private $title;
+    private string $title;
 
     /**
      * @var Question[]
      */
-    private $questions = [];
+    private array $questions = [];
 
     /**
      * Function allows chaining.
+     *
      * @param string $title
+     *
      * @return self
      */
     public function setTitle(string $title): self
@@ -33,7 +32,9 @@ final class Questionnaire
 
     /**
      * Function allows chaining.
+     *
      * @param Question $question
+     *
      * @return self
      */
     public function addQuestion(Question $question): self

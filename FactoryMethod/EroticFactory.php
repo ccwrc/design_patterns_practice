@@ -14,6 +14,7 @@ abstract class EroticFactory
 
     /**
      * @param string $sex
+     *
      * @throws \InvalidArgumentException
      * @return EroticAccessory
      */

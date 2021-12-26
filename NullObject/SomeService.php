@@ -6,10 +6,7 @@ namespace Patterns\NullObject;
 
 class SomeService
 {
-    /**
-     * @var MailerStrategy
-     */
-    private $mailer;
+    private MailerStrategy $mailer;
 
     public function __construct(MailerStrategy $mailer)
     {

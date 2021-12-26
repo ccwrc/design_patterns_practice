@@ -9,15 +9,18 @@ use Patterns\State\PhoneState;
 class PhoneStateIdle extends PhoneState
 {
     /**
-     * @return bool
+     * @inheritDoc
      */
     public function isLineBusy(): bool
     {
         return false;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function stateAfterShortPressRedButton(): PhoneState
     {
-        return PhoneStateIdle::create();
+        return self::create();
     }
 }

@@ -6,14 +6,12 @@ namespace Patterns\State;
 
 /**
  * Context.
+ *
  * @link https://www.youtube.com/watch?v=Fe93CLbHjxQ Who do you gone call?
  */
 class Phone
 {
-    /**
-     * @var PhoneState
-     */
-    private $state;
+    private PhoneState $state;
 
     public function __construct(PhoneState $state)
     {

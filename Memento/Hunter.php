@@ -6,14 +6,9 @@ namespace Patterns\Memento;
 
 class Hunter implements Deadly
 {
-    /**
-     * @var string
-     */
-    private $name;
-    /**
-     * @var string|null
-     */
-    private $weapon = null;
+    private string $name;
+
+    private ?string $weapon = null;
 
     public function __construct(string $name)
     {
@@ -27,7 +22,7 @@ class Hunter implements Deadly
 
     public function doesHaveWeapon(): bool
     {
-        return $this->weapon === null ? false : true;
+        return !($this->weapon === null);
     }
 
     public function __toString(): string

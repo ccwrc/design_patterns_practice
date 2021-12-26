@@ -11,18 +11,24 @@ class GirlCaretaker implements Caretaker
     /**
      * @var GirlMemento[]
      */
-    private $mementos = [];
+    private array $mementos = [];
 
-    public function addMementoAndReturnId(GirlMemento $memento): string
+    /**
+     * @inheritDoc
+     */
+    public function addMementoAndReturnId(GirlMemento $girlMemento): string
     {
-        $hash = spl_object_hash($memento);
-        $this->mementos[$hash] = $memento;
+        $hash = spl_object_hash($girlMemento);
+        $this->mementos[$hash] = $girlMemento;
 
         return $hash;
     }
 
-    public function getMemento(string $hash): ?GirlMemento
+    /**
+     * @inheritDoc
+     */
+    public function getMemento(string $mementoId): ?GirlMemento
     {
-        return $this->mementos[$hash] ?? null;
+        return $this->mementos[$mementoId] ?? null;
     }
 }

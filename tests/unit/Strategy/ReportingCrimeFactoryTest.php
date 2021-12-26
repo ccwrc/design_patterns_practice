@@ -27,7 +27,7 @@ class ReportingCrimeFactoryTest extends TestCase
         $reportingCrimeCarjacking = ReportingCrimeFactory::create(ReportingCrimeFactory::CARJACKING);
         $this->assertSame('215', $reportingCrimeCarjacking->getCrimeCode());
 
-        $reportingCrimeIndecentExposure = ReportingCrimeFactory::create('indecentExposure');
+        $reportingCrimeIndecentExposure = ReportingCrimeFactory::create('indecent Exposure');
         $this->assertSame('314', $reportingCrimeIndecentExposure->getCrimeCode());
 
         $reportingCrimeKidnapping = ReportingCrimeFactory::create('kidnappING');

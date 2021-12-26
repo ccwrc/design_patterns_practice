@@ -6,13 +6,10 @@ namespace Patterns\FactoryMethod\Accessory;
 
 final class BenWaBalls implements EroticAccessory
 {
-    /**
-     * @var int
-     */
-    private $pleasureLevel = 0;
+    private int $pleasureLevel = 0;
 
     /**
-     * @param int $pleasureLevel negative values for masochists
+     * @inheritDoc
      */
     public function setPleasureLevel(int $pleasureLevel): void
     {
@@ -20,7 +17,7 @@ final class BenWaBalls implements EroticAccessory
     }
 
     /**
-     * @return int
+     * @inheritDoc
      */
     public function getPleasureLevel(): int
     {

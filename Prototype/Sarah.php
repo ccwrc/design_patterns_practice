@@ -6,20 +6,11 @@ namespace Patterns\Prototype;
 
 final class Sarah implements Location
 {
-    /**
-     * @var bool
-     */
-    private $willToSurvive;
+    private bool $willToSurvive;
 
-    /**
-     * @var int
-     */
-    private $location;
+    private int $location;
 
-    /**
-     * @var bool
-     */
-    private $lives;
+    private bool $lives;
 
     public function __construct(bool $willToSurvive)
     {
@@ -50,14 +41,17 @@ final class Sarah implements Location
 
     /**
      * @param Location $location
+     *
      * @return bool
      */
     public function killSarah(Location $location): bool
     {
         if ($location->getLocation() === $this->location && true === $this->isLives()) {
             $this->lives = false;
+
             return true;
         }
+
         return false;
     }
 }

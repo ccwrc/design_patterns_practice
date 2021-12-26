@@ -8,7 +8,7 @@ final class CoolEnvironment
 {
     static private $instance;
 
-    private $parameters = [
+    private array $parameters = [
         'language' => 'esperanto',
         'password' => 'doPasaCnoty',
         'madnessLevel' => 'mid'
@@ -26,11 +26,12 @@ final class CoolEnvironment
     {
     }
 
-    static public function getInstance(): self
+    public static function getInstance(): self
     {
         if(self::$instance === null) {
             self::$instance = new CoolEnvironment();
         }
+
         return self::$instance;
     }
 

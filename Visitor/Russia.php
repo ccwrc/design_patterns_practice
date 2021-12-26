@@ -9,8 +9,7 @@ use Patterns\Visitor\PatternInterface\VisitorInterface;
 final class Russia implements VisitorInterface
 {
     /**
-     * @param CountryInterface $country
-     * @return bool
+     * @inheritDoc
      */
     public function visitCountry(CountryInterface $country): bool
     {
@@ -19,13 +18,14 @@ final class Russia implements VisitorInterface
         }
 
         $country->gettingRidArea(1);
+
         return true;
     }
 
     /**
      * Screw good practices, it's Russia!
-     * @param CountryInterface $country
-     * @return bool
+     *
+     * @inheritDoc
      */
     public function visitFriendCountry(CountryInterface $country): bool
     {
@@ -37,6 +37,7 @@ final class Russia implements VisitorInterface
         } catch (\Throwable $throwable) {
             return false;
         }
+
         return true;
     }
 }

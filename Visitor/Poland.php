@@ -8,19 +8,15 @@ use Patterns\Visitor\PatternInterface\{RoleVisitedInterface, VisitorInterface};
 
 final class Poland implements CountryInterface, RoleVisitedInterface
 {
-    /**
-     * @var int
-     */
-    private $totalArea;
-    /**
-     * @var string
-     */
-    private $legend;
+    private int $totalArea;
+
+    private string $legend;
 
     public function __construct(int $totalArea)
     {
         $this->totalArea = \abs($totalArea);
-        $this->legend = 'https://eszkola.pl/historia/poczatki-panstwa-polskiego-legendy-i-legendarni-wladcy-polski-7038.html';
+        $this->legend =
+            'https://eszkola.pl/historia/poczatki-panstwa-polskiego-legendy-i-legendarni-wladcy-polski-7038.html';
     }
 
     public function createCountryLegend(string $legend): void
@@ -44,7 +40,7 @@ final class Poland implements CountryInterface, RoleVisitedInterface
         return $this->totalArea;
     }
 
-    public function accept(VisitorInterface $visitor)
+    public function accept(VisitorInterface $visitor): void
     {
         $visitor->visitFriendCountry($this);
     }

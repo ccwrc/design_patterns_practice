@@ -7,10 +7,9 @@ namespace Patterns\Observer;
 class FakeManager implements \SplSubject
 {
     /**
-     * @var \SplObjectStorage
      * @link https://devenv.pl/php-spl-class-splobjectstorage/
      */
-    private $observers;
+    private \SplObjectStorage $observers;
 
     public function __construct()
     {
@@ -19,6 +18,7 @@ class FakeManager implements \SplSubject
 
     /**
      * Attach an SplObserver
+     *
      * @link https://php.net/manual/en/splsubject.attach.php
      */
     public function attach(\SplObserver $observer): void
@@ -36,6 +36,7 @@ class FakeManager implements \SplSubject
 
     /**
      * Notify an observer
+     *
      * @link https://php.net/manual/en/splsubject.notify.php
      */
     public function notify(): void
@@ -48,11 +49,13 @@ class FakeManager implements \SplSubject
 
     /**
      * @link http://php.net/manual/en/language.operators.comparison.php
+     *
      * @param int $firstNumber
      * @param int $secondNumber
+     *
      * @return int
      */
-    static public function spaceshipOperator(
+    public static function spaceshipOperator(
         int $firstNumber,
         int $secondNumber
     ): int
@@ -62,10 +65,11 @@ class FakeManager implements \SplSubject
 
     /**
      * @link https://stackoverflow.com/questions/38716613/generate-a-single-use-token-in-php-random-bytes-or-openssl-random-pseudo-bytes
+     *
      * @return string
      * @throws \Exception
      */
-    static public function getSingleUseToken(): string
+    public static function getSingleUseToken(): string
     {
         return \bin2hex(\random_bytes(12));
     }

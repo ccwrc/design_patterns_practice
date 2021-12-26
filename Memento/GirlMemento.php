@@ -14,7 +14,7 @@ class GirlMemento implements Memento
     private $state;
 
     /**
-     * @return mixed
+     * @inheritDoc
      */
     public function getState()
     {
@@ -22,7 +22,7 @@ class GirlMemento implements Memento
     }
 
     /**
-     * @param mixed $state
+     * @inheritDoc
      */
     public function saveState($state): void
     {

@@ -6,15 +6,11 @@ namespace Patterns\Memento;
 
 final class FastGirl extends Girl
 {
-    /**
-     * @var int
-     */
-    private $maxSpeed;
+    private int $maxSpeed;
 
     public function __construct(string $name)
     {
         parent::__construct($name);
-
         $this->maxSpeed = 20;
     }
 
@@ -36,6 +32,9 @@ final class FastGirl extends Girl
         return $girlMemento;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function restoreFromMemento(GirlMemento $girlMemento): void
     {
         $state = $girlMemento->getState();

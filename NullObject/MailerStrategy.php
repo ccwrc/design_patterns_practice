@@ -8,6 +8,7 @@ interface MailerStrategy
 {
     /**
      * @param string $mailAddress
+     *
      * @return mixed
      */
     public function sendMail(string $mailAddress);

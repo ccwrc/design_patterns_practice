@@ -6,15 +6,12 @@ namespace Patterns\Observer;
 
 final class PasswordManager implements \SplSubject, KeyloggerSubject
 {
+    private string $plainTextPassword;
+
     /**
-     * @var string
-     */
-    private $plainTextPassword;
-    /**
-     * @var \SplObjectStorage
      * @link https://devenv.pl/php-spl-class-splobjectstorage/
      */
-    private $observers;
+    private \SplObjectStorage $observers;
 
     public function __construct()
     {
@@ -24,6 +21,7 @@ final class PasswordManager implements \SplSubject, KeyloggerSubject
 
     /**
      * Attach an SplObserver
+     *
      * @link https://php.net/manual/en/splsubject.attach.php
      */
     public function attach(\SplObserver $observer): void
@@ -41,6 +39,7 @@ final class PasswordManager implements \SplSubject, KeyloggerSubject
 
     /**
      * Notify an observer
+     *
      * @link https://php.net/manual/en/splsubject.notify.php
      */
     public function notify(): void
@@ -58,7 +57,9 @@ final class PasswordManager implements \SplSubject, KeyloggerSubject
 
     /**
      * @link https://stackoverflow.com/questions/47634750/travis-ci-php-7-2-dont-support-argon2i/47678023
+     *
      * @param string $plainTextPassword
+     *
      * @return string
      * @throws \Exception
      */
@@ -91,12 +92,14 @@ final class PasswordManager implements \SplSubject, KeyloggerSubject
 
     /**
      * @link http://php.net/manual/en/control-structures.goto.php
+     *
      * @param null|string $trollPassword
+     *
      * @return string
      */
-    static public function goToHell(?string $trollPassword): string
+    public static function goToHell(?string $trollPassword): string
     {
-        if (($trollPassword !== 'go to hell') and ($trollPassword !== null)) {
+        if (($trollPassword !== 'go to hell') && ($trollPassword !== null)) {
             goto bloodthirstyDinosaur;
         } elseif ($trollPassword === 'go to hell') {
             goto plainDinosaur;

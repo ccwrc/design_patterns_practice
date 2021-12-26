@@ -8,14 +8,9 @@ use Patterns\Strategy\PatternInterface\CrimeType;
 
 final class ReportingCrime
 {
-    /**
-     * @var \DateTime
-     */
-    private $notificationTimeOfCrime;
-    /**
-     * @var CrimeType
-     */
-    private $crimeType;
+    private \DateTime $notificationTimeOfCrime;
+
+    private CrimeType $crimeType;
 
     public function __construct(CrimeType $crimeType)
     {

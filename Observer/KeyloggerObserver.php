@@ -6,14 +6,9 @@ namespace Patterns\Observer;
 
 class KeyloggerObserver implements \SplObserver
 {
-    /**
-     * @var int
-     */
-    static private $counterSubject = 0;
-    /**
-     * @var int
-     */
-    static private $counterSubjectImplementsKeylogger = 0;
+    static private int $counterSubject = 0;
+
+    static private int $counterSubjectImplementsKeylogger = 0;
 
     public static function getCounterSubject(): int
     {
@@ -27,16 +22,21 @@ class KeyloggerObserver implements \SplObserver
 
     /**
      * @link https://niebezpiecznik.pl/post/600-milionow-hasel-facebook-wyciek/
+     *
      * @param \SplSubject $subject
+     *
      * @return null|string
      */
     public function update(\SplSubject $subject): ?string
     {
         if ($subject instanceof KeyloggerSubject) {
             self::$counterSubjectImplementsKeylogger++;
+
             return 'pass: ' . $subject->getPlainTextPassword() . ' - update the account balance in the bank';
         }
+
         self::$counterSubject++;
+
         return null;
     }
 }

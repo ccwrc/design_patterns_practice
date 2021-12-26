@@ -8,34 +8,19 @@ use Patterns\Memento\PatternInterface\Originator;
 
 class Girl implements Originator
 {
-    /**
-     * @var string
-     */
-    protected $name;
-    /**
-     * @var bool
-     */
-    protected $wolvesResistance;
-    /**
-     * @var bool
-     */
-    protected $abilityToLifeInForest;
-    /**
-     * @var bool
-     */
-    protected $basket;
-    /**
-     * @var string
-     */
-    protected $hoodColor;
-    /**
-     * @var bool
-     */
-    protected $liveGrandmother;
-    /**
-     * @var bool
-     */
-    protected $revengeDesire;
+    protected string $name;
+
+    protected bool $wolvesResistance;
+
+    protected bool $abilityToLifeInForest;
+
+    protected bool $basket;
+
+    protected string $hoodColor;
+
+    protected bool $liveGrandmother;
+
+    protected bool $revengeDesire;
 
     public function __construct(string $name)
     {
@@ -64,6 +49,9 @@ class Girl implements Originator
         return $this->liveGrandmother;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function saveToMemento(): GirlMemento
     {
         $state = [
@@ -81,6 +69,9 @@ class Girl implements Originator
         return $girlMemento;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function restoreFromMemento(GirlMemento $girlMemento): void
     {
         $state = $girlMemento->getState();

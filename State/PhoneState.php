@@ -19,10 +19,16 @@ abstract class PhoneState
         return static::class;
     }
 
+    /**
+     * @return PhoneState
+     */
     public static function create(): PhoneState
     {
         return new static();
     }
 
+    /**
+     * @return PhoneState
+     */
     abstract public function stateAfterShortPressRedButton(): PhoneState;
 }
