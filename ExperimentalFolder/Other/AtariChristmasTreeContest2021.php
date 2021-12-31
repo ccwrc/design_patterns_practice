@@ -19,6 +19,11 @@ final class AtariChristmasTreeContest2021
         'lopez',
         'pustak',
         'Kroll',
+        'tbxx',
+        'renton',
+        'Pecet',
+        'Caesar',
+        'Sikor',
     ];
 
     /**
