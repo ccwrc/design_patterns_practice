@@ -17,7 +17,7 @@ final class AtariChristmasTreeContest2021
 
     public const PEOPLE_OF_CARBON_AND_STEEL = [
         'lopez',
-        'pustak',
+        'pustak', // Winner
         'Kroll',
         'tbxx',
         'renton',
@@ -97,7 +97,9 @@ final class AtariChristmasTreeContest2021
     private function createEmailContent(string $winner): string
     {
         return 'Winner: ' . $winner . "\n"
-            . 'Number of people of carbon and steel: ' . count(self::PEOPLE_OF_CARBON_AND_STEEL) . "\n"
+            . 'Number of people of carbon and steel: '
+            . count(array_unique(self::PEOPLE_OF_CARBON_AND_STEEL))
+            . "\n"
             . 'Link to contest: ' . self::LINK_TO_CONTEST . "\n"
             . "\n"
             . 'Greetings, ' . "\n"
