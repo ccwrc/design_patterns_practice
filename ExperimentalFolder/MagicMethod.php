@@ -203,22 +203,23 @@ final class MagicMethod
     public function __clone()
     {
         $this->isClone = true;
-        $this->cloneNumber = static::$cloneCounter;
-        static::$cloneCounter++;
+        $this->cloneNumber = self::$cloneCounter;
+        self::$cloneCounter++;
     }
 
     /**
-     * @link https://stackoverflow.com/questions/46441958/what-is-the-real-purpose-of-magic-method-set-state-in-php Better
-     *  than official docs.
+     * @link https://stackoverflow.com/questions/46441958/what-is-the-real-purpose-of-magic-method-set-state-in-php
+     * Better than official docs.
+     *
      * @link http://docs.php.net/manual/pl/function.var-export.php var_export() docs
      *
      * @param array $array
      *
-     * @return string
+     * @return MagicMethod
      */
-    public static function __set_state(array $array): string
+    public static function __set_state(array $array): MagicMethod
     {
-        return self::SET_STATE_MESSAGE;
+        return new MagicMethod(self::SET_STATE_MESSAGE, 17);
     }
 
     /**

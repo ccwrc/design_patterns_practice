@@ -72,8 +72,8 @@ final class Internet implements InternetInterface
      */
     private function doesLinkLeadToPicture(string $pictureUrl): bool
     {
-        $headers = \get_headers($pictureUrl, 1);
+        $headers = \get_headers($pictureUrl, true);
 
-        return \strpos($headers['content-type'] ?? '', 'image/') !== false;
+        return str_contains($headers['content-type'] ?? '', 'image/');
     }
 }

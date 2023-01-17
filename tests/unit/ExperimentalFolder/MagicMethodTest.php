@@ -10,18 +10,13 @@ use PHPUnit\Framework\TestCase;
 
 class MagicMethodTest extends TestCase
 {
-    /**
-     * @var string
-     */
-    private static $magicMethodName = 'Harry Houdini';
-    /**
-     * @var int
-     */
-    private static $magicMethodNumber = 6;
+    private static string $magicMethodName = 'Harry Houdini';
+
+    private static int $magicMethodNumber = 6;
 
     public function testCreate(): MagicMethod
     {
-        $object = new MagicMethod(MagicMethodTest::$magicMethodName, MagicMethodTest::$magicMethodNumber);
+        $object = new MagicMethod(self::$magicMethodName, self::$magicMethodNumber);
         $this->assertInstanceOf(MagicMethod::class, $object);
 
         return $object;
@@ -50,7 +45,7 @@ class MagicMethodTest extends TestCase
     public function testToString(MagicMethod $magicMethod): void
     {
         echo $magicMethod;
-        $this->expectOutputString(MagicMethodTest::$magicMethodName);
+        $this->expectOutputString(self::$magicMethodName);
     }
 
     public function testDestruct(): void
@@ -67,7 +62,7 @@ class MagicMethodTest extends TestCase
      */
     public function testGet(MagicMethod $magicMethod): void
     {
-        $this->assertEquals(MagicMethodTest::$magicMethodNumber, $magicMethod->number);
+        $this->assertEquals(self::$magicMethodNumber, $magicMethod->number);
 
         $this->expectException(\Exception::class);
         $magicMethod->fakeProperty;
@@ -104,8 +99,8 @@ class MagicMethodTest extends TestCase
      */
     public function testInvoke(MagicMethod $magicMethod): void
     {
-        $this->assertTrue(is_callable($magicMethod));
-        $this->assertTrue(is_string($magicMethod()));
+        $this->assertIsCallable($magicMethod);
+        $this->assertIsString($magicMethod());
         $this->assertSame(MagicMethod::INVOKE_MESSAGE, $magicMethod());
     }
 
@@ -142,15 +137,15 @@ class MagicMethodTest extends TestCase
         $this->assertSame($counterForFirstClone, $cloneNo1->getCloneNumber());
 
         $cloneNo2 = clone $magicMethod;
-        $this->assertSame(MagicMethodTest::$magicMethodName, $cloneNo2->getName());
-        $this->assertSame(MagicMethodTest::$magicMethodNumber, $cloneNo2->getNumber());
+        $this->assertSame(self::$magicMethodName, $cloneNo2->getName());
+        $this->assertSame(self::$magicMethodNumber, $cloneNo2->getNumber());
 
         $cloneNo3 = clone $magicMethod;
         $this->assertTrue($cloneNo3->isClone());
         $this->assertSame($counterForThirdClone, $cloneNo3->getCloneNumber());
 
         $this->assertFalse($magicMethod->isClone());
-        $this->assertSame(null, $magicMethod->getCloneNumber());
+        $this->assertNull($magicMethod->getCloneNumber());
     }
 
     /**

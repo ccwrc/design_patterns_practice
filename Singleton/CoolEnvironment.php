@@ -22,7 +22,7 @@ final class CoolEnvironment
     {
     }
 
-    private function __wakeup()
+    public function __wakeup()
     {
     }
 
