@@ -1,4 +1,4 @@
-## design_patterns_practice (up to PHP 7.4 version)    
+## design_patterns_practice (up to PHP 8.0 version)    
 
 Create your own .env file and copy the contents of .env.dist to it (in the same directory).
 
