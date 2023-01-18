@@ -31,18 +31,6 @@ class ArraySpreadOperatorTest extends TestCase
         ));
     }
 
-    public function testErrorGlueThreeArrays(): void
-    {
-        $array = ['one' => 1];
-
-        $this->expectException(\Error::class);
-        ArraySpreadOperator::glueThreeArrays(
-            $array,
-            $array,
-            $array
-        );
-    }
-
     public function testGlueSpeed(): void
     {
         $array1 = [2, 3, 4];

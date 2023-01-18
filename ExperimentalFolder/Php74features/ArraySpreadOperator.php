@@ -11,7 +11,7 @@ final class ArraySpreadOperator
 {
     /**
      * Much faster than array_merge().
-     * Note: only works with arrays with numerical keys.
+     * Note: to PHP 8.0 only works with arrays with numerical keys. Works fine from PHP 8.1
      */
     public static function glueThreeArrays(
         array $array1,
