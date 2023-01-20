@@ -1,10 +1,4 @@
 more info:
-https://lukasz-socha.pl/php/wzorce-projektowe-cz-2-strategy/
-
-https://designpatternsphp.readthedocs.io/pl/latest/Behavioral/Strategy/README.html
-
-https://4programmers.net/PHP/Wzorce_Projektowe#strategy
-
-http://itcraftsman.pl/wzorce-projektowe-strategia/
-
-https://zawarstwaabstrakcji.pl/wzorce-projektowe/strategia/
+(pl) https://designpatternsphp.readthedocs.io/pl/latest/Behavioral/Strategy/README.html
+(pl) http://itcraftsman.pl/wzorce-projektowe-strategia/
+(pl) https://zawarstwaabstrakcji.pl/wzorce-projektowe/strategia/

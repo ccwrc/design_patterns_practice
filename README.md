@@ -7,9 +7,6 @@ To run unit tests:
 or with a detailed description:    
 ./vendor/bin/phpunit --verbose
 
-PHPUnit doc:   
-https://phpunit.de/getting-started/phpunit-7.html   
-
 
 **Creational:**   
 - Abstract Factory
@@ -37,7 +34,8 @@ https://phpunit.de/getting-started/phpunit-7.html
 - State    
 
 **Others:**   
-- Value Object   :pen: 
+- Value Object
+- Command Query Separation   :pen: 
 
 
 

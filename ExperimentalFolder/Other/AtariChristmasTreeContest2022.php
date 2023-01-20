@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder\Other;
 
-use Patterns\ExperimentalFolder\MicroLogger;
-use Patterns\ExperimentalFolder\Utils\VerifyEmails;
+use Patterns\ExperimentalFolder\{MicroLogger, Utils\VerifyEmails};
 
 /**
  * @link https://atarionline.pl/forum/comments.php?DiscussionID=6718 contest
  */
-final class AtariChristmasTreeContest2022
+final readonly class AtariChristmasTreeContest2022
 {
     public const LINK_TO_CONTEST = 'https://atarionline.pl/forum/comments.php?DiscussionID=6718';
 
