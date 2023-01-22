@@ -20,6 +20,17 @@ class ReadonlyPropertyTest extends TestCase
         $book->title = 'Failure';
     }
 
+    public function testUnsetTitle(): void
+    {
+        $book = new ReadonlyProperty(
+            'Fiasko by Stanisław Lem',
+            379
+        );
+
+        $this->expectError();
+        unset($book->title);
+    }
+
     public function testIsUsed(): void
     {
         $book = new ReadonlyProperty(
