@@ -19,6 +19,7 @@ final readonly class AtariChristmasTreeContest2022
         'Wolfen',
         'VLX',
         'lopez',
+        'as...',
     ];
 
     /**
