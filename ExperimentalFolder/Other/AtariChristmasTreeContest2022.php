@@ -23,11 +23,6 @@ final readonly class AtariChristmasTreeContest2022
     ];
 
     /**
-     * Handle for sending e-mails.
-     */
-    private SendEmailInterface $sendEmail;
-
-    /**
      * Emails of persons supervising the draw.
      *
      * @var string[]
@@ -35,11 +30,10 @@ final readonly class AtariChristmasTreeContest2022
     private array $supervisorsEmails;
 
     public function __construct(
-        SendEmailInterface $sendEmail,
-        array              $supervisorsEmails
+        private SendEmailInterface $sendEmail,
+        array                      $supervisorsEmails
     )
     {
-        $this->sendEmail = $sendEmail;
         $this->supervisorsEmails = VerifyEmails::verify($supervisorsEmails);
     }
 
