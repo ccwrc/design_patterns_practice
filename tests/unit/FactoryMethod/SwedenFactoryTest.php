@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\FactoryMethod;
 
 use Patterns\FactoryMethod\Accessory\{BenWaBalls, EroticAccessory, Handcuffs, Rope};
-use Patterns\FactoryMethod\SwedenFactory;
-
+use Patterns\FactoryMethod\{EroticFactory, SwedenFactory};
 use PHPUnit\Framework\TestCase;
 
 class SwedenFactoryTest extends TestCase
@@ -17,7 +16,7 @@ class SwedenFactoryTest extends TestCase
 
         $this->assertInstanceOf(Handcuffs::class, $handcuffs);
         $this->assertInstanceOf(EroticAccessory::class, $handcuffs);
-        $this->assertEquals(100, $handcuffs->getPleasureLevel());
+        $this->assertEquals(EroticFactory::PLEASURE_LEVEL_100, $handcuffs->getPleasureLevel());
     }
 
     public function testCanCreateBenWaBalls(): void
@@ -26,7 +25,7 @@ class SwedenFactoryTest extends TestCase
 
         $this->assertInstanceOf(BenWaBalls::class, $balls);
         $this->assertInstanceOf(EroticAccessory::class, $balls);
-        $this->assertEquals(300, $balls->getPleasureLevel());
+        $this->assertEquals(EroticFactory::PLEASURE_LEVEL_300, $balls->getPleasureLevel());
     }
 
     public function testCanCreateRope(): void
@@ -35,6 +34,6 @@ class SwedenFactoryTest extends TestCase
 
         $this->assertInstanceOf(Rope::class, $rope);
         $this->assertInstanceOf(EroticAccessory::class, $rope);
-        $this->assertEquals(-50, $rope->getPleasureLevel());
+        $this->assertEquals(EroticFactory::PLEASURE_LEVEL_MINUS_50, $rope->getPleasureLevel());
     }
 }

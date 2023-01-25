@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\ExperimentalFolder\Php74features;
 
 use Patterns\ExperimentalFolder\Php74features\TypedPropertiesTwoZero;
-
 use PHPUnit\Framework\TestCase;
 
 class TypedPropertiesTwoZeroTest extends TestCase
@@ -21,6 +20,7 @@ class TypedPropertiesTwoZeroTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param TypedPropertiesTwoZero $twoZero
      */
     public function testTypedString(TypedPropertiesTwoZero $twoZero): void
@@ -33,6 +33,7 @@ class TypedPropertiesTwoZeroTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param TypedPropertiesTwoZero $twoZero
      */
     public function testTypedInt(TypedPropertiesTwoZero $twoZero): void
@@ -53,6 +54,7 @@ class TypedPropertiesTwoZeroTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param TypedPropertiesTwoZero $twoZero
      */
     public function testUninitializedVar(TypedPropertiesTwoZero $twoZero): void

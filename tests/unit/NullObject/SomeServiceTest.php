@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\NullObject;
 
 use Patterns\NullObject\{FakeMailer, RealMailer, SomeService};
-
 use PHPUnit\Framework\TestCase;
 
 class SomeServiceTest extends TestCase

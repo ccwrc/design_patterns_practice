@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\ExperimentalFolder;
 
 use Patterns\ExperimentalFolder\{MagicMethod, MicroLogger};
-
 use PHPUnit\Framework\TestCase;
 
 class MagicMethodTest extends TestCase
@@ -24,6 +23,7 @@ class MagicMethodTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param MagicMethod $magicMethod
      */
     public function testCall(MagicMethod $magicMethod): void
@@ -40,6 +40,7 @@ class MagicMethodTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param MagicMethod $magicMethod
      */
     public function testToString(MagicMethod $magicMethod): void
@@ -58,6 +59,7 @@ class MagicMethodTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param MagicMethod $magicMethod
      */
     public function testGet(MagicMethod $magicMethod): void
@@ -70,6 +72,7 @@ class MagicMethodTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param MagicMethod $magicMethod
      */
     public function testSet(MagicMethod $magicMethod): void
@@ -95,6 +98,7 @@ class MagicMethodTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param MagicMethod $magicMethod
      */
     public function testInvoke(MagicMethod $magicMethod): void
@@ -106,6 +110,7 @@ class MagicMethodTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param MagicMethod $magicMethod
      */
     public function testIsSet(MagicMethod $magicMethod): void
@@ -115,6 +120,7 @@ class MagicMethodTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param MagicMethod $magicMethod
      */
     public function testUnset(MagicMethod $magicMethod): void
@@ -125,6 +131,7 @@ class MagicMethodTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param MagicMethod $magicMethod
      */
     public function testClone(MagicMethod $magicMethod): void
@@ -151,7 +158,9 @@ class MagicMethodTest extends TestCase
     /**
      * @link http://docs.php.net/manual/pl/function.eval.php eval() docs.
      * @link http://docs.php.net/manual/pl/function.var-export.php var_export() docs
+     *
      * @depends testCreate
+     *
      * @param MagicMethod $magicMethod
      */
     public function testSetState(MagicMethod $magicMethod): void
@@ -162,6 +171,7 @@ class MagicMethodTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param MagicMethod $magicMethod
      */
     public function testDebugInfo(MagicMethod $magicMethod): void

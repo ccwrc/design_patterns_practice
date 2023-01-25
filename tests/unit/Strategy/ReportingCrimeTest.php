@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Strategy;
 
 use Patterns\Strategy\{PatternInterface\CrimeType, PoliceProcedures\OtherCrime, ReportingCrime};
-
 use PHPUnit\Framework\TestCase;
 
 class ReportingCrimeTest extends TestCase

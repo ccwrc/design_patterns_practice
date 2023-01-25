@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\AdapterWrapper\Implementation;
 
 use Patterns\AdapterWrapper\Implementation\OptimisticCalculator;
-
 use PHPUnit\Framework\TestCase;
 
 class OptimisticCalculatorTest extends TestCase

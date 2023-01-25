@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\SimpleFactory;
 
 use Patterns\SimpleFactory\Cat;
-
 use PHPUnit\Framework\TestCase;
 
 class CatTest extends TestCase
@@ -34,7 +33,7 @@ class CatTest extends TestCase
         $cat = new Cat(false, true);
 
         $this->assertTrue($cat->isAnnoying());
-        $this->assertTrue(is_string($cat->getVoice()));
+        $this->assertIsString($cat->getVoice());
         $this->assertEquals('Go fuck yourself men!', $cat->getVoice());
     }
 }

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Strategy\PoliceProcedures;
 
 use Patterns\Strategy\PoliceProcedures\Carjacking;
-
 use PHPUnit\Framework\TestCase;
 
 class CarjackingTest extends TestCase
@@ -21,6 +20,7 @@ class CarjackingTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param Carjacking $carjacking
      */
     public function testGetProcedure(Carjacking $carjacking): void
@@ -30,6 +30,7 @@ class CarjackingTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param Carjacking $carjacking
      */
     public function testGetCode(Carjacking $carjacking): void

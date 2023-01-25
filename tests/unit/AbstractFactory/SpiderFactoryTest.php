@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\AbstractFactory;
 
 use Patterns\AbstractFactory\{Cobweb, SpiderFactory};
-
 use PHPUnit\Framework\TestCase;
 
 class SpiderFactoryTest extends TestCase
@@ -16,6 +15,7 @@ class SpiderFactoryTest extends TestCase
         {
             /**
              * @param int $strength
+             *
              * @return Cobweb
              */
             public function makeWeb(int $strength): Cobweb

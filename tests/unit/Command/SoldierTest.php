@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Command;
 
 use Patterns\Command\Soldier;
-
 use PHPUnit\Framework\TestCase;
 
 class SoldierTest extends TestCase

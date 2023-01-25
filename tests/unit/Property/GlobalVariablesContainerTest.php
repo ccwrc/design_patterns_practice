@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Property;
 
 use Patterns\Property\GlobalVariablesContainer;
-
 use PHPUnit\Framework\TestCase;
 
 class GlobalVariablesContainerTest extends TestCase

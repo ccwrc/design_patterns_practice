@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Observer;
 
 use Patterns\Observer\PasswordManager;
-
 use PHPUnit\Framework\TestCase;
 
 class PasswordManagerTest extends TestCase
@@ -20,7 +19,7 @@ class PasswordManagerTest extends TestCase
             $passwordHash = false;
         }
 
-        $this->assertTrue(\is_string($passwordHash));
+        $this->assertIsString($passwordHash);
         $this->assertNotSame($plainText, $passwordHash);
     }
 
@@ -37,7 +36,7 @@ class PasswordManagerTest extends TestCase
 
     public function testGoToHell(): void
     {
-        $this->assertTrue(is_string(PasswordManager::goToHell('rand ' . rand(1, 155))));
+        $this->assertIsString(PasswordManager::goToHell('rand ' . rand(1, 155)));
         $this->assertSame('go to hell', PasswordManager::goToHell('any string'));
         $this->assertSame('welcome', PasswordManager::goToHell('go to hell'));
         $this->assertSame('welcome', PasswordManager::goToHell(null));

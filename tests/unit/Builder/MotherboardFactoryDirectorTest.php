@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Builder;
 
 use Patterns\Builder\{AtariMotherboardBuilder, BiostarMotherboardBuilder, MotherboardFactoryDirector};
-
 use PHPUnit\Framework\TestCase;
 
 class MotherboardFactoryDirectorTest extends TestCase

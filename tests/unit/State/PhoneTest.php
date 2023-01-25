@@ -6,7 +6,6 @@ namespace Patterns\tests\unit\State;
 
 use Patterns\State\Phone;
 use Patterns\State\PhoneStates\{PhoneStateIdle, PhoneStateRinging};
-
 use PHPUnit\Framework\TestCase;
 
 class PhoneTest extends TestCase

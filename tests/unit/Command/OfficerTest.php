@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Command;
 
 use Patterns\Command\{CommandInvokerInterface, Officer};
-
 use PHPUnit\Framework\TestCase;
 
 class OfficerTest extends TestCase
@@ -21,7 +20,9 @@ class OfficerTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param Officer $officer
+     *
      * @throws \JsonException
      */
     public function testDoesJsonNowThrowExceptions(Officer $officer): void
@@ -32,7 +33,9 @@ class OfficerTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param Officer $officer
+     *
      * @throws \JsonException
      */
     public function testValidDoesJsonNowThrowExceptions(Officer $officer): void
@@ -42,6 +45,7 @@ class OfficerTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param Officer $officer
      */
     public function testShowArrayFirstKey(Officer $officer): void

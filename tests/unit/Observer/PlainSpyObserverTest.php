@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Observer;
 
 use Patterns\Observer\{FakeManager, PlainSpyObserver};
-
 use PHPUnit\Framework\TestCase;
 
 class PlainSpyObserverTest extends TestCase

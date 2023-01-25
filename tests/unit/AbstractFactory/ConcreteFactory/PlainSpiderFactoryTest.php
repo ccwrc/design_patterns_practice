@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\AbstractFactory\ConcreteFactory;
 
 use Patterns\AbstractFactory\{Cobweb, ConcreteFactory\PlainSpiderFactory};
-
 use PHPUnit\Framework\TestCase;
 
 class PlainSpiderFactoryTest extends TestCase
@@ -23,6 +22,7 @@ class PlainSpiderFactoryTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param PlainSpiderFactory $plainSpider
      */
     public function testCanCreateCobweb(PlainSpiderFactory $plainSpider): void

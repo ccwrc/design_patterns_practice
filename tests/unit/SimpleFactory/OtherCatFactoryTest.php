@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\SimpleFactory;
 
 use Patterns\SimpleFactory\{Cat, OtherCatFactory};
-
 use PHPUnit\Framework\TestCase;
 
 class OtherCatFactoryTest extends TestCase

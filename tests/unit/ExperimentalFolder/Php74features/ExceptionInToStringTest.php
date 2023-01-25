@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\ExperimentalFolder\Php74features;
 
 use Patterns\ExperimentalFolder\Php74features\ExceptionInToString;
-
 use PHPUnit\Framework\TestCase;
 
 class ExceptionInToStringTest extends TestCase

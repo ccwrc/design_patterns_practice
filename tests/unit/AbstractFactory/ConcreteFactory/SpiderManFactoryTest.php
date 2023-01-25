@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\AbstractFactory\ConcreteFactory;
 
 use Patterns\AbstractFactory\{Cobweb, ConcreteFactory\SpiderManFactory};
-
 use PHPUnit\Framework\{TestCase};
 
 class SpiderManFactoryTest extends TestCase
@@ -23,6 +22,7 @@ class SpiderManFactoryTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param SpiderManFactory $spiderMan
      */
     public function testCatchCriminals(SpiderManFactory $spiderMan): void
@@ -47,6 +47,7 @@ class SpiderManFactoryTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param SpiderManFactory $spiderMan
      */
     public function testCatchCriminalsError(SpiderManFactory $spiderMan): void
@@ -57,6 +58,7 @@ class SpiderManFactoryTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param SpiderManFactory $spiderMan
      */
     public function testCanCreateCobweb(SpiderManFactory $spiderMan): void

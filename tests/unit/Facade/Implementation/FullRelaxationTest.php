@@ -6,7 +6,6 @@ namespace Patterns\tests\unit\Facade\Implementation;
 
 use Patterns\Facade\{AirConditioning, Internet, TvSet};
 use Patterns\Facade\Implementation\FullRelaxation;
-
 use PHPUnit\Framework\TestCase;
 
 class FullRelaxationTest extends TestCase

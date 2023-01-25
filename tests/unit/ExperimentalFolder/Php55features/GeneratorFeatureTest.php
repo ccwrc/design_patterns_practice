@@ -6,7 +6,6 @@ namespace Patterns\tests\unit\ExperimentalFolder\Php55features;
 
 use Patterns\ExperimentalFolder\MicroLogger;
 use Patterns\ExperimentalFolder\Php55features\GeneratorFeature;
-
 use PHPUnit\Framework\TestCase;
 
 class GeneratorFeatureTest extends TestCase

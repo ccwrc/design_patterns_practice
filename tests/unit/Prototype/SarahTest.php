@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Prototype;
 
 use Patterns\Prototype\{Sarah, TerminatorPrototype};
-
 use PHPUnit\Framework\TestCase;
 
 class SarahTest extends TestCase
@@ -25,6 +24,7 @@ class SarahTest extends TestCase
 
             /**
              * @param Sarah $sarah
+             *
              * @return bool
              */
             public function tryKillSarah(Sarah $sarah): bool

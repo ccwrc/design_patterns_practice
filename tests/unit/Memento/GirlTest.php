@@ -22,6 +22,7 @@ class GirlTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param Girl $girl
      */
     public function testBehatNeeded(Girl $girl): void

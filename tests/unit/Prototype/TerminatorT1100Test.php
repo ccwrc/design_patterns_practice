@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Prototype;
 
 use Patterns\Prototype\{Sarah, TerminatorT1100};
-
 use PHPUnit\Framework\TestCase;
 
 class TerminatorT1100Test extends TestCase

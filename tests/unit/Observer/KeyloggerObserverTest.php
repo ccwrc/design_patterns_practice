@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Observer;
 
 use Patterns\Observer\{FakeManager, KeyloggerObserver, PasswordManager};
-
 use PHPUnit\Framework\TestCase;
 
 class KeyloggerObserverTest extends TestCase

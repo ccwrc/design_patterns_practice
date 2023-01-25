@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\FluentInterface;
 
 use Patterns\FluentInterface\{Question, Questionnaire};
-
 use PHPUnit\Framework\TestCase;
 
 class QuestionnaireTest extends TestCase
@@ -21,6 +20,6 @@ class QuestionnaireTest extends TestCase
             ->addQuestion($question2)
             ->addQuestion($question3);
 
-        $this->assertEquals(3, \sizeof($questionnaire->getQuestions()));
+        $this->assertCount(3, $questionnaire->getQuestions());
     }
 }

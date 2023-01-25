@@ -8,6 +8,10 @@ use Patterns\FactoryMethod\Accessory\EroticAccessory;
 
 abstract class EroticFactory
 {
+    public const PLEASURE_LEVEL_100 = 100;
+    public const PLEASURE_LEVEL_300 = 300;
+    public const PLEASURE_LEVEL_MINUS_50 = -50;
+
     public const FOR_MAN = 'man';
     public const FOR_WOMAN = 'woman';
     public const FOR_BI = 'who cares';

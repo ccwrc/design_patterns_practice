@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\FactoryMethod;
 
 use Patterns\FactoryMethod\{Accessory\EroticAccessory, ChinaFactory, EroticFactory};
-
 use PHPUnit\Framework\TestCase;
 
 class ChinaFactoryTest extends TestCase

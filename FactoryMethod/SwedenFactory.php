@@ -15,14 +15,14 @@ final class SwedenFactory extends EroticFactory
     {
         switch ($sex) {
             case self::FOR_MAN:
-                return new Handcuffs(100);
+                return new Handcuffs(self::PLEASURE_LEVEL_100);
             case self::FOR_WOMAN:
                 $benWaBalls = new BenWaBalls();
-                $benWaBalls->setPleasureLevel(300);
+                $benWaBalls->setPleasureLevel(self::PLEASURE_LEVEL_300);
 
                 return $benWaBalls;
             case self::FOR_BI:
-                return new Rope(-50);
+                return new Rope(self::PLEASURE_LEVEL_MINUS_50);
             default:
                 throw new \InvalidArgumentException('is not a valid sex');
         }

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Facade;
 
 use Patterns\Facade\AirConditioning;
-
 use PHPUnit\Framework\TestCase;
 
 class AirConditioningTest extends TestCase

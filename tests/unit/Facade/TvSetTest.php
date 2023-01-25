@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Facade;
 
 use Patterns\Facade\TvSet;
-
 use PHPUnit\Framework\TestCase;
 
 class TvSetTest extends TestCase
@@ -19,6 +18,7 @@ class TvSetTest extends TestCase
 
     /**
      * @link https://www.youtube.com/watch?v=VY-50K33qKk Pulp Fiction, Samuel L. Jackson
+     *
      * @throws \Exception
      */
     public function testFailIsMaryAnTvSetObject(): void

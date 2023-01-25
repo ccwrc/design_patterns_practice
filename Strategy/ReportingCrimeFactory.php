@@ -21,22 +21,13 @@ final class ReportingCrimeFactory
      */
     public static function create(string $crimeType): ReportingCrime
     {
-        switch (strtolower($crimeType)) {
-            case self::CARJACKING:
-                $newCrimeType = new Carjacking();
-                break;
-            case self::INDECENT_EXPOSURE:
-                $newCrimeType = new IndecentExposure();
-                break;
-            case self::KIDNAPPING:
-                $newCrimeType = new Kidnapping();
-                break;
-            case self::MURDER:
-                $newCrimeType = new Murder();
-                break;
-            default:
-                $newCrimeType = new OtherCrime();
-        }
+        $newCrimeType = match (strtolower($crimeType)) {
+            self::CARJACKING => new Carjacking(),
+            self::INDECENT_EXPOSURE => new IndecentExposure(),
+            self::KIDNAPPING => new Kidnapping(),
+            self::MURDER => new Murder(),
+            default => new OtherCrime(),
+        };
 
         return new ReportingCrime($newCrimeType);
     }

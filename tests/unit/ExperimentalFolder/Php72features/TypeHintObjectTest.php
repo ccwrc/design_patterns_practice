@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\ExperimentalFolder\Php72features;
 
 use Patterns\ExperimentalFolder\Php72features\TypeHintObject;
-
 use PHPUnit\Framework\TestCase;
 
 class TypeHintObjectTest extends TestCase

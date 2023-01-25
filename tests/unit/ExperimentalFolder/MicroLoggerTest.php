@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\ExperimentalFolder;
 
 use Patterns\ExperimentalFolder\EnvironmentVariables;
-
 use PHPUnit\Framework\TestCase;
 
 class MicroLoggerTest extends TestCase

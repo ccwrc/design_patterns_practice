@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\AbstractFactory;
 
 use Patterns\AbstractFactory\Cobweb;
-
 use PHPUnit\Framework\TestCase;
 
 class CobwebTest extends TestCase

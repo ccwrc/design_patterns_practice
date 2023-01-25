@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Memento;
 
 use Patterns\Memento\Hunter;
-
 use PHPUnit\Framework\TestCase;
 
 class HunterTest extends TestCase

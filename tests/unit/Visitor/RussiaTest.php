@@ -6,7 +6,6 @@ namespace Patterns\tests\unit\Visitor;
 
 use Patterns\Visitor\PatternInterface\VisitorInterface;
 use Patterns\Visitor\{Poland, Russia, Ukraine};
-
 use PHPUnit\Framework\TestCase;
 
 class RussiaTest extends TestCase
@@ -25,6 +24,7 @@ class RussiaTest extends TestCase
 
     /**
      * @depends testCreateVisitor
+     *
      * @param VisitorInterface $visitor
      */
     public function testVisitUkraine(VisitorInterface $visitor): void
@@ -38,6 +38,7 @@ class RussiaTest extends TestCase
 
     /**
      * @depends testCreateVisitor
+     *
      * @param VisitorInterface $visitor
      */
     public function testVisitPoland(VisitorInterface $visitor): void

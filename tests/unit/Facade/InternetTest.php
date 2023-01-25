@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Facade;
 
 use Patterns\Facade\Internet;
-
 use PHPUnit\Framework\TestCase;
 
 class InternetTest extends TestCase

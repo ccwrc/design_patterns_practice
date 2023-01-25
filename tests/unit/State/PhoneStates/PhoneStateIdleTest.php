@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\State\PhoneStates;
 
 use Patterns\State\PhoneStates\PhoneStateIdle;
-
 use PHPUnit\Framework\TestCase;
 
 class PhoneStateIdleTest extends TestCase

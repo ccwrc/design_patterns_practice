@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\FactoryMethod\Accessory;
 
 use Patterns\FactoryMethod\Accessory\{EroticAccessory, Rope};
-
 use PHPUnit\Framework\TestCase;
 
 class RopeTest extends TestCase
@@ -24,6 +23,7 @@ class RopeTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param Rope $rope
      */
     public function testSetPleasureLevel(Rope $rope): void
@@ -37,6 +37,7 @@ class RopeTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param Rope $rope
      */
     public function testGetSafeWord(Rope $rope): void

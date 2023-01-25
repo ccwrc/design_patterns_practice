@@ -6,7 +6,6 @@ namespace Patterns\tests\unit\ExperimentalFolder\Php74features;
 
 use Patterns\ExperimentalFolder\MicroLogger;
 use Patterns\ExperimentalFolder\Php74features\ArraySpreadOperator;
-
 use PHPUnit\Framework\TestCase;
 
 class ArraySpreadOperatorTest extends TestCase

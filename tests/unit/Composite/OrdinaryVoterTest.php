@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Composite;
 
 use Patterns\Composite\{ElectionsPart, OrdinaryVoter};
-
 use PHPUnit\Framework\TestCase;
 
 class OrdinaryVoterTest extends TestCase
@@ -24,6 +23,7 @@ class OrdinaryVoterTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param OrdinaryVoter $ordinaryVoter
      */
     public function testGetVotingPower(OrdinaryVoter $ordinaryVoter): void
@@ -33,7 +33,9 @@ class OrdinaryVoterTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param OrdinaryVoter $ordinaryVoter
+     *
      * @throws \ReflectionException
      */
     public function testAddElectionsPartException(OrdinaryVoter $ordinaryVoter): void

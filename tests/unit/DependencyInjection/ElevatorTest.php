@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\DependencyInjection;
 
 use Patterns\DependencyInjection\{Elevator, Floor, Rope};
-
 use PHPUnit\Framework\TestCase;
 
 class ElevatorTest extends TestCase
@@ -23,6 +22,7 @@ class ElevatorTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param $elevator Elevator
      */
     public function testTryCutRope(Elevator $elevator): void
@@ -32,6 +32,7 @@ class ElevatorTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param $elevator Elevator
      */
     public function testShowMaxStrength(Elevator $elevator): void

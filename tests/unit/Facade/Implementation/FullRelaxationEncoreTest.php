@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Facade\Implementation;
 
 use Patterns\Facade\Implementation\FullRelaxationEncore;
-
 use PHPUnit\Framework\TestCase;
 
 class FullRelaxationEncoreTest extends TestCase

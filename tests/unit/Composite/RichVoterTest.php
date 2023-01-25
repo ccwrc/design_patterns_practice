@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Composite;
 
 use Patterns\Composite\{ElectionsPart, RichVoter};
-
 use PHPUnit\Framework\TestCase;
 
 class RichVoterTest extends TestCase
@@ -24,6 +23,7 @@ class RichVoterTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param RichVoter $richVoter
      */
     public function testGetVotingPower(RichVoter $richVoter): void
@@ -33,7 +33,9 @@ class RichVoterTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param RichVoter $richVoter
+     *
      * @throws \ReflectionException
      */
     public function testRemoveElectionsPart(RichVoter $richVoter): void

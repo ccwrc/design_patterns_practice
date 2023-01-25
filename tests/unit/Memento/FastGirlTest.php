@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Patterns\tests\unit\Memento;
 
 use Patterns\Memento\{FastGirl, Wolf, GirlCaretaker};
-
 use PHPUnit\Framework\TestCase;
 
 class FastGirlTest extends TestCase
@@ -23,6 +22,7 @@ class FastGirlTest extends TestCase
 
     /**
      * @depends testCreate
+     *
      * @param FastGirl $girl
      */
     public function testBehatNeededWithMaxSpeed(FastGirl $girl): void
