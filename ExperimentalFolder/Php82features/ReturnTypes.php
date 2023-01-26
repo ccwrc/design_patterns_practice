@@ -7,7 +7,7 @@ namespace Patterns\ExperimentalFolder\Php82features;
 /**
  * @link https://php.watch/articles/PHP-8.2#type-safety description
  */
-class ReturnTypes
+final class ReturnTypes
 {
     public static function getTrue(): true
     {
