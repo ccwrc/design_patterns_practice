@@ -6,12 +6,9 @@ namespace Patterns\AbstractFactory;
 
 abstract class Cobweb
 {
-    protected int $strength;
-
     protected string $productionTechnology;
 
-    public function __construct(int $strength)
+    public function __construct(protected int $strength)
     {
-        $this->strength = $strength;
     }
 }
