@@ -37,17 +37,11 @@ final class AirConditioning implements AirConditioningInterface
         $this->isWorking = false;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function setTemperature(int $temperature): void
     {
         $this->temperature = self::getCorrectTemperature($temperature);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getTemperature(): int
     {
         return $this->temperature;

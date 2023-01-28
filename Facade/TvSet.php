@@ -13,9 +13,6 @@ final class TvSet implements TvSetInterface
         $this->turnedOn = false;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function turnOn(): string
     {
         $this->turnedOn = true;
@@ -23,9 +20,6 @@ final class TvSet implements TvSetInterface
         return 'tv turned on';
     }
 
-    /**
-     * @inheritDoc
-     */
     public function disable(): string
     {
         $this->turnedOn = false;
@@ -33,9 +27,6 @@ final class TvSet implements TvSetInterface
         return 'welcome to real life';
     }
 
-    /**
-     * @inheritDoc
-     */
     public function isTurnedOn(): bool
     {
         return $this->turnedOn;

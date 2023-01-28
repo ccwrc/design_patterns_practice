@@ -6,22 +6,14 @@ namespace Patterns\Facade\Implementation;
 
 use Patterns\Facade\{AirConditioningInterface, InternetInterface, TvSetInterface};
 
-final class FullRelaxation implements RelaxInterface
+final readonly class FullRelaxation implements RelaxInterface
 {
-    private AirConditioningInterface $airConditioning;
-
-    private InternetInterface $internet;
-
-    private TvSetInterface $tvSet;
-
     public function __construct(
-        AirConditioningInterface $airConditioning,
-        InternetInterface $internet,
-        TvSetInterface $tvSet
-    ) {
-        $this->airConditioning = $airConditioning;
-        $this->internet = $internet;
-        $this->tvSet = $tvSet;
+        private AirConditioningInterface $airConditioning,
+        private InternetInterface        $internet,
+        private TvSetInterface           $tvSet
+    )
+    {
     }
 
     /**

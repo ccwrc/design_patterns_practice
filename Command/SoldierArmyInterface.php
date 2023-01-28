@@ -14,8 +14,6 @@ interface SoldierArmyInterface
 
     /**
      * Negative values for poisoned or out-of-date food.
-     *
-     * @param int $calories
      */
     public function eatForGloryOfCountry(int $calories): void;
 }

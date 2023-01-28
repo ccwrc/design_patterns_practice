@@ -39,9 +39,6 @@ final class Internet implements InternetInterface
         return 'I\'ll be back';
     }
 
-    /**
-     * @inheritDoc
-     */
     public function isOnline(): bool
     {
         return $this->online;
@@ -49,8 +46,6 @@ final class Internet implements InternetInterface
 
     /**
      * @link https://images85.fotosik.pl/662/83146eae65906369.jpg valid test link
-     *
-     * @param string $linkToPicture
      */
     public function addLinkToPicture(string $linkToPicture): void
     {
@@ -65,11 +60,6 @@ final class Internet implements InternetInterface
         return \count($this->picturesCollection);
     }
 
-    /**
-     * @param string $pictureUrl
-     *
-     * @return bool
-     */
     private function doesLinkLeadToPicture(string $pictureUrl): bool
     {
         $headers = \get_headers($pictureUrl, true);

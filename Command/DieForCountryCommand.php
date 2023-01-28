@@ -9,11 +9,8 @@ namespace Patterns\Command;
  */
 final class DieForCountryCommand extends Command
 {
-    private SoldierArmyInterface $soldierArmy;
-
-    public function __construct(SoldierArmyInterface $soldierArmy)
+    public function __construct(private SoldierArmyInterface $soldierArmy)
     {
-        $this->soldierArmy = $soldierArmy;
     }
 
     public function execute(): void

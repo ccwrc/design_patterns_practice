@@ -6,18 +6,9 @@ namespace Patterns\Facade;
 
 interface TvSetInterface
 {
-    /**
-     * @return string
-     */
     public function turnOn(): string;
 
-    /**
-     * @return string
-     */
     public function disable(): string;
 
-    /**
-     * @return bool
-     */
     public function isTurnedOn(): bool;
 }
