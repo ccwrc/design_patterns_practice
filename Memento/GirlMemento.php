@@ -8,15 +8,12 @@ use Patterns\Memento\PatternInterface\Memento;
 
 class GirlMemento implements Memento
 {
-    /**
-     * @var mixed
-     */
-    private $state;
+    private mixed $state;
 
     /**
      * @inheritDoc
      */
-    public function getState()
+    public function getState(): mixed
     {
         return $this->state;
     }
@@ -24,7 +21,7 @@ class GirlMemento implements Memento
     /**
      * @inheritDoc
      */
-    public function saveState($state): void
+    public function saveState(mixed $state): void
     {
         $this->state = $state;
     }

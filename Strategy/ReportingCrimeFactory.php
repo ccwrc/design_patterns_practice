@@ -14,11 +14,6 @@ final class ReportingCrimeFactory
     public const KIDNAPPING = 'kidnapping';
     public const OTHER_CRIME = 'other';
 
-    /**
-     * @param string $crimeType
-     *
-     * @return ReportingCrime
-     */
     public static function create(string $crimeType): ReportingCrime
     {
         $newCrimeType = match (strtolower($crimeType)) {

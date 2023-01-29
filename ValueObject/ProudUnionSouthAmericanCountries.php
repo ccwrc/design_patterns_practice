@@ -24,8 +24,6 @@ final class ProudUnionSouthAmericanCountries
 
     /**
      * That's why it's not Value Object, the class is mutable.
-     *
-     * @param SouthAmericanCountry $newProudUnionLeader
      */
     public function overthrowLeader(SouthAmericanCountry $newProudUnionLeader): void
     {

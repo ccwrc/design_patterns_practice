@@ -17,7 +17,7 @@ abstract class EroticFactory
     public const FOR_BI = 'who cares';
 
     /**
-     * @param string $sex
+     * @param string $sex I suggest using constants
      *
      * @throws \InvalidArgumentException
      * @return EroticAccessory

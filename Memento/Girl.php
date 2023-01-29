@@ -33,9 +33,6 @@ class Girl implements Originator
         $this->revengeDesire = false;
     }
 
-    /**
-     * @param Deadly $killer
-     */
     public function killGrandma(Deadly $killer): void
     {
         if ($killer->doesHaveWeapon()) {

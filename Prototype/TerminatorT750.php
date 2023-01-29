@@ -17,9 +17,6 @@ final class TerminatorT750 extends TerminatorPrototype
         //$this->serialNumber = clone $this->serialNumber;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function tryKillSarah(Sarah $sarah): bool
     {
         if ($sarah->isWillToSurvive() === false && $sarah->getLocation() === $this->getLocation()) {

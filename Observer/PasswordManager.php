@@ -58,9 +58,6 @@ final class PasswordManager implements \SplSubject, KeyloggerSubject
     /**
      * @link https://stackoverflow.com/questions/47634750/travis-ci-php-7-2-dont-support-argon2i/47678023
      *
-     * @param string $plainTextPassword
-     *
-     * @return string
      * @throws \Exception
      */
     public function createPasswordHash(string $plainTextPassword): string
@@ -92,10 +89,6 @@ final class PasswordManager implements \SplSubject, KeyloggerSubject
 
     /**
      * @link http://php.net/manual/en/control-structures.goto.php
-     *
-     * @param null|string $trollPassword
-     *
-     * @return string
      */
     public static function goToHell(?string $trollPassword): string
     {

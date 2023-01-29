@@ -6,11 +6,8 @@ namespace Patterns\NullObject;
 
 class SomeService
 {
-    private MailerStrategy $mailer;
-
-    public function __construct(MailerStrategy $mailer)
+    public function __construct(private MailerStrategy $mailer)
     {
-        $this->mailer = $mailer;
     }
 
     public function sendSomeMail(string $mailAddress): ?string

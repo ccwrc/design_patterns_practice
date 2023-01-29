@@ -11,8 +11,5 @@ interface EroticAccessory
      */
     public function setPleasureLevel(int $pleasureLevel): void;
 
-    /**
-     * @return int
-     */
     public function getPleasureLevel(): int;
 }

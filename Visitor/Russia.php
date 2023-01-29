@@ -8,9 +8,6 @@ use Patterns\Visitor\PatternInterface\VisitorInterface;
 
 final class Russia implements VisitorInterface
 {
-    /**
-     * @inheritDoc
-     */
     public function visitCountry(CountryInterface $country): bool
     {
         if (\get_class($this) === \get_class($country)) {
@@ -24,8 +21,6 @@ final class Russia implements VisitorInterface
 
     /**
      * Screw good practices, it's Russia!
-     *
-     * @inheritDoc
      */
     public function visitFriendCountry(CountryInterface $country): bool
     {
@@ -34,7 +29,7 @@ final class Russia implements VisitorInterface
             $totalArea = $reflectionObject->getProperty('totalArea');
             $totalArea->setAccessible(true);
             $totalArea->setValue($country, 0);
-        } catch (\Throwable $throwable) {
+        } catch (\Throwable) {
             return false;
         }
 

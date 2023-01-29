@@ -39,11 +39,6 @@ final class Sarah implements Location
         return $this->lives;
     }
 
-    /**
-     * @param Location $location
-     *
-     * @return bool
-     */
     public function killSarah(Location $location): bool
     {
         if ($location->getLocation() === $this->location && true === $this->isLives()) {

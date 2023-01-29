@@ -6,11 +6,8 @@ namespace Patterns\Memento;
 
 abstract class ForAnonymousClassTesting
 {
-    private string $name;
-
-    public function __construct(string $name)
+    public function __construct(private string $name)
     {
-        $this->name = $name;
     }
 
     abstract public function someFunction(): void;

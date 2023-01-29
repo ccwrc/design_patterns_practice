@@ -49,11 +49,6 @@ class FakeManager implements \SplSubject
 
     /**
      * @link http://php.net/manual/en/language.operators.comparison.php
-     *
-     * @param int $firstNumber
-     * @param int $secondNumber
-     *
-     * @return int
      */
     public static function spaceshipOperator(
         int $firstNumber,
@@ -66,7 +61,6 @@ class FakeManager implements \SplSubject
     /**
      * @link https://stackoverflow.com/questions/38716613/generate-a-single-use-token-in-php-random-bytes-or-openssl-random-pseudo-bytes
      *
-     * @return string
      * @throws \Exception
      */
     public static function getSingleUseToken(): string

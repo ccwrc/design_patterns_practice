@@ -15,7 +15,7 @@ final class Ukraine implements CountryInterface, RoleVisitedInterface
     public function __construct(int $totalArea)
     {
         $this->totalArea = \abs($totalArea);
-        $this->legend = '';
+        $this->legend = 'https://www.bbc.com/news/world-europe-61285833';
     }
 
     public function accept(VisitorInterface $visitor): void

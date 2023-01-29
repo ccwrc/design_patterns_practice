@@ -16,10 +16,7 @@ final class GlobalVariablesContainer implements PropertyContainer
     {
     }
 
-    /**
-     * @inheritDoc
-     */
-    public static function addPropertyBy(string $name, $property): void
+    public static function addPropertyBy(string $name, mixed $property): void
     {
         self::$container[$name] = $property;
     }
@@ -32,9 +29,6 @@ final class GlobalVariablesContainer implements PropertyContainer
         return self::$container[$name] ?? null;
     }
 
-    /**
-     * @inheritDoc
-     */
     public static function removePropertyBy(string $name): void
     {
         if(self::isPropertyExist($name)) {
@@ -42,9 +36,6 @@ final class GlobalVariablesContainer implements PropertyContainer
         }
     }
 
-    /**
-     * @inheritDoc
-     */
     public static function getPropertyKeys(): string
     {
         $keys = '';
@@ -55,9 +46,6 @@ final class GlobalVariablesContainer implements PropertyContainer
         return $keys;
     }
 
-    /**
-     * @inheritDoc
-     */
     public static function isPropertyExist(string $name): bool
     {
         return isset(self::$container[$name]);

@@ -11,9 +11,6 @@ class PlainSpyObserver implements \SplObserver
      */
     private array $subjects = [];
 
-    /**
-     * @param \SplSubject $subject
-     */
     public function update(\SplSubject $subject): void
     {
         $this->subjects[] = clone $subject;

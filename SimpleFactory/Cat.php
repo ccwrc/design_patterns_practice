@@ -6,6 +6,9 @@ namespace Patterns\SimpleFactory;
 
 class Cat implements CatInterface
 {
+    public const CAT_VOICE = 'meow, meow';
+    public const CAT_VOICE_ANNOYING = 'Go fuck yourself men!';
+
     private bool $fluffy;
 
     private bool $annoying;
@@ -19,31 +22,22 @@ class Cat implements CatInterface
         $this->annoying = $isAnnoying;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function isFluffy(): bool
     {
         return $this->fluffy;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function isAnnoying(): bool
     {
         return $this->annoying;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getVoice(): string
     {
         if ($this->annoying) {
-            return 'Go fuck yourself men!';
+            return self::CAT_VOICE_ANNOYING;
         }
 
-        return 'meow, meow';
+        return self::CAT_VOICE;
     }
 }

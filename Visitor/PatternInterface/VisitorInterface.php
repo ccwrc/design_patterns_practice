@@ -8,17 +8,7 @@ use Patterns\Visitor\CountryInterface;
 
 interface VisitorInterface
 {
-    /**
-     * @param CountryInterface $country
-     *
-     * @return bool
-     */
     public function visitCountry(CountryInterface $country): bool;
 
-    /**
-     * @param CountryInterface $country
-     *
-     * @return bool
-     */
     public function visitFriendCountry(CountryInterface $country): bool;
 }

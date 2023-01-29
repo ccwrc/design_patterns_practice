@@ -11,9 +11,6 @@ final class OtherCrime implements CrimeType
     private const CODE = 'XXX';
     private const PROCEDURE = 'Recognize, make a note, pass it to the prosecutor\'s office';
 
-    /**
-     * @inheritDoc
-     */
     public function getProcedure(): string
     {
         return self::PROCEDURE;

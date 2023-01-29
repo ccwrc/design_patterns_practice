@@ -18,19 +18,11 @@ final class VintageDildo implements EroticAccessory
         $this->pleasureLevel = $pleasureLevel;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getPleasureLevel(): int
     {
         return $this->pleasureLevel;
     }
 
-    /**
-     * @param int $size
-     *
-     * @return string
-     */
     public function changeSize(int $size): string
     {
         $this->size = \abs($size);

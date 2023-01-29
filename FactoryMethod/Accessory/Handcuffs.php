@@ -21,9 +21,6 @@ final class Handcuffs implements EroticAccessory, Vandersexxx
         $this->pleasureLevel = $pleasureLevel;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getPleasureLevel(): int
     {
         return $this->pleasureLevel;

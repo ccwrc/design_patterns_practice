@@ -18,9 +18,6 @@ final class Kidnapping implements CrimeType
         $this->procedure = 'Call for support, pursue, keep informed about the location.';
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getProcedure(): string
     {
         return $this->procedure;

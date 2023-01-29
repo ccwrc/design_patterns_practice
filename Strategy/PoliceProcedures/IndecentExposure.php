@@ -11,9 +11,6 @@ final class IndecentExposure implements CrimeType
     private const CODE = '314';
     private const PROCEDURE = 'Prepare a blanket, catch a suspect, cover with a blanket';
 
-    /**
-     * @inheritDoc
-     */
     public function getProcedure(): string
     {
         return self::PROCEDURE;

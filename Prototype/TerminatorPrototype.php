@@ -10,7 +10,7 @@ abstract class TerminatorPrototype implements Location
 {
     protected int $location;
 
-    protected ?Uuid $serialNumber;
+    protected ?Uuid $serialNumber = null;
 
     protected int $randomValue;
 
@@ -22,27 +22,19 @@ abstract class TerminatorPrototype implements Location
 
     abstract public function __clone();
 
-    /**
-     * @param Sarah $sarah
-     *
-     * @return bool
-     */
     abstract public function tryKillSarah(Sarah $sarah): bool;
 
     public function setSerialNumber(): bool
     {
         try {
-            $this->serialNumber = Uuid::uuid4();
+            $this->serialNumber = Uuid::uuid5();
 
             return true;
-        } catch (\Throwable $throwable) {
+        } catch (\Throwable) {
             return false;
         }
     }
 
-    /**
-     * @return null|Uuid
-     */
     public function getSerialNumber(): ?Uuid
     {
         return $this->serialNumber;

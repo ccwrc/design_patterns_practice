@@ -24,9 +24,6 @@ class GirlCaretaker implements Caretaker
         return $hash;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getMemento(string $mementoId): ?GirlMemento
     {
         return $this->mementos[$mementoId] ?? null;

@@ -16,9 +16,6 @@ final class BenWaBalls implements EroticAccessory
         $this->pleasureLevel = $pleasureLevel;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getPleasureLevel(): int
     {
         return $this->pleasureLevel;

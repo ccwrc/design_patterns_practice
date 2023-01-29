@@ -18,10 +18,6 @@ final class Questionnaire
 
     /**
      * Function allows chaining.
-     *
-     * @param string $title
-     *
-     * @return self
      */
     public function setTitle(string $title): self
     {
@@ -32,10 +28,6 @@ final class Questionnaire
 
     /**
      * Function allows chaining.
-     *
-     * @param Question $question
-     *
-     * @return self
      */
     public function addQuestion(Question $question): self
     {
@@ -44,9 +36,6 @@ final class Questionnaire
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTitle(): ?string
     {
         return $this->title;

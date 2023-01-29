@@ -25,7 +25,7 @@ class CatTest extends TestCase
         $cat = new Cat(true, false);
 
         $this->assertFalse($cat->isAnnoying());
-        $this->assertEquals('meow, meow', $cat->getVoice());
+        $this->assertEquals(Cat::CAT_VOICE, $cat->getVoice());
     }
 
     public function testGetVoiceAnnoyingCat(): void
@@ -34,6 +34,6 @@ class CatTest extends TestCase
 
         $this->assertTrue($cat->isAnnoying());
         $this->assertIsString($cat->getVoice());
-        $this->assertEquals('Go fuck yourself men!', $cat->getVoice());
+        $this->assertEquals(Cat::CAT_VOICE_ANNOYING, $cat->getVoice());
     }
 }

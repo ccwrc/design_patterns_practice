@@ -8,15 +8,11 @@ interface Memento
 {
     /**
      * Returns the state of the object provided by originator
-     *
-     * @return mixed
      */
-    public function getState();
+    public function getState(): mixed;
 
     /**
      * Writes the state of the object provided by originator
-     *
-     * @param mixed $state
      */
-    public function saveState($state): void;
+    public function saveState(mixed $state): void;
 }

@@ -18,9 +18,6 @@ final class Murder implements CrimeType
         $this->procedure = 'Call for support, pursue.';
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getProcedure(): string
     {
         return $this->procedure;

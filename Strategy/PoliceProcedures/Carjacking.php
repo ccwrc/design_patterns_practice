@@ -11,9 +11,6 @@ final class Carjacking implements CrimeType
     private const CODE = '215';
     private const PROCEDURE = 'Turn on the siren and lights, pursue';
 
-    /**
-     * @inheritDoc
-     */
     public function getProcedure(): string
     {
         return self::PROCEDURE;
