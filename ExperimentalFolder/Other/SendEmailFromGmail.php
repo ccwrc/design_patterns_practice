@@ -9,7 +9,7 @@ use Patterns\ExperimentalFolder\EnvironmentVariables;
 use PHPMailer\PHPMailer\{Exception, PHPMailer};
 
 /**
- * @link https://myaccount.google.com/lesssecureapps Check if you have problems with gmail.
+ * @link https://support.google.com/accounts/answer/185833 Application passwords.
  */
 final class SendEmailFromGmail implements SendEmailInterface
 {
