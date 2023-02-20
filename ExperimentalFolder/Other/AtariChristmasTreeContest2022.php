@@ -21,6 +21,7 @@ final readonly class AtariChristmasTreeContest2022
         'lopez',
         'as...',
         'martinez',
+        'Kroll',
     ];
 
     /**
