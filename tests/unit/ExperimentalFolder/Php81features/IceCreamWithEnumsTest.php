@@ -21,4 +21,11 @@ class IceCreamWithEnumsTest extends TestCase
 
         $this->assertStringContainsString('Enum', get_class($iceCream->availableFlavors()[0]));
     }
+
+    public function testIsFlavorCorrect(): void
+    {
+        $this->assertFalse(IceCreamWithEnums::isFlavorCorrect('banana chicken - of course incorrect'));
+
+        $this->assertTrue(IceCreamWithEnums::isFlavorCorrect(IceCreamFlavorEnum::DangerousFlavor->value));
+    }
 }

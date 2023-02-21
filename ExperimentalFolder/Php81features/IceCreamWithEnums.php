@@ -34,6 +34,11 @@ readonly class IceCreamWithEnums
         return $this->color->name;
     }
 
+    public static function isFlavorCorrect(string $flavor): bool
+    {
+        return IceCreamFlavorEnum::tryFrom($flavor) instanceof IceCreamFlavorEnum;
+    }
+
     public function availableFlavors(): array
     {
         return $this->flavor->getFlavors();
