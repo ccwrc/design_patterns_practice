@@ -16,9 +16,10 @@ class NamedParametersTest extends TestCase
             'I saved the cat',
             'I don\'t program in Java for evil corporations.'
         ];
+        $string = 'This is second default value. Where is first?';
 
         $result1 = NamedParameters::willYouGoToHeaven($bool, $array);
-        $result2 = NamedParameters::willYouGoToHeaven(goodDeeds: $array, areYouDead: $bool);
+        $result2 = NamedParameters::willYouGoToHeaven($bool, defaultValue2: $string, goodDeeds: $array);
 
         $this->assertSame($result1, $result2);
     }

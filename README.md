@@ -36,4 +36,5 @@ or with a detailed description:
 **Others:**   
 - Value Object
 - Command Query Separation
-- Lazy Loading   :pen: 
+- Lazy Loading  
+- DTO   :pen: 

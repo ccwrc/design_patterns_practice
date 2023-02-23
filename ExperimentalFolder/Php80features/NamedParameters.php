@@ -11,7 +11,12 @@ class NamedParameters
 {
     public const NUMBER_TO_OPEN_HEAVEN = 2;
 
-    public static function willYouGoToHeaven(bool $areYouDead, array $goodDeeds): bool
+    public static function willYouGoToHeaven(
+        bool   $areYouDead,
+        array  $goodDeeds,
+        string $defaultValue1 = 'birth-sin',
+        string $defaultValue2 = 'test'
+    ): bool
     {
         if (!$areYouDead) {
             return false;
