@@ -23,10 +23,10 @@ class SoulDtoTest extends TestCase
 
     public function testUnserialize(): void
     {
-        $soul = new SoulDto(['Another, innocent, plain human soul.']);
-        $serializedSoul = \serialize($soul);
+        $soulDto = new SoulDto(['Another, innocent, plain human soul.']);
+        $serializedSoulDto = \serialize($soulDto);
 
         $this->expectExceptionMessage('There is no return from hell.');
-        \unserialize($serializedSoul);
+        \unserialize($serializedSoulDto);
     }
 }
