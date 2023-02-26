@@ -22,6 +22,7 @@ final readonly class AtariChristmasTreeContest2022
         'as...',
         'martinez',
         'Kroll',
+        'Barnaba',
     ];
 
     /**
