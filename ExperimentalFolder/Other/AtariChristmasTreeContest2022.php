@@ -16,7 +16,7 @@ final readonly class AtariChristmasTreeContest2022
     public const WINNER_PREVIOUS_CONTEST = 'pustak';
 
     public const PEOPLE_OF_CARBON_AND_STEEL = [
-        'Wolfen',
+        'Wolfen', // Winner
         'VLX',
         'lopez',
         'as...',
