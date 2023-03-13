@@ -22,6 +22,7 @@ class GeneratorFeatureTest extends TestCase
         $generator->operateOnFileWithGenerator();
         $memoryPeakUsage = memory_get_peak_usage(true);
         MicroLogger::addLog('Test memory with Generator: ' . $memoryPeakUsage);
+        memory_reset_peak_usage();
 
         $this->assertGreaterThan(1, $memoryPeakUsage);
 
@@ -42,6 +43,7 @@ class GeneratorFeatureTest extends TestCase
         $generator->operateOnFileNoUseGenerator();
         $memoryPeakUsageNoGenerator = memory_get_peak_usage(true);
         MicroLogger::addLog('Test memory no Generator: ' . $memoryPeakUsageNoGenerator);
+        memory_reset_peak_usage();
 
         $this->assertGreaterThan($memoryPeakUsageWithGenerator, $memoryPeakUsageNoGenerator);
     }
