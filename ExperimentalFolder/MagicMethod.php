@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder;
 
+use Patterns\ExperimentalFolder\Php74features\SerializeUnserialize;
+
 /**
  * @link https://www.php.net/manual/en/language.oop5.magic.php offical docs.
- * @link https://www.tutorialdocs.com/article/16-php-magic-methods.html unoffical docs.
  *
  * Function __autoload() has been DEPRECATED as of PHP 7.2.0. Use instead PSR-4 standard.
  * @link https://www.php-fig.org/psr/psr-4/ PSR-4.
@@ -75,6 +76,8 @@ final class MagicMethod
     }
 
     /**
+     * Method is triggered when invoking inaccessible methods in an object context.
+     *
      * @param string $name
      * @param array $arguments
      *
@@ -86,6 +89,8 @@ final class MagicMethod
     }
 
     /**
+     * Method is triggered when invoking inaccessible methods in a static context.
+     *
      * @param string $name
      * @param array $arguments
      *
@@ -97,6 +102,8 @@ final class MagicMethod
     }
 
     /**
+     * Method allows a class to decide how it will react when it is treated like a string.
+     *
      * @link https://sekurak.pl/php-object-injection-malo-znana-krytyczna-klasa-podatnosci/ How to avoid problems.
      *
      * @return string
@@ -107,6 +114,9 @@ final class MagicMethod
     }
 
     /**
+     * The destructor will be called even if script execution is stopped using exit(). Calling exit() in a destructor
+     * will prevent the remaining shutdown routines from executing.
+     *
      * @link https://www.owasp.org/index.php/PHP_Object_Injection How to avoid problems.
      */
     public function __destruct()
@@ -116,7 +126,9 @@ final class MagicMethod
     }
 
     /**
-     * Warning: magic is slower (than getters/setters)
+     * Method is utilized for reading data from inaccessible (protected or private) or non-existing properties.
+     *
+     * Warning: magic is slower (than getters/setters).
      *
      * @param string $name
      *
@@ -136,6 +148,8 @@ final class MagicMethod
     }
 
     /**
+     * Method is run when writing data to inaccessible (protected or private) or non-existing properties.
+     *
      * @param string $name
      * @param mixed $value
      *
@@ -148,6 +162,11 @@ final class MagicMethod
     }
 
     /**
+     * Function serialize() checks if the class has a function with the magic name __sleep(). If so, that function is
+     * executed prior to any serialization.
+     *
+     * Custom object serialization from PHP 7.4 @see SerializeUnserialize
+     *
      * @link https://www.php.net/manual/en/language.oop5.magic.php#object.sleep docs.
      */
     public function __sleep(): array
@@ -156,6 +175,11 @@ final class MagicMethod
     }
 
     /**
+     * Function unserialize() checks for the presence of a function with the magic name __wakeup(). If present, this
+     * function can reconstruct any resources that the object may have.
+     *
+     * Custom object unserialize from PHP 7.4 @see SerializeUnserialize
+     *
      * @link https://www.owasp.org/index.php/PHP_Object_Injection How to avoid problems.
      */
     public function __wakeup(): void
@@ -198,7 +222,6 @@ final class MagicMethod
 
     /**
      * Method is run for the clone, not the original object.
-     * @link https://www.youtube.com/watch?v=Sz-Abh8opLo just a movie trailer.
      */
     public function __clone()
     {
@@ -208,6 +231,9 @@ final class MagicMethod
     }
 
     /**
+     * This static method is called for classes exported by var_export(). The only parameter of this method is an
+     * array containing exported properties in the form ['property' => value, ...].
+     *
      * @link https://stackoverflow.com/questions/46441958/what-is-the-real-purpose-of-magic-method-set-state-in-php
      * Better than official docs.
      *
@@ -224,6 +250,7 @@ final class MagicMethod
 
     /**
      * Called by var_dump() or print_r().
+     *
      * @return array
      */
     public function __debugInfo(): array
