@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Patterns\Observer;
 
+use ReturnTypeWillChange;
+
 class KeyloggerObserver implements \SplObserver
 {
     static private int $counterSubject = 0;
@@ -23,7 +25,7 @@ class KeyloggerObserver implements \SplObserver
     /**
      * @link https://niebezpiecznik.pl/post/600-milionow-hasel-facebook-wyciek/
      */
-    public function update(\SplSubject $subject): ?string
+    #[ReturnTypeWillChange] public function update(\SplSubject $subject): ?string
     {
         if ($subject instanceof KeyloggerSubject) {
             self::$counterSubjectImplementsKeylogger++;

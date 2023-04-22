@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder;
 
+use ReturnTypeWillChange;
+
 /**
  * Class allows access (read and write) to one of 32 bits, for the number of int type passed in the constructor.
  */
@@ -103,7 +105,7 @@ final class NumberPerBit implements \ArrayAccess
      * @return mixed Can return all value types.
      * @since 5.0.0
      */
-    public function offsetGet($offset)
+    #[ReturnTypeWillChange] public function offsetGet($offset)
     {
         return $this->intDividedIntoBits[$offset] ?? null;
     }
