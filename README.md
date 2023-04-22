@@ -7,11 +7,12 @@ Create your own .env file and copy the contents of .env.dist to it (in the same 
 or with a detailed description:    
 ./vendor/bin/phpunit --verbose         
 
-## Basic commands for Docker
+## Basic commands for Docker:
 docker build -t design_patterns_practice .        
 docker run -d -it --name dpp design_patterns_practice         
 docker exec -it dpp /bin/sh      
 ./vendor/bin/phpunit       
+          
 
 
 **Creational:**   
