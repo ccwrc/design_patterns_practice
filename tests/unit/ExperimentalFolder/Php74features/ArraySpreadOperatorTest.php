@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Patterns\tests\unit\ExperimentalFolder\Php74features;
 
-use Patterns\ExperimentalFolder\MicroLogger;
 use Patterns\ExperimentalFolder\Php74features\ArraySpreadOperator;
 use PHPUnit\Framework\TestCase;
 
@@ -30,6 +29,8 @@ class ArraySpreadOperatorTest extends TestCase
         ));
     }
 
+    /*
+     * test skipped: from PHP 8.2 speed differences are negligible
     public function testGlueSpeed(): void
     {
         $array1 = [2, 3, 4];
@@ -56,4 +57,5 @@ class ArraySpreadOperatorTest extends TestCase
 
         $this->assertGreaterThan($executionTimeGlue, $executionTimeGlueOldWay);
     }
+    */
 }
