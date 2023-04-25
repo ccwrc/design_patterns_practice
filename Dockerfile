@@ -12,6 +12,6 @@ RUN apt-get update -y && apt-get install -y \
     vim
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
-# https://blog.codito.pl/2022/11/composer-obrazy-dockera-w-trybie-binary-only/
+# https://blog.codito.dev/2022/11/composer-binary-only-docker-images/
 COPY --from=composer/composer:2.5.5-bin /composer /usr/bin/composer
 RUN composer install --no-interaction --no-progress
