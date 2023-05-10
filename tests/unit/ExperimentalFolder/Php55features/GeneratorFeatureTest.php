@@ -10,6 +10,8 @@ use PHPUnit\Framework\TestCase;
 
 class GeneratorFeatureTest extends TestCase
 {
+    private const NUMBER_OF_LINES_IN_FILE_FOR_TESTING = 300000;
+
     /**
      * My results:
      * 45 142 016 (bytes) used memory - $generator->operateOnFileNoUseGenerator();
@@ -17,7 +19,7 @@ class GeneratorFeatureTest extends TestCase
      */
     public function testMemoryGetPeakUsageWithGenerator(): int
     {
-        $generator = new GeneratorFeature(300000);
+        $generator = new GeneratorFeature(self::NUMBER_OF_LINES_IN_FILE_FOR_TESTING);
 
         $generator->operateOnFileWithGenerator();
         $memoryPeakUsage = memory_get_peak_usage(true);
@@ -38,7 +40,7 @@ class GeneratorFeatureTest extends TestCase
      */
     public function testMemoryGetPeakUsageNoGenerator(int $memoryPeakUsageWithGenerator): void
     {
-        $generator = new GeneratorFeature(300000);
+        $generator = new GeneratorFeature(self::NUMBER_OF_LINES_IN_FILE_FOR_TESTING);
 
         $generator->operateOnFileNoUseGenerator();
         $memoryPeakUsageNoGenerator = memory_get_peak_usage(true);
