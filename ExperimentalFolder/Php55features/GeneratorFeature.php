@@ -39,10 +39,9 @@ final class GeneratorFeature
         }
 
         $file = \fopen(self::$pathToTestTxtFile, 'rb');
-        $lines = getLines($file);
         $result = '';
 
-        foreach ($lines as $line) {
+        foreach (getLines($file) as $line) {
             $result .= 'modification ' . $line;
         }
 
