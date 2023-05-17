@@ -11,7 +11,6 @@
     "ramsey/uuid": "^3.8",
     "ext-json": "*",
     "symfony/dotenv": "^4.3",
-    "ext-pdo": "*",
     "ext-mysqli": "*",
     "ext-xml": "*",
     "phpmailer/phpmailer": "^v6.5.0"

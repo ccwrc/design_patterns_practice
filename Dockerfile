@@ -11,6 +11,7 @@ RUN apt-get update -y && apt-get install -y \
     unzip \
     vim
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 # https://blog.codito.dev/2022/11/composer-binary-only-docker-images/
 COPY --from=composer/composer:2.5.5-bin /composer /usr/bin/composer
