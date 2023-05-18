@@ -7,7 +7,7 @@ namespace Patterns\ValueObject;
 /**
  * Value Object: without their own identity (no id), small, immutable, always correct after creation.
  */
-final class SouthAmericanCountry
+final class SouthAmericanCountry implements \Stringable
 {
     public const COUNTRIES_LIST = [
         'Brazil',
