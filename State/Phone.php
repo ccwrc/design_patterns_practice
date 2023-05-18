@@ -11,6 +11,8 @@ namespace Patterns\State;
  */
 class Phone
 {
+    public const IN_EMERGENCY_CALL = '555-2368';
+
     private PhoneState $state;
 
     public function __construct(PhoneState $state)
