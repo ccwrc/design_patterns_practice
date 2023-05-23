@@ -34,7 +34,7 @@ docker exec -it dpp /bin/sh
 - Memento
 - Null Object
 - Observer
-- Strategy   
+- Strategy (Policy)   
 - Visitor   
 - Command  
 - State    
