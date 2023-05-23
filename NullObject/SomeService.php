@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\NullObject;
 
-class SomeService
+readonly class SomeService
 {
     public function __construct(private MailerStrategy $mailer)
     {

@@ -9,9 +9,7 @@ interface MailerStrategy
     /**
      * No return type: each implementation can return its own.
      *
-     * @param string $mailAddress
-     *
-     * @return mixed
+     * @return mixed|void
      */
     public function sendMail(string $mailAddress);
 }
