@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Patterns\ExperimentalFolder\Php80features;
 
 /**
+ * Warning: renaming (refactor) an argument can cause errors wherever the class/method is used.
+ *
  * @link https://php.watch/versions/8.0/named-parameters info.
  */
 class NamedParameters
