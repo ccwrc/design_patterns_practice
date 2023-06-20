@@ -17,7 +17,7 @@ final class Questionnaire
     private array $questions = [];
 
     /**
-     * Function allows chaining.
+     * Method allows chaining.
      */
     public function setTitle(string $title): self
     {
@@ -27,7 +27,7 @@ final class Questionnaire
     }
 
     /**
-     * Function allows chaining.
+     * Method allows chaining.
      */
     public function addQuestion(Question $question): self
     {
