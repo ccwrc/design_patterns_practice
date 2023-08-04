@@ -15,7 +15,7 @@ namespace Patterns\ExperimentalFolder;
  * build an app using the symfony component.
  */
 
-// Getting parameters from command line.
+//> Getting parameters from command line.
 $defaultService = 'github';
 $optionsFromCommandLine = getopt('', ['service::']);
 $service = $optionsFromCommandLine['service'] ?? $defaultService;
@@ -28,19 +28,16 @@ $lineRepository = getLineFromStandardInput();
 
 echo 'Enter branch name: ';
 $lineBranch = getLineFromStandardInput();
-// End (Getting parameters from command line).
+//< Getting parameters from command line.
 
-// Main app core
-switch ($service) {
-    case $defaultService:
-        echo getLastShaFromGithub($lineOwner, $lineRepository, $lineBranch);
-        break;
-    default:
-        echo "\n Unknown service '" . $service . "'\n";
-}
-// End (Main app core).
+//> Main app core
+echo match ($service) {
+    $defaultService => getLastShaFromGithub($lineOwner, $lineRepository, $lineBranch),
+    default => "\n Unknown service '" . $service . "'\n",
+};
+//< Main app core.
 
-// More or less useful functions below.
+//> More or less useful functions.
 function getLineFromStandardInput(): string
 {
     $handle = fopen('php://stdin', 'r');
@@ -60,16 +57,32 @@ function getLastShaFromGithub(string $owner, string $repository, string $branch)
             'method' => 'GET',
             'header' => [
                 'User-Agent: PHP'
-            ]
+            ],
+            'ignore_errors' => true
         ]
     ];
-    $context = stream_context_create($options);
-    // @ below -> very, very bad practice, don't try this at home.
-    $content = @file_get_contents("https://api.github.com/repos/" . $owner . "/" . $repository . "/git/refs/heads/" . $branch . "", false, $context);
+
+    try {
+        $context = stream_context_create($options);
+        $content = file_get_contents("https://api.github.com/repos/" . $owner . "/" . $repository
+            . "/git/refs/heads/" . $branch, false, $context);
+    } catch (\Throwable $throwable) {
+        echo 'Error: ' . $throwable->getMessage() . "\n";
+        die;
+    }
+
     if (false === $content) {
         return "\n You entered the wrong parameters, check them and try again. \n";
     }
-    $decodedContent = json_decode($content);
 
-    return $decodedContent->object->sha . "\n";
+    try {
+        $decodedContent = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+        $result = $decodedContent->object->sha ?? $decodedContent->message ?? 'Error';
+    } catch (\Throwable $throwable) {
+        echo 'Error: ' . $throwable->getMessage() . "\n";
+        die;
+    }
+
+    return $result . "\n";
 }
+//< More or less useful functions.
