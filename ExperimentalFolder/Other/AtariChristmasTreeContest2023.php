@@ -18,5 +18,8 @@ final readonly class AtariChristmasTreeContest2023
         'gorgh',
         'pigula',
         'triplex aka blasph',
+        'sun',
+        'Caesar',
+        'Sikor',
     ];
 }
