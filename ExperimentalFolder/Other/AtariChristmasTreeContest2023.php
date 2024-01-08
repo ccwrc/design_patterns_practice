@@ -21,5 +21,7 @@ final readonly class AtariChristmasTreeContest2023
         'sun',
         'Caesar',
         'Sikor',
+        'amarok',
+        'lopez',
     ];
 }
