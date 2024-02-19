@@ -23,5 +23,7 @@ final readonly class AtariChristmasTreeContest2023
         'Sikor',
         'amarok',
         'lopez',
+        'Kroll',
+        'Peri Noid',
     ];
 }
