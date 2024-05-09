@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Patterns\ExperimentalFolder;
 
-class NamedConstructors
+final class NamedConstructors
 {
     public const string DANGEROUS_NAME = 'Arnold';
     public const string PLAIN_NAME = 'Joe';
@@ -19,17 +19,17 @@ class NamedConstructors
 
     public static function createWithDangerousName(string $surname): self
     {
-        return new NamedConstructors(self::DANGEROUS_NAME, $surname);
+        return new self(self::DANGEROUS_NAME, $surname);
     }
 
     public static function createWithPlainName(string $surname): self
     {
-        return new NamedConstructors(self::PLAIN_NAME, $surname);
+        return new self(self::PLAIN_NAME, $surname);
     }
 
     public static function createWithDogName(string $surname): self
     {
-        return new NamedConstructors(self::DOG_NAME, $surname);
+        return new self(self::DOG_NAME, $surname);
     }
 
     public function getName(): string
