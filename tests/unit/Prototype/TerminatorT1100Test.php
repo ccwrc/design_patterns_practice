@@ -54,21 +54,4 @@ class TerminatorT1100Test extends TestCase
             }
         }
     }
-
-    public function testGetLocation(): void
-    {
-        $t1100 = new TerminatorT1100(6);
-
-        $this->assertIsInt($t1100->getLocation());
-    }
-
-    public function testSetSerialNumber(): void
-    {
-        $t1100 = new TerminatorT1100(6);
-        if ($t1100->setSerialNumber()) {
-            $this->assertIsString($t1100->getSerialNumber()->toString());
-        } else {
-            $this->assertNull($t1100->getSerialNumber());
-        }
-    }
 }

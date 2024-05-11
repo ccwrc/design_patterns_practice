@@ -10,7 +10,7 @@ abstract class TerminatorPrototype implements Location
 {
     protected int $location;
 
-    protected ?Uuid $serialNumber = null;
+    protected ?string $serialNumber = null;
 
     protected int $randomValue;
 
@@ -27,7 +27,7 @@ abstract class TerminatorPrototype implements Location
     public function setSerialNumber(): bool
     {
         try {
-            $this->serialNumber = Uuid::uuid5();
+            $this->serialNumber = Uuid::uuid4()->toString();
 
             return true;
         } catch (\Throwable) {
@@ -35,7 +35,7 @@ abstract class TerminatorPrototype implements Location
         }
     }
 
-    public function getSerialNumber(): ?Uuid
+    public function getSerialNumber(): ?string
     {
         return $this->serialNumber;
     }

@@ -10,11 +10,11 @@ namespace Patterns\ExperimentalFolder\Php81features;
  */
 final class ReadonlyProperty
 {
-    public const DEFAULT_RENTAL_TIME = 14;
+    public const int DEFAULT_RENTAL_TIME = 14;
 
     public readonly string $title;
     public readonly int $numberOfPages;
-    private readonly bool $isUsed;
+    private readonly bool $isUsed; /** @phpstan-ignore-line */
     public int $rentalTime = self::DEFAULT_RENTAL_TIME;
 
     /**

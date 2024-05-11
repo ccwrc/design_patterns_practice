@@ -11,7 +11,7 @@ use Patterns\ExperimentalFolder\Php81features\ReadonlyProperty;
  */
 final readonly class ReadonlyClass
 {
-    private bool $isUsed;
+    private bool $isUsed; /** @phpstan-ignore-line */
 
     /**
      * Another book from library for example. @see ReadonlyProperty

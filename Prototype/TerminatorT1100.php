@@ -13,8 +13,7 @@ final class TerminatorT1100 extends TerminatorPrototype
 
     public function __clone()
     {
-        //obligatory if $serialNumber is an object
-        //$this->serialNumber = clone $this->serialNumber;
+        $this->serialNumber = 'T1100 clone';
     }
 
     public function tryKillSarah(Sarah $sarah): bool
