@@ -5,7 +5,10 @@ Create your own .env file and copy the contents of .env.dist to it (in the same 
 ## To run unit tests:  
 ./vendor/bin/phpunit   
 or with a detailed description:    
-./vendor/bin/phpunit --verbose         
+./vendor/bin/phpunit --verbose     
+
+## To run PHPStan:
+./vendor/bin/phpstan analyse  ./ --level 0        
 
 ## Basic commands for Docker:
 docker build -t design_patterns_practice .        
