@@ -9,6 +9,13 @@ namespace Patterns\ExperimentalFolder\Php53features;
  */
 class LateStaticBindingsA
 {
+    /**
+     * @link https://phpstan.org/blog/solving-phpstan-error-unsafe-usage-of-new-static why constructor is final.
+     */
+    final public function __construct()
+    {
+    }
+
     public static function getSelf(): LateStaticBindingsA
     {
         return new self();

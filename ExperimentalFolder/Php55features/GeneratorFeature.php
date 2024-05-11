@@ -31,17 +31,14 @@ final class GeneratorFeature
 
     public function operateOnFileWithGenerator(): void
     {
-        function getLines($file): \Generator
-        {
-            while ($line = fgets($file)) {
-                yield $line;
-            }
-        }
-
         $file = \fopen(self::$pathToTestTxtFile, 'rb');
         $result = '';
 
-        foreach (getLines($file) as $line) {
+        foreach (static function ($file): \Generator {
+            while ($line = fgets($file)) {
+                yield $line;
+            }
+        } as $line) {
             $result .= 'modification ' . $line;
         }
 
