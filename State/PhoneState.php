@@ -15,7 +15,7 @@ abstract class PhoneState
 
     public static function create(): PhoneState
     {
-        return new static();
+        return new static(); /** @phpstan-ignore-line */
     }
 
     abstract public function stateAfterShortPressRedButton(): PhoneState;

@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Patterns\tests\unit\ExperimentalFolder\Php81features;
 
-use JetBrains\PhpStorm\NoReturn;
 use Patterns\ExperimentalFolder\Php81features\Enums\{IceCreamColorEnum, IceCreamFlavorEnum, IceCreamTemperatureEnum};
 use Patterns\ExperimentalFolder\Php81features\IceCreamWithEnums;
 use PHPUnit\Framework\TestCase;
 
 class IceCreamWithEnumsTest extends TestCase
 {
-    #[NoReturn] public function testIsEnum(): void
+    public function testIsEnum(): void
     {
         $iceCream = new IceCreamWithEnums(
             IceCreamFlavorEnum::DangerousFlavor,
