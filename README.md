@@ -8,7 +8,7 @@ or with a detailed description:
 ./vendor/bin/phpunit --verbose     
 
 ## To run PHPStan:
-./vendor/bin/phpstan analyse  ./ --level 0        
+./vendor/bin/phpstan analyse  ./ --level 4        
 
 ## Basic commands for Docker:
 docker build -t design_patterns_practice .        
