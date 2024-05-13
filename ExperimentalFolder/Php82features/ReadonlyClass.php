@@ -11,7 +11,7 @@ use Patterns\ExperimentalFolder\Php81features\ReadonlyProperty;
  */
 final readonly class ReadonlyClass
 {
-    private bool $isUsed; /** @phpstan-ignore-line */
+    private bool $isUsed;
 
     /**
      * Another book from library for example. @see ReadonlyProperty
@@ -37,7 +37,7 @@ final readonly class ReadonlyClass
      */
     public function setIsUsed(true $isUsed): void
     {
-        $this->isUsed = $isUsed; /** @phpstan-ignore-line */
+        $this->isUsed = $isUsed;
     }
 
     public function itIsUsed(): bool

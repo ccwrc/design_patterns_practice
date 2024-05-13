@@ -14,7 +14,7 @@ final class ReadonlyProperty
 
     public readonly string $title;
     public readonly int $numberOfPages;
-    private readonly bool $isUsed; /** @phpstan-ignore-line */
+    private readonly bool $isUsed;
     public int $rentalTime = self::DEFAULT_RENTAL_TIME;
 
     /**
@@ -43,7 +43,7 @@ final class ReadonlyProperty
      */
     public function setIsUsed(true $isUsed): void
     {
-        $this->isUsed = $isUsed; /** @phpstan-ignore-line */
+        $this->isUsed = $isUsed;
     }
 
     public function itIsUsed(): bool

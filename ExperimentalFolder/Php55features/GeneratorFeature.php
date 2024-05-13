@@ -34,7 +34,7 @@ final class GeneratorFeature
         $file = \fopen(self::$pathToTestTxtFile, 'rb');
         $result = '';
 
-        foreach (static function ($file): \Generator { /** @phpstan-ignore-line */
+        foreach (static function ($file): \Generator {
             while ($line = fgets($file)) {
                 yield $line;
             }

@@ -6,7 +6,7 @@ namespace Patterns\FactoryMethod\Accessory;
 
 final class VintageDildo implements EroticAccessory
 {
-    private int $size = 6;
+    private int $size = 6; /** @phpstan-ignore-line */
 
     private int $pleasureLevel = 0;
 
