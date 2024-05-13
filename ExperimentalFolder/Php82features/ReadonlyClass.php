@@ -37,7 +37,7 @@ final readonly class ReadonlyClass
      */
     public function setIsUsed(true $isUsed): void
     {
-        $this->isUsed = $isUsed;
+        $this->isUsed = $isUsed; /** @phpstan-ignore-line */
     }
 
     public function itIsUsed(): bool

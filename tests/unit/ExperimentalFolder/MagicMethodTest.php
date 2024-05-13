@@ -166,7 +166,7 @@ class MagicMethodTest extends TestCase
     public function testSetState(MagicMethod $magicMethod): void
     {
         eval('$variableOutOfNowhere = ' . var_export($magicMethod, true) . ';'); // $variableOutOfNowhere is born here
-        $this->assertEquals(MagicMethod::SET_STATE_MESSAGE, $variableOutOfNowhere); /** @phpstan-ignore-line */
+        $this->assertEquals(MagicMethod::SET_STATE_MESSAGE, $variableOutOfNowhere);
     }
 
     /**
