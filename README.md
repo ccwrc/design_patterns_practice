@@ -1,49 +1,107 @@
-## design_patterns_practice (up to PHP 8.3 version)    
 
-Create your own .env file and copy the contents of .env.dist to it (in the same directory).
+# Design Patterns Practice (PHP to 8.3)
 
-## To run unit tests:  
-./vendor/bin/phpunit   
-or with a detailed description:    
-./vendor/bin/phpunit --verbose     
+## Description
+Exercise, fun, summer, beach and sea :)
 
-## To run PHPStan:
-./vendor/bin/phpstan analyse  ./ --level 4        
+## Table of Contents
+- [Initial Configuration](#initial-configuration)
+- [Unit Testing Instructions](#unit-testing-instructions)
+- [Static Analysis](#static-analysis)
+- [Docker Usage Guidelines](#docker-usage-guidelines)
+- [Implemented Design Patterns](#implemented-design-patterns)
 
-## Basic commands for Docker:
-docker build -t design_patterns_practice .        
-docker run -d -it --name dpp design_patterns_practice         
-docker exec -it dpp /bin/sh      
-./vendor/bin/phpunit       
-## 
+## Initial Configuration
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
 
-**Creational:**   
+2. Navigate to the project directory:
+   ```bash
+   cd <repository-folder>
+   ```
+
+3. Install dependencies using Composer:
+   ```bash
+   composer install
+   ```
+
+4. Read .env.dist file and follow the rules.
+
+## Unit Testing Instructions
+
+Run the tests:
+   ```bash
+   ./vendor/bin/phpunit
+   ```
+
+For detailed output, use:
+   ```bash
+   ./vendor/bin/phpunit --verbose
+   ```
+
+## Static Analysis
+
+Run PHPStan on the project files (level 0 is the least strict, 10 the most):
+   ```bash
+   ./vendor/bin/phpstan analyse  ./ --level 4
+   ```
+
+## Docker Usage Guidelines
+The project can be containerized using Docker. Follow these steps to set up the environment:
+
+1. Build the Docker image:
+   ```bash
+   docker build -t design_patterns_practice .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -d -it --name dpp design_patterns_practice
+   ```
+
+3. Enter to the container:
+   ```bash
+   docker exec -it dpp /bin/sh
+   ```
+
+4. Run tests in the container:
+   ```bash
+   ./vendor/bin/phpunit
+   ```
+
+## Implemented Design Patterns
+
+### Creational Patterns
 - Abstract Factory
 - Builder
 - Prototype
 - Singleton
 - Property
-- Factory method  
-- Simple Factory  
+- Factory method
+- Simple Factory
 
-**Structural:**   
+### Structural Patterns
 - Dependency Injection
-- Facade    
-- Adapter (Wrapper)    
-- Composite   
-- Fluent Interface   
+- Facade
+- Adapter (Wrapper)
+- Composite
+- Fluent Interface
 
-**Behavioral:**   
+### Behavioral Patterns
 - Memento
 - Null Object
 - Observer
-- Strategy (Policy)   
-- Visitor   
-- Command  
-- State    
+- Strategy (Policy)
+- Visitor
+- Command
+- State
 
-**Others:**   
+### Other
 - Value Object
 - Command Query Separation
-- Lazy Loading  
-- DTO   :pen: 
+- Lazy Loading
+- DTO     
+
+### <span style="color:red;">Warning: You open "Experimental Folder" directory at your own risk.</span>

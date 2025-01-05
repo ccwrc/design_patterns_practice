@@ -8,16 +8,17 @@
   },
   "require": {
     "php": ">=8.3",
-    "ramsey/uuid": "^3.8",
+    "ramsey/uuid": "^4.7",
     "ext-json": "*",
-    "symfony/dotenv": "^4.3",
+    "symfony/dotenv": "^5.4",
     "ext-mysqli": "*",
     "ext-xml": "*",
+    "ext-intl": "*",
     "phpmailer/phpmailer": "^v6.5.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "phpunit/phpunit": "^9.5.28",
-    "phpstan/phpstan": "^1.10"
+    "phpstan/phpstan": "^2.1"
   }
 }
