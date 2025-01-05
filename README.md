@@ -1,8 +1,8 @@
 
-# Design Patterns Practice (PHP to 8.3)
+# Design Patterns Practice (PHP up to 8.3)
 
 ## Description
-Exercise, fun, summer, beach and sea :)
+This repository is designed for educational and experimental purposes.
 
 ## Table of Contents
 - [Initial Configuration](#initial-configuration)
@@ -61,7 +61,7 @@ The project can be containerized using Docker. Follow these steps to set up the 
    docker run -d -it --name dpp design_patterns_practice
    ```
 
-3. Enter to the container:
+3. Enter the container:
    ```bash
    docker exec -it dpp /bin/sh
    ```
@@ -104,4 +104,5 @@ The project can be containerized using Docker. Follow these steps to set up the 
 - Lazy Loading
 - DTO     
 
-### <span style="color:red;">Warning: You open "Experimental Folder" directory at your own risk.</span>
+### :warning: Warning:
+**You open "ExperimentalFolder" directory at your own risk.**
