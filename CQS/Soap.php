@@ -22,7 +22,7 @@ final class Soap
      * Use if you feel dirty.
      *
      * @return void
-     * @throws \Exception
+     * @throws \DateMalformedStringException
      */
     public function washSomethingCommand(): void
     {
