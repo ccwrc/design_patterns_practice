@@ -13,12 +13,10 @@ class SensitiveParameterTest extends TestCase
     {
         $plainParameter = 'I\'m a dog.';
         $secretParameter = 'I married a cat.';
-        $expectedString = 'SensitiveParameterValue Object';
 
         $result = SensitiveParameter::shamefulSecret($plainParameter, $secretParameter);
 
-        $this->assertStringContainsString($plainParameter, $result);
-        $this->assertStringContainsString($expectedString, $result);
-        $this->assertStringNotContainsString($secretParameter, $result);
+        $this->assertContains($plainParameter, $result);
+        $this->assertNotContains($secretParameter, $result);
     }
 }

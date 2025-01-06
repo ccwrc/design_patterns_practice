@@ -12,8 +12,10 @@ class SensitiveParameter
     public static function shamefulSecret(
         string                        $plainParameter,
         #[\SensitiveParameter] string $secretParameter
-    ): true|string
+    ): array
     {
-        return print_r(debug_backtrace(), true);
+        $backtrace = debug_backtrace();
+
+        return $backtrace[0]['args'];
     }
 }
