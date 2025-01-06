@@ -7,7 +7,7 @@
     }
   },
   "require": {
-    "php": ">=8.3",
+    "php": ">=8.4",
     "ramsey/uuid": "^4.7",
     "ext-json": "*",
     "symfony/dotenv": "^5.4",
