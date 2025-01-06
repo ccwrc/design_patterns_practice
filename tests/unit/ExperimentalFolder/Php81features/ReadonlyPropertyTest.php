@@ -16,7 +16,7 @@ class ReadonlyPropertyTest extends TestCase
             379
         );
 
-        $this->expectError();
+        $this->expectException(\Error::class);
         $book->title = 'Failure';
     }
 
@@ -27,7 +27,7 @@ class ReadonlyPropertyTest extends TestCase
             379
         );
 
-        $this->expectError();
+        $this->expectException(\Error::class);
         unset($book->title);
     }
 
@@ -43,7 +43,7 @@ class ReadonlyPropertyTest extends TestCase
         $book->setIsUsed(true);
         $this->assertTrue($book->itIsUsed());
 
-        $this->expectError();
+        $this->expectException(\Error::class);
         $book->setIsUsed(true);
     }
 

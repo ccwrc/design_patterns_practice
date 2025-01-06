@@ -16,7 +16,7 @@ class RecursionLimitTest extends TestCase
             $this->markTestSkipped('No limit for xdebug.max_nesting_level - test skipped');
         }
 
-        $this->expectError();
+        $this->expectException(\Error::class);
         RecursionLimit::countDownToZeroFrom((int)$maxNestingLevel + 1);
     }
 }

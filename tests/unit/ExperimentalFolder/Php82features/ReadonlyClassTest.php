@@ -16,7 +16,7 @@ class ReadonlyClassTest extends TestCase
             224
         );
 
-        $this->expectError();
+        $this->expectException(\Error::class);
         $book->title = 'Bill, the Galactic Hero on the Planet of Ten Thousand Bars';
     }
 
@@ -27,7 +27,7 @@ class ReadonlyClassTest extends TestCase
             289
         );
 
-        $this->expectError();
+        $this->expectException(\Error::class);
         unset($book->title);
     }
 
@@ -43,7 +43,7 @@ class ReadonlyClassTest extends TestCase
         $book->setIsUsed(true);
         $this->assertTrue($book->itIsUsed());
 
-        $this->expectError();
+        $this->expectException(\Error::class);
         $book->setIsUsed(true);
     }
 }

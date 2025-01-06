@@ -22,7 +22,7 @@ class DisjunctiveNormalFormTest extends TestCase
         $someInterfaceObject = new class() implements SomeInterface {
         };
 
-        $this->expectError();
+        $this->expectException(\Error::class);
         $giveBack = DisjunctiveNormalForm::giveBack($someInterfaceObject);
     }
 

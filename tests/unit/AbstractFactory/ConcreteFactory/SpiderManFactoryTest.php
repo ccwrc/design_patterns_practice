@@ -52,7 +52,7 @@ class SpiderManFactoryTest extends TestCase
      */
     public function testCatchCriminalsError(SpiderManFactory $spiderMan): void
     {
-        $this->expectError();
+        $this->expectException(\Error::class);
         $spiderMan->catchCriminals('John', 911);
     }
 
