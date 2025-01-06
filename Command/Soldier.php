@@ -9,9 +9,9 @@ namespace Patterns\Command;
  */
 final class Soldier implements SoldierArmyInterface
 {
-    private string $rank; /** @phpstan-ignore-line */
+    private string $rank;
 
-    private string $name; /** @phpstan-ignore-line */
+    private string $name;
 
     private bool $isDead;
 

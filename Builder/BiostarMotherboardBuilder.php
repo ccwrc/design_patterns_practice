@@ -6,11 +6,11 @@ namespace Patterns\Builder;
 
 class BiostarMotherboardBuilder implements MotherboardBuilder
 {
-    private string $pcb; /** @phpstan-ignore-line */
+    private string $pcb;
 
-    private string $lan; /** @phpstan-ignore-line */
+    private string $lan;
 
-    private string $audioCard; /** @phpstan-ignore-line */
+    private string $audioCard;
 
     public function createPcb(): void
     {

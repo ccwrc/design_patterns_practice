@@ -4,3 +4,6 @@ parameters:
             - vendor
             - tests
             - ExperimentalFolder
+
+    ignoreErrors:
+        - '#^.+ is never read, only written\.$#'
