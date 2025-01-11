@@ -1,5 +1,5 @@
 
-# Design Patterns Practice (PHP up to 8.3)
+# Design Patterns Practice (PHP up to 8.4)
 
 ## Description
 This repository is designed for educational and experimental purposes.
