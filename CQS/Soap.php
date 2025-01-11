@@ -9,7 +9,7 @@ namespace Patterns\CQS;
  */
 final class Soap
 {
-    private const DRYING_TIME_IN_MINUTES = 30;
+    private const int DRYING_TIME_IN_MINUTES = 30;
 
     private \DateTime $timeToDry;
 

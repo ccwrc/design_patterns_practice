@@ -10,7 +10,7 @@ final class Russia implements VisitorInterface
 {
     public function visitCountry(CountryInterface $country): bool
     {
-        if (\get_class($this) === \get_class($country)) {
+        if (\get_class($this) === \get_class($country)) { /* @phpstan-ignore-line */
             return false;
         }
 

@@ -9,7 +9,7 @@ namespace Patterns\FluentInterface;
  */
 final class Questionnaire
 {
-    private string $title;
+    private string $title = '';
 
     /**
      * @var Question[]
@@ -36,7 +36,7 @@ final class Questionnaire
         return $this;
     }
 
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }

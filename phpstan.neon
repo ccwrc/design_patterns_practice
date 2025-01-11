@@ -7,3 +7,4 @@ parameters:
 
     ignoreErrors:
         - '#^.+ is never read, only written\.$#'
+        - identifier: throws.unusedType

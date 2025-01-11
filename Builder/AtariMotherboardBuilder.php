@@ -6,7 +6,7 @@ namespace Patterns\Builder;
 
 class AtariMotherboardBuilder implements MotherboardBuilder
 {
-    private string $pcb; /* @phpstan-ignore-line */
+    private string $pcb;
 
     private string $lan;
 

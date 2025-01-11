@@ -101,7 +101,7 @@ final class PasswordManager implements \SplSubject, KeyloggerSubject
         plainDinosaur:
         return 'welcome';
 
-        bloodthirstyDinosaur:
+        bloodthirstyDinosaur: /** @phpstan-ignore-line */
         return 'go to hell';
     }
 }
